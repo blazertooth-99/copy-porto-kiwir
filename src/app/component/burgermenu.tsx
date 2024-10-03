@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const BurgerMenu = () => {
   return (
-    <div className="grid place-items-center min-h-screen text-center">
+    <div className="grid place-items-center text-center">
       <div className="mx-auto w-full max-w-sm space-y-4">
         
         <div className="flex border border-gray-200 rounded-lg shadow-sm dark:border-blue-800">

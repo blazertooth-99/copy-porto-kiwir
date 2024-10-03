@@ -21,3 +21,6 @@
 
 ** Install embla carousel
 - npm install embla-carousel-react --save
+
+** Install Third Party Google Maps
+- npm i @next/third-parties

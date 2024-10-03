@@ -24,7 +24,7 @@ export default function RootLayout({
       <header className={nunito_sans.className}>
         <Navbar />
       </header>
-      {children}
+      <div className={montserrat.className}>{children}</div>
       <footer>
         <Footer />
       </footer>

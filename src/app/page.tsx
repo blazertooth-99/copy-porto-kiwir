@@ -7,11 +7,11 @@ import News from "./landing_page/news"
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between p-10">
+    <main className="flex flex-col justify-center p-10">
       <Heroimg />
       <Business />
       <Career />
       <News />
-      </main>
+    </main>
   );
 }
