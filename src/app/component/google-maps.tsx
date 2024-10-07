@@ -1,35 +1,19 @@
 import { GoogleMapsEmbed } from '@next/third-parties/google'
-import { getGoogleMapsApiKey } from '../action'
 
-const MapPage = async () => {
-  let apiKey: string;
-  let error: string | null = null;
+export default function MapPage() {
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!
 
-  try {
-    apiKey = await getGoogleMapsApiKey();
-  } catch (err) {
-    console.error('Failed to load Google Maps API key:', err);
-    error = 'Failed to load Google Maps API key';
-  }
-
-  if (error) {
-    return (
-      <div className="container mx-auto p-4">
-        <div className="text-red-500">{error}</div>
-      </div>
-    );
+  if (!apiKey) {
+    return <div className='text-red'>Error: Google Maps API key is not set</div>
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <GoogleMapsEmbed
-        apiKey={apiKey!}
-        height={400}
-        width="100%"
-        mode="place"
-        q="Brooklyn Bridge,New York,NY"
-      />
-    </div>
-  );
+    <GoogleMapsEmbed
+      apiKey={apiKey}
+      height={250}
+      width="100%"
+      mode="place"
+      q="Brooklyn Bridge,New York,NY"
+    />
+  )
 }
-export default MapPage;
