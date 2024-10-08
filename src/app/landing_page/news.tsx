@@ -30,7 +30,7 @@ export default function NewsCarousel() {
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-4">Info Berita dan Kegiatan Terkini</h1>
-      <div className="text-green-500 mb-6 flex items-center">
+      <div className="text-orange-950 mb-6 flex items-center">
         <span>Selengkapnya di Berita & Kegiatan</span>
         <ChevronRight className="w-4 h-4 ml-1" />
       </div>
@@ -50,7 +50,7 @@ export default function NewsCarousel() {
                     <h6 className="my-4 font-semibold">{article.title}</h6>
                     <div className="flex space-x-2 mb-2">
                         {article.categories.map((categories, index) => (
-                          <span key={index} className="bg-blue-400 text-black text-xs px-2 py-1 rounded">{categories}</span>
+                          <span key={index} className="bg-orange-950 text-white text-xs px-2 py-1 rounded">{categories}</span>
                         ))}
                       </div>
                       <span>{article.date}</span>

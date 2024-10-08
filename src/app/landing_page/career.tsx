@@ -1,5 +1,6 @@
 import { CAREER } from "../constants/career";
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,7 +27,12 @@ const Career = () => {
               <div className="p-1">
                 <Card>
                   <CardContent className="flex flex-col aspect-square items-center justify-center p-6">
-                    <img src={article.img} />
+                    <Image
+                      src={article.img}
+                      width={500}
+                      height={500}
+                      alt="Career Image"
+                    />
                     <h6 className="my-4 font-semibold">{article.name}</h6>
                     <Button asChild variant="outline">
                       <Link href="/news">More Info</Link>

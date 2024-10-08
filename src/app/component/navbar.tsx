@@ -126,10 +126,10 @@ const Navbar = (props: any) => {
           </svg>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm">
+            <Button size="sm" className="bg-gray-100 text-orange-950 hover:bg-gray-200">
               Sign in
             </Button>
-            <Button size="sm">Sign up</Button>
+            <Button size="sm" className="bg-orange-900 text-white hover:bg-orange-950">Sign up</Button>
           </div>
           <div className="visible md:invisible">
           <BurgerMenu />

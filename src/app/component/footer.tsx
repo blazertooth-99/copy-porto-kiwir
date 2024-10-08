@@ -101,38 +101,38 @@ export default function Component() {
           <div className="flex space-x-4 mb-4 md:mb-0 pb-4">
             <Link
               href="#"
-              className="text-white hover:text-gray-300 rounded-full bg-green-600 p-1 items-center"
+              className="text-white hover:text-gray-300 rounded-full bg-orange-950 p-1 items-center"
             >
               <Facebook size={24} />
             </Link>
             <Link
               href="#"
-              className="text-white hover:text-gray-300 rounded-full bg-green-600 p-1 items-center"
+              className="text-white hover:text-gray-300 rounded-full bg-orange-950 p-1 items-center"
             >
               <Mail size={24} />
             </Link>
             <Link
               href="#"
-              className="text-white hover:text-gray-300 rounded-full bg-green-600 p-1 items-center"
+              className="text-white hover:text-gray-300 rounded-full bg-orange-950 p-1 items-center"
             >
               <Instagram size={24} />
             </Link>
             <Link
               href="#"
-              className="text-white hover:text-gray-300 rounded-full bg-green-600 p-1 items-center"
+              className="text-white hover:text-gray-300 rounded-full bg-orange-950 p-1 items-center"
             >
               <Linkedin size={24} />
             </Link>
             <Link
               href="#"
-              className="text-white hover:text-gray-300 rounded-full bg-green-600 p-1 items-center"
+              className="text-white hover:text-gray-300 rounded-full bg-orange-950 p-1 items-center"
             >
               <Youtube size={24} />
             </Link>
           </div>
         </div>
       </div>
-      <div className="flex flex-cols bg-green-800 w-auto md:max-w-full h-auto mx-auto items-center justify-center py-5 px-0 mx-0">
+      <div className="flex flex-cols bg-orange-950 w-auto md:max-w-full h-auto mx-auto items-center justify-center py-5 px-0 mx-0">
         <p className="text-sm text-white text-center">
           © Agree 2024 - Agree adalah merek milik PT Telekomunikasi Indonesia,
           Tbk. Terdaftar pada Direktorat Jendral Kekayaan Intelektual Republik
