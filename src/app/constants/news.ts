@@ -13,7 +13,7 @@ export const newsArticle: NewsArticle[] = [
 
     {
         id: 1,
-        date: '20 Agustus 2024 • 4 menit baca',
+        date: '20 Agustus 2024',
         readTime: '4 menit baca',
         title: 'Hasil Laut Indonesia Terus Diperkuat Digitalisasi',
         categories: ["Teknologi", "Begal", "Polisi sampah"],

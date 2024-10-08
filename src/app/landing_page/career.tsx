@@ -31,11 +31,11 @@ const Career = () => {
                       src={article.img}
                       width={500}
                       height={500}
-                      alt="Career Image"
+                      alt={article.review}
                     />
                     <h6 className="my-4 font-semibold">{article.name}</h6>
                     <Button asChild variant="outline">
-                      <Link href="/news">More Info</Link>
+                      <Link href="/career">More Info</Link>
                     </Button>
                   </CardContent>
                 </Card>

@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Business = (props: any) => {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-between pt-6">
+    <main className="flex flex-col min-h-fit items-center justify-between pt-6">
       <div className="inline-flex items-center justify-center w-full">
         <hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
         <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">

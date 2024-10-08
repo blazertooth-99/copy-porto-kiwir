@@ -5,8 +5,16 @@ import Navbar from "./component/navbar";
 import Footer from "./component/footer";
 
 // const inter = Inter({ subsets: ["latin"] });
-const montserrat = Montserrat({ subsets: ["latin"] });
-const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  adjustFontFallback: false,
+});
+const nunito_sans = Nunito_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  adjustFontFallback: false,
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,9 +32,7 @@ export default function RootLayout({
         <div className={nunito_sans.className}>
           <Navbar />
         </div>
-          <div className={montserrat.className}>
-            {children}
-          </div>
+        <div className={montserrat.className}>{children}</div>
         <Footer />
       </body>
     </html>

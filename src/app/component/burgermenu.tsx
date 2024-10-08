@@ -10,7 +10,7 @@ const BurgerMenu = () => {
         <div className="flex border border-gray-200 rounded-lg shadow-sm dark:border-blue-800">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="w-10 h-10 rounded-r-none">
+              <Button variant="ghost" size="icon" className="w-8 h-8 rounded-r-none items-center justify-center">
                 <MenuIcon className="scale-125 w-6 h-6 block" /> 
                 <span className="sr-only">Toggle menu</span>
               </Button>

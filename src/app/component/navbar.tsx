@@ -19,6 +19,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { LogOut } from "lucide-react";
+import DarkMode from "./dark-mode-switcher";
 
 const components = [{
   title: "Change Language",
@@ -133,6 +134,9 @@ const Navbar = (props: any) => {
           </div>
           <div className="visible md:invisible">
           <BurgerMenu />
+          </div>
+          <div className="flex items-center w-fit h-fit">
+            <DarkMode />
           </div>
         </div>
       </div>
