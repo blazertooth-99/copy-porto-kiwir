@@ -57,24 +57,24 @@ const Business = (props: any) => {
                 />
               </div>
               <div className="col-span-1">
-              <div className="flex items-center justify-center mt-4">
-                <Avatar className="mb-1 size-20">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                </Avatar>
-              </div>
-              <h2 className="text-2xl font-bold mb-2 text-center">
-                BUSINESS 2
-              </h2>
-              <p className="mb-4 py-1 text-center">
-                Lorem ipsum dolor sit amet, consectetur
-              </p>
-              <div className="p-5 flex items-center justify-center">
-                <button className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors">
-                  LEARN MORE
-                </button>
+                <div className="flex items-center justify-center mt-4">
+                  <Avatar className="mb-1 size-20">
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                  </Avatar>
+                </div>
+                <h2 className="text-2xl font-bold mb-2 text-center">
+                  BUSINESS 2
+                </h2>
+                <p className="mb-4 py-1 text-center">
+                  Lorem ipsum dolor sit amet, consectetur
+                </p>
+                <div className="p-5 flex items-center justify-center">
+                  <button className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors">
+                    LEARN MORE
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
           </div>
           {/* END GRID VIEW BUSINESS 2 */}
 
@@ -121,22 +121,22 @@ const Business = (props: any) => {
                 />
               </div>
               <div className="col-span-1 p-2">
-              <div className="flex items-center justify-center mt-4">
-                <Avatar className="mb-1 size-20">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                </Avatar>
-              </div>
-              <h2 className="text-2xl font-bold mb-2 text-center">
-                BUSINESS 4
-              </h2>
-              <p className="mb-4 py-1 text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div className="p-5 flex items-center justify-center">
-                <button className="border border-gray-800 px-4 py-2 rounded hover:bg-gray-800 hover:text-white transition-colors">
-                  LEARN MORE
-                </button>
+                <div className="flex items-center justify-center mt-4">
+                  <Avatar className="mb-1 size-20">
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                  </Avatar>
+                </div>
+                <h2 className="text-2xl font-bold mb-2 text-center">
+                  BUSINESS 4
+                </h2>
+                <p className="mb-4 py-1 text-center">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <div className="p-5 flex items-center justify-center">
+                  <button className="border border-gray-800 px-4 py-2 rounded hover:bg-gray-800 hover:text-white transition-colors">
+                    LEARN MORE
+                  </button>
                 </div>
               </div>
             </div>
@@ -146,31 +146,29 @@ const Business = (props: any) => {
           {/* START GRID VIEW BUSINESS 5 */}
           <div className="col-span-1 md:col-span-3 bg-green-600 text-white">
             <div className="w-full grid grid-cols-1 md:grid-cols-2" >
-            <div className="h-full left-0 object-left-top p-0 relative">
-              <Image
-                src={tes}
-                alt="Business 5 background"
-                className="relative bottom-0 md:w-[80%] w-full h-full md:h-full"
-              />
+              <div className="h-full left-0 object-left p-0 relative">
+                <Image
+                  src={tes}
+                  alt="Business 5 background"
+                  className="relative object-cover bottom-0 md:w-[80%] w-full h-full md:h-full"
+                />
               </div>
               <div className="col-span-1" >
-              <div className="relative z-10 items-center justify-center py-10">
-                <Avatar className="mb-1 mr-2 size-20">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                </Avatar>
-                <div>
-                  <h2 className="text-2xl font-bold mb-2">BUSINESS 5</h2>
-                  <p className="mb-2 px-1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                  <div className="py-5 flex gap-4">
-                  <button className="border border-white px-4 py-0 rounded hover:bg-white hover:text-green-600 transition-colors">
+                <div className="flex items-center justify-center md:items-left md:justify-start mt-4">
+                  <Avatar className="mb-1 ml-2 size-20">
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                  </Avatar>
+                </div>
+                <h2 className="text-2xl font-bold mb-2 text-center md:text-left">BUSINESS 5</h2>
+                <p className="mb-2 px-1 text-center md:text-left">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.
+                </p>
+                <div className="py-5 flex gap-4 items-center justify-center md:items-left md:justify-start">
+                  <button className="border border-white px-4 py-2 rounded hover:bg-white hover:text-green-600 transition-colors">
                     LEARN MORE
                   </button>
-                  </div>
-                </div>
                 </div>
               </div>
               {/* END GRID VIEW BUSINESS 5 */}

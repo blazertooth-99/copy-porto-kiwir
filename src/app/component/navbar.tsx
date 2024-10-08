@@ -131,7 +131,9 @@ const Navbar = (props: any) => {
             </Button>
             <Button size="sm">Sign up</Button>
           </div>
+          <div className="visible md:invisible">
           <BurgerMenu />
+          </div>
         </div>
       </div>
     </nav>

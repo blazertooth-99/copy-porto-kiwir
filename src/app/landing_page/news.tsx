@@ -1,68 +1,74 @@
 "use client"
 
+import { useState } from 'react'
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { newsArticle, NewsArticle } from '../constants/news'
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import Image from "next/image";
-import imgnews from "../assets/news-1.jpg"
-import { NEWS } from "../constants/data"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-const News= () => {
-    return (
-      <main className="flex flex-col items-center justify-between pt-6">
-        <div className="inline-flex items-center justify-center w-full">
-          <hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
-            <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
-              <h1> NEWS </h1>
-            </div> 
-        </div>
 
-        <div className="container mx-auto px-4 py-8">
-      <header className="flex items-center mb-8">
-        <div className="w-8 h-8 mr-2">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polygon points="12 2 2 7 12 12 22 7 12 2" />
-            <polyline points="2 17 12 22 22 17" />
-            <polyline points="2 12 12 17 22 12" />
-          </svg>
-        </div>
-        <h1 className="text-2xl font-bold">Terbaru</h1>
-      </header>
+export default function NewsCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="relative aspect-video md:aspect-auto md:h-[400px] overflow-hidden rounded-lg">
-          <Image
-            src={imgnews}
-            alt="Featured article image"
-            layout="fill"
-            objectFit="cover"
-            className="transition-transform duration-300 hover:scale-105"
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-            <p className="text-white text-sm mb-2">20 Agustus 2024 • 4 menit baca</p>
-            <h2 className="text-white text-xl font-bold">Hasil Laut Indonesia Terus Diperkuat Digitalisasi</h2>
-          </div>
-        </div>
-        <div className="space-y-6">
-          {NEWS.map((article, index) => (
-            <div key={index} className="flex space-x-4">
-              <div className="relative w-24 h-24 flex-shrink-0">
-                <Image
-                  src={article.image}
-                  alt={`Article ${index + 1} image`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <div className="flex-grow">
-                <p className="text-sm text-gray-500 mb-1">{article.date} • {article.readTime}</p>
-                <h3 className="text-lg font-semibold leading-snug">{article.title}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % newsArticle.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + newsArticle.length) % newsArticle.length)
+  }
+
+  return (
+    <div className="w-full max-w-4xl mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-4">Info Berita dan Kegiatan Terkini</h1>
+      <div className="text-green-500 mb-6 flex items-center">
+        <span>Selengkapnya di Berita & Kegiatan</span>
+        <ChevronRight className="w-4 h-4 ml-1" />
       </div>
-    </div>
 
-      </main>
-    )
-}
-export default News;
+      <Carousel className="w-full max-w-5xl">
+        <CarouselContent>
+          {newsArticle.map((article, index) => (
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-1">
+                <Card>
+                  <CardContent className="flex flex-col aspect-square items-center justify-center p-6">
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      className='"w-full h-64 object-cover'
+                    />
+                    <h6 className="my-4 font-semibold">{article.title}</h6>
+                    <div className="flex space-x-2 mb-2">
+                        {article.categories.map((categories, index) => (
+                          <span key={index} className="bg-blue-400 text-black text-xs px-2 py-1 rounded">{categories}</span>
+                        ))}
+                      </div>
+                      <span>{article.date}</span>
+                      <span className="mx-2">•</span>
+                      <span>{article.readTime}</span>
+
+                    <Button asChild variant="outline">
+                      <Link href="/news">More Info</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </div>
+  );
+};

@@ -11,7 +11,7 @@ const BurgerMenu = () => {
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="w-10 h-10 rounded-r-none">
-                <MenuIcon className="hidden scale-125 w-6 h-6 lg:block" /> 
+                <MenuIcon className="scale-125 w-6 h-6 block" /> 
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
