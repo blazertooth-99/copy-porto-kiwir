@@ -17,7 +17,7 @@ const Business = (props: any) => {
 
           {/*START GRID VIEW BUSINESS 1 */}
           <div className="relative w-full h-full row-span-1 md:row-span-2 my-0 py-0">
-            <div className="h-full bg-teal-700 text-white p-0 relative">
+            <div className="h-full bg-orange-900 hover:bg-orange-950 text-white p-0 relative">
               <div className="p-0 mt-auto">
                 <Image
                   src={tes}
@@ -47,7 +47,7 @@ const Business = (props: any) => {
           </div>
 
           {/* START GRID VIEW BUSINESS 2 */}
-          <div className="h-full my-0 py-0 bg-sky-600 text-white">
+          <div className="h-full my-0 py-0 bg-orange-900 hover:bg-orange-950 text-white">
             <div className="w-full grid grid-cols-1 md:grid-cols-2">
               <div className="h-full right-0 object-right p-0 relative">
                 <Image
@@ -80,7 +80,7 @@ const Business = (props: any) => {
 
           {/* START GRID VIEW BUSINESS 3 */}
           <div className="relative w-full h-full row-span-1 md:row-span-2">
-            <div className="object-right h-full bg-red-300 text-white p-0 relative">
+            <div className="object-right h-full bg-orange-900 hover:bg-orange-950 text-white p-0 relative">
               <div className="p-0 mt-auto">
                 <Image
                   src={tes}
@@ -111,7 +111,7 @@ const Business = (props: any) => {
           {/* END GRID VIEW BUSINESS 3 */}
 
           {/* START GRID VIEW BUSINESS 4 */}
-          <div className="h-full my-0 py-0 bg-green-300 text-white">
+          <div className="h-full my-0 py-0 bg-orange-900 hover:bg-orange-950 text-white">
             <div className="w-full grid grid-cols-1 md:grid-cols-2">
               <div className="h-full right-0 object-right p-0 relative">
                 <Image
@@ -134,7 +134,7 @@ const Business = (props: any) => {
                   eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <div className="p-5 flex items-center justify-center">
-                  <button className="border border-gray-800 px-4 py-2 rounded hover:bg-gray-800 hover:text-white transition-colors">
+                  <button className="border px-4 py-2 rounded hover:text-white transition-colors">
                     LEARN MORE
                   </button>
                 </div>
@@ -144,7 +144,7 @@ const Business = (props: any) => {
           {/* END GRID VIEW BUSINESS 4 */}
 
           {/* START GRID VIEW BUSINESS 5 */}
-          <div className="col-span-1 md:col-span-3 bg-green-600 text-white">
+          <div className="col-span-1 md:col-span-3 bg-orange-900 hover:bg-orange-950 text-white">
             <div className="w-full grid grid-cols-1 md:grid-cols-2" >
               <div className="h-full left-0 object-left p-0 relative">
                 <Image

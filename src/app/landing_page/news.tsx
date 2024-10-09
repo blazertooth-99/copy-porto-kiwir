@@ -26,38 +26,37 @@ export default function NewsCarousel() {
         <ChevronRight className="w-4 h-4 ml-1" />
       </div>
 
-      <Carousel className="w-full max-w-max">
+      <Carousel className="w-full max-w-5xl">
         <CarouselContent>
           {newsArticle.map((article, index) => (
-            <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/2">
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
                 <Card>
-                  <CardContent className="flex flex-col justify-center p-1">
+                  <CardContent className="flex flex-col justify-center w-full h-[450px] p-2">
                     <Image
                       src={article.image}
                       alt={article.title}
-                      className='"w-full h-80 object-cover rounded-md'
+                      className="w-full h-80 md:h-3/4 object-cover rounded-md"
                     />
-                    <h6 className="mx-2 my-4 font-semibold text-left">
+                    <h6 className="mx-2 font-semibold text-left text-base lg:text-sm">
                       {article.title}
                     </h6>
-                    <div className="flex space-x-2 mb-2">
+                    <span className="mt-1 mb-2 mx-2 text-xs">
+                      {article.date}
+                      <span className="mx-2 text-sm">•</span>
+                      <span className="text-xs">
+                        {article.readTime}</span>
+                    </span>
+                    <div className="flex space-x-1 mb-4 mx-2">
                       {article.categories.map((categories, index) => (
                         <span
                           key={index}
-                          className="bg-orange-950 text-white text-xs px-2 py-1 rounded"
+                          className="bg-orange-950 px-2 py-1 text-white text-xs rounded"
                         >
                           {categories}
                         </span>
                       ))}
                     </div>
-                    <span className="py-5">
-                      {article.date}
-                      <span className="mx-2">•</span>
-                      <span>
-                        {article.readTime}</span>
-                    </span>
-
                     <Button asChild variant="outline">
                       <Link href="/news">More Info</Link>
                     </Button>
