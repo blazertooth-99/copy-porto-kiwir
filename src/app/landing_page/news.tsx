@@ -27,39 +27,39 @@ export default function NewsCarousel() {
       </div>
 
       <Carousel className="w-full max-w-5xl">
-        <CarouselContent>
+        <CarouselContent className="p-3 relative">
           {newsArticle.map((article, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card>
-                  <CardContent className="flex flex-col justify-center w-full h-[450px] p-2">
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 hover:scale-105 duration-500 transition-transform">
+              <div className="p-0 m-0">
+                <Card className="relative h-[400px] hover: w-fit gap-2">
+                  <CardContent className="relative justify-center w-full h-full p-1">
                     <Image
                       src={article.image}
                       alt={article.title}
-                      className="w-full h-80 md:h-3/4 object-cover rounded-md"
+                      className="w-full h-full object-cover rounded-md"
                     />
-                    <h6 className="mx-2 font-semibold text-left text-base lg:text-sm">
-                      {article.title}
-                    </h6>
-                    <span className="mt-1 mb-2 mx-2 text-xs">
-                      {article.date}
-                      <span className="mx-2 text-sm">•</span>
-                      <span className="text-xs">
-                        {article.readTime}</span>
-                    </span>
-                    <div className="flex space-x-1 mb-4 mx-2">
-                      {article.categories.map((categories, index) => (
-                        <span
-                          key={index}
-                          className="bg-orange-950 px-2 py-1 text-white text-xs rounded"
-                        >
-                          {categories}
-                        </span>
-                      ))}
+                    <div className="absolute bottom-0 left-0 p-4 text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 from-50% to-transparent rounded-md m-1" />
+                      <div className="flex space-x-1 mb-4 mx-2">
+                        {article.categories.map((categories, index) => (
+                          <span
+                            key={index}
+                            className="bg-orange-950 px-2 py-1 text-white text-xs rounded"
+                          >
+                            {categories}
+                          </span>
+                        ))}
+                      </div>
+                      <h6 className="mx-2 font-semibold text-left text-base lg:text-sm">
+                        {article.title}
+                      </h6>
+                      <span className="mt-1 mb-2 mx-2 text-xs">
+                        {article.date}
+                        <span className="mx-2 text-sm">•</span>
+                        <span className="text-xs">
+                          {article.readTime}</span>
+                      </span>
                     </div>
-                    <Button asChild variant="outline">
-                      <Link href="/news">More Info</Link>
-                    </Button>
                   </CardContent>
                 </Card>
               </div>
