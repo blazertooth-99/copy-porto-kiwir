@@ -8,7 +8,7 @@ import MapPage from "./google-maps";
 
 export default function Component() {
   return (
-    <footer className="bg-white text-gray-600 pt-5 border-t dark:bg-gray-950/90">
+    <footer className="bg-white/30 backdrop-blur-md dark:bg-neutral-800/30">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-top justify-center">
           <div className="col-span-1">

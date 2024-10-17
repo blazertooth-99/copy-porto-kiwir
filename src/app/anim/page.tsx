@@ -2,6 +2,8 @@
 
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitText from "./split/page"
 
 const Anim = () => {
     const comp = useRef(null)
@@ -28,7 +30,7 @@ const Anim = () => {
             }).from("#welcome", {
                 opacity:0,
                 duration: 0.5,
-            })
+            });
         }, comp)
         return () => ctx.revert()
     }, [])
@@ -52,6 +54,11 @@ return (
             id="welcome"
             className="text-9xl font-bold text-gray-100">Welcome</h1>
 
+        </div>
+        <div 
+        id="split-content"
+        className="h-screen flex bg-gray-950 justify-center items-center">
+            <SplitText />
         </div>
     </div>
 )
