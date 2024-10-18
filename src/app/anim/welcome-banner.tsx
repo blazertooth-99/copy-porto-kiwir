@@ -3,7 +3,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitText from "./split/page"
+import SplitText from "./Split-text"
 
 const Anim = () => {
     const comp = useRef(null)
@@ -38,14 +38,14 @@ return (
     <div className="relative" ref={comp}>
         <div
             id="intro-slider"
-            className="h-screen p-10 bg-gray-50 absolute top-0 left-0 z-10 w-full flex flex-col gap-10 tracking-tight">
-            <h1 className="text-9xl " id="title-1">
+            className="h-screen bg-gray-50 absolute top-0 left-0 z-10 w-full flex flex-col tracking-tight gap-10 p-10">
+            <h1 className="text-8xl md:text-9xl my-7" id="title-1">
                 Software Engineer
             </h1>
-            <h1 className="text-9xl" id="title-2">
+            <h1 className="text-8xl md:text-9xl" id="title-2">
                 UI/UX Designer
             </h1>
-            <h1 className="text-9xl" id="title-3">
+            <h1 className="text-8xl md:text-9xl" id="title-3">
                 Quality Assurance
             </h1>
         </div>

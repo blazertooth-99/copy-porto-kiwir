@@ -4,9 +4,9 @@ import Business from "./landing_page/business";
 import Career from "./landing_page/career";
 import News from "./landing_page/news"
 import About from "./landing_page/about"
-import Anim from "./anim/page"
-import Parallax from "./GSAP/Parallax"
-import TextZoom from "./GSAP/TextZoom"
+import Anim from "./anim/welcome-banner"
+import Parallax from "./anim/Parallax"
+import TextZoom from "./anim/TextZoom"
 
 export default function Home() {
   return (
@@ -14,10 +14,10 @@ export default function Home() {
       <Anim />
       <Parallax />
       <TextZoom />
-      <Business />
+      {/* <Business />
       <About />
       <Career />
-      <News />
+      <News /> */}
     </main>
   );
 }

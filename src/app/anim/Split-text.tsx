@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
-import Img1 from "../../assets/slides/content.jpg"
+import Img1 from "../assets/slides/content.jpg"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,16 +22,16 @@ const SplitText = () => {
 
     // Initialize SplitType on the content element
     new SplitType(content.current, {
-      types: "words",
+      types: 'lines,words,chars',
       tagName: "span",
     });
 
     // GSAP animation targeting the split words
     gsap.from(".content span", {
       opacity: 0.3,
-      duration: 0.5,
+      duration: 0.3,
       ease: "power1.inOut",
-      stagger: 0.5,
+      stagger: 0.3,
       scrollTrigger: {
         trigger: content.current,
         start: "top center",
@@ -53,8 +53,9 @@ const SplitText = () => {
       >
         <div  id="third-title">
           <h1 ref={content} className="content text-5xl font-semibold text-gray-100 p-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+            eiusmod tempor. incididunt ut labore et dolore magna aliqua Ut enim ad
+            minim veniam. incididunt ut labore et dolore magna aliqua Ut enim ad
             minim veniam.
           </h1>
         </div>

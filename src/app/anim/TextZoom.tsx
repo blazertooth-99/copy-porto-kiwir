@@ -14,11 +14,12 @@ export default function ZoomInScroll() {
     if (!sectionRef.current || !headingsRef.current[0]) return
 
     gsap.to(headingsRef.current[0], {
-      scale: 100,
+      scale: 200,
       duration: 3,
       scrollTrigger: {
         trigger: sectionRef.current,
         pin: true,
+        start: 'top',
         end: 'bottom top',
         scrub: 3,
       },
