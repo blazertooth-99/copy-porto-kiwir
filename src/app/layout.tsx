@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Nunito_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "./component/navbar";
-import Footer from "./component/footer";
+import Navbar from "./component/home/navbar";
+import Footer from "./component/home/footer";
 
 // const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({

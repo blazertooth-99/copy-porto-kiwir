@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link";
 import * as React from "react"
 import { List, ListItem } from "@mui/material";
-import logo from "../assets/logo.png"
+import logo from "../../assets/logo.png"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 import BurgerMenu from "./burgermenu";

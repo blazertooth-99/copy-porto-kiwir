@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
-import Img1 from "../../assets/slides/content.jpg"
+import Img1 from "../assets/slides/content.jpg"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,8 +34,9 @@ const SplitText = () => {
       stagger: 0.5,
       scrollTrigger: {
         trigger: content.current,
-        start: "top center",
         scrub: true,
+        start: "top center",
+        end: "bottom center",
         onEnter: () => console.log("ScrollTrigger animation started"), // Debugging
       },
     });

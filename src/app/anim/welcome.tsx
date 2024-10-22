@@ -3,9 +3,9 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitText from "./split/page"
+import SplitText from "./splitText"
 
-const Anim = () => {
+const Welcome = () => {
     const comp = useRef(null)
 
     useLayoutEffect(() => {
@@ -39,20 +39,22 @@ return (
         <div
             id="intro-slider"
             className="h-screen p-10 bg-gray-50 absolute top-0 left-0 z-10 w-full flex flex-col gap-10 tracking-tight">
-            <h1 className="text-9xl " id="title-1">
-                Software Engineer
+            <h1 className="text-8xl md:text-9xl " id="title-1">
+                .....
             </h1>
-            <h1 className="text-9xl" id="title-2">
-                UI/UX Designer
+            <h1 className="text-8xl md:text-9xl" id="title-2">
+                Hi!
             </h1>
-            <h1 className="text-9xl" id="title-3">
-                Quality Assurance
+            <h1 className="text-8xl md:text-9xl" id="title-3">
+                Hello there :)
             </h1>
         </div>
         <div className="h-screen flex bg-gray-950 justify-center items-center">
             <h1 
             id="welcome"
-            className="text-9xl font-bold text-gray-100">Welcome</h1>
+            className="text-9xl font-bold text-gray-100">
+                Welcome
+                </h1>
 
         </div>
         <div 
@@ -63,4 +65,4 @@ return (
     </div>
 )
 }
-export default Anim;
+export default Welcome;

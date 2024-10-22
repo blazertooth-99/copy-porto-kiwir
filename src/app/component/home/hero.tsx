@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import imgBanner from "../assets/Banner.jpeg"
-import AnimatedTitle from "./AnimatedTitle"
+import AnimatedTitle from "../common/AnimatedTitle"
 
 export default function Component() {
   return (

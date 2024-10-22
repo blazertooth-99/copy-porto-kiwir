@@ -1,23 +1,24 @@
 import Image from "next/image";
-import Heroimg from "./component/hero";
-import Business from "./landing_page/business";
-import Career from "./landing_page/career";
-import News from "./landing_page/news"
-import About from "./landing_page/about"
-import Anim from "./anim/page"
-import Parallax from "./GSAP/Parallax"
-import TextZoom from "./GSAP/TextZoom"
+import Heroimg from "./component/home/hero";
+import Business from "./public/business";
+import Career from "./public/career";
+import News from "./public/news"
+import About from "./public/about"
+import Welcome from "./anim/welcome"
+import Parallax from "./anim/Parallax"
+import TextZoom from "./anim/TextZoom"
+import ImgDist from "./anim/imgDist";
+import TextZoomOut from "./anim/TextZoomOut";
 
 export default function Home() {
   return (
     <main className="flex flex-col justify-center mb-auto">
-      <Anim />
+      <Welcome />
       <Parallax />
+      <ImgDist />
       <TextZoom />
-      <Business />
+      {/* <TextZoomOut /> */}
       <About />
-      <Career />
-      <News />
     </main>
   );
 }
