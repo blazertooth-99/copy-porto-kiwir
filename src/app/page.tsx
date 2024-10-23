@@ -8,12 +8,13 @@ import Welcome from "./anim/welcome"
 import Parallax from "./anim/Parallax"
 import TextZoom from "./anim/TextZoom"
 import ImgDist from "./anim/imgDist";
-import TextZoomOut from "./anim/TextZoomOut";
+import TextScroll from "./anim/TextScroll"
 
 export default function Home() {
   return (
     <main className="flex flex-col justify-center mb-auto">
       <Welcome />
+      <TextScroll />
       <Parallax />
       <ImgDist />
       <TextZoom />

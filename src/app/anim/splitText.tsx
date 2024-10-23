@@ -11,7 +11,7 @@ import Img1 from "../assets/slides/content.jpg"
 gsap.registerPlugin(ScrollTrigger);
 
 const SplitText = () => {
-  const content = useRef(null);
+  const content = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     // Ensure that the content element is available

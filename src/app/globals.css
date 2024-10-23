@@ -22,6 +22,20 @@
   }
 }
 
+.clip-path-polygon-50 {
+  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+  transform-origin: center;
+  transition: clip-path 0.4s cubic-bezier(.1,.5,.5,1);
+}
+/* .text {
+-webkit-background-clip: text;
+} */
+
+.text:hover > span {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -76,6 +90,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  
 }
 
 @layer base {

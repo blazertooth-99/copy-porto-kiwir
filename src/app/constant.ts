@@ -5,6 +5,15 @@ import Img3 from '../app/assets/news1.jpg'
 import Img4 from '../app/assets/sample2.webp'
 import Image, { StaticImageData } from 'next/image'
 
+
+
+export const TYPED_STR = [
+    "I design and develop for website",
+    "I love to learn new technology",
+    "I design dynamic user experience",
+  ];
+
+
 export interface ParallaxContent{
     id: number;
     title: string;
