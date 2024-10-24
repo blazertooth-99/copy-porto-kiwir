@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import * as React from "react"
+import * as React from "react";
 import { List, ListItem } from "@mui/material";
-import logo from "../../assets/logo.png"
-import { Input } from "@/components/ui/input"
-import { Search } from "lucide-react"
+import logoCS from "../../assets/logoCS.png";
+import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
 import BurgerMenu from "./burgermenu";
 
 import {
@@ -18,20 +18,21 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { LogOut } from "lucide-react";
+} from "@/components/ui/navigation-menu";
 import DarkMode from "./dark-mode-switcher";
 
-const components = [{
-  title: "Change Language",
-  href: "",
-  description: "Indonesia",
-},
-{
-  title: "Change Language",
-  href: "",
-  description: "Inggris",
-},]
+const components = [
+  {
+    title: "Change Language",
+    href: "",
+    description: "Indonesia",
+  },
+  {
+    title: "Change Language",
+    href: "",
+    description: "Inggris",
+  },
+];
 
 const Navbar = (props: any) => {
   return (
@@ -42,14 +43,13 @@ const Navbar = (props: any) => {
             <Link href="/" className="flex items-center" prefetch={false}>
               <Image
                 {...props}
-                src={logo}
+                src={logoCS}
                 x="20%"
                 y="20%"
                 width="100"
                 height="50"
                 viewBox="0 0 50 100"
               />
-
             </Link>
             <nav className="hidden md:flex gap-4">
               <Link
@@ -90,17 +90,21 @@ const Navbar = (props: any) => {
 
               <NavigationMenu>
                 <NavigationMenuItem className="list-none">
-                  <NavigationMenuTrigger>
-                    ID
+                  <NavigationMenuTrigger className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-white-100/30 backdrop-blur-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-gray-600/80 border border-white/20">
+                    <span className="text-md">ID</span>
+                    <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+                      <div className="relative h-full w-10 bg-white/20"></div>
+                    </div>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[400px] gap-3 p-4 md:w-[100px] md:grid-cols-1 lg:w-[200px] ">
+                    <div className="grid w-[400px] gap-3 p-4 md:w-[100px] md:grid-cols-1 lg:w-[200px]">
                       {components.map((component) => (
                         <ListItem
                           {...props}
                           key={component.title}
                           title={component.title}
                           href={component.href}
+                          className=" bg-white/30 backdrop-blur-md dark:bg-neutral-800/30"
                         >
                           {component.description}
                         </ListItem>
@@ -110,24 +114,6 @@ const Navbar = (props: any) => {
                 </NavigationMenuItem>
               </NavigationMenu>
             </nav>
-            <div className="flex items-center gap-2">
-              <div className="relative w-full max-w-sm">
-                <Input
-                  type="search"
-                  placeholder="Search..."
-                  className="pl-10 pr-4"
-                />
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <Button size="sm" className="bg-gray-100 px-2 py-2 text-orange-950 hover:bg-gray-200">
-                Sign in
-              </Button>
-              <Button size="sm" className="bg-orange-900 px-2 py-2 text-white hover:bg-orange-950">
-                Sign up
-              </Button>
-            </div>
             <div className="visible md:invisible">
               <BurgerMenu />
             </div>
@@ -138,6 +124,6 @@ const Navbar = (props: any) => {
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 export default Navbar;

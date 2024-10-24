@@ -22,12 +22,14 @@ export default function TypingAnimation() {
         duration: 5,
         text: phrase,
         ease: "back.out",
-        delay: 0.5,
+        stagger: 0.5,
+        delay: -0.1,
       }).to(text, {
-        duration: 5,
+        duration: 3,
         text: "",
         ease: "back.in",
-        delay: 0.5,
+        stagger: 0.5,
+        delay: 0,
       })
     })
 

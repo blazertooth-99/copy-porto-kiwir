@@ -3,6 +3,7 @@ import { Inter, Montserrat, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./component/home/navbar";
 import Footer from "./component/home/footer";
+import { ReactLenis } from "./utils/lenis";
 
 // const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({
@@ -28,6 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <ReactLenis root>
       <body className={montserrat.className}>
         <div className={nunito_sans.className}>
           <Navbar />
@@ -35,6 +37,7 @@ export default function RootLayout({
         <div className={montserrat.className}>{children}</div>
         <Footer />
       </body>
+      </ReactLenis>
     </html>
   );
 }

@@ -39,27 +39,27 @@ const TextScroll = () => {
 
   return (
     <div className="container mx-auto py-20 min-h-screen flex flex-col justify-center items-start space-y-10">
-      <h1 className="text text-9xl tracking-tight leading-none text-gray-300 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent bg-[length:0%_100%] transition-all ease-[cubic-bezier(.1,.5,.5,1)] duration-500 border-b border-gray-700 relative">
+      <h1 className="w-full text text-9xl tracking-tight leading-none text-gray-300 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent bg-[length:0%_100%] transition-all ease-[cubic-bezier(.1,.5,.5,1)] duration-500 border-b border-gray-700 relative">
         TEXT EFFECT
-        <span className="absolute inset-0 flex items-center justify-center bg-blue-600 text-black clip-path-polygon-50">
+        <span className="absolute inset-0 flex items-center justify-start bg-blue-600 text-black clip-path-polygon-50">
           WOAH
         </span>
       </h1>
-      <h1 className="text text-9xl tracking-tight leading-none text-gray-300 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent bg-[length:0%_100%] transition-all ease-[cubic-bezier(.1,.5,.5,1)] duration-500 border-b border-gray-700 relative">
+      <h1 className="w-full text text-9xl tracking-tight leading-none text-gray-300 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent bg-[length:0%_100%] transition-all ease-[cubic-bezier(.1,.5,.5,1)] duration-500 border-b border-gray-700 relative">
         GSAP
-        <span className="absolute inset-0 flex items-center justify-center bg-blue-600 text-black clip-path-polygon-50">
+        <span className="absolute inset-0 flex items-center justify-start bg-blue-600 text-black clip-path-polygon-50">
           AND CLIPPING
         </span>
       </h1>
-      <h1 className="text text-9xl tracking-tight leading-none text-gray-300 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent bg-[length:0%_100%] transition-all ease-[cubic-bezier(.1,.5,.5,1)] duration-500 border-b border-gray-700 relative">
+      <h1 className="w-full text text-9xl tracking-tight leading-none text-gray-300 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent bg-[length:0%_100%] transition-all ease-[cubic-bezier(.1,.5,.5,1)] duration-500 border-b border-gray-700 relative">
         CRAZYYY
-        <span className="absolute inset-0 flex items-center justify-center bg-blue-600 text-black clip-path-polygon-50">
+        <span className="absolute inset-0 flex items-center justify-start bg-blue-600 text-black clip-path-polygon-50">
           CRAZYYY
         </span>
       </h1>
-      <h1 className="text text-9xl tracking-tight leading-none text-gray-300 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent bg-[length:0%_100%] transition-all ease-[cubic-bezier(.1,.5,.5,1)] duration-500 border-b border-gray-700 relative">
+      <h1 className="w-full text text-9xl tracking-tight leading-none text-gray-300 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent bg-[length:0%_100%] transition-all ease-[cubic-bezier(.1,.5,.5,1)] duration-500 border-b border-gray-700 relative">
         HOVER ON ME
-        <span className="absolute inset-0 flex items-center justify-center bg-blue-600 text-black clip-path-polygon-50">
+        <span className="absolute inset-0 flex items-center justify-start bg-blue-600 text-black clip-path-polygon-50">
           <Link
             href="https://stacksorted.com/text-effects/minh-pham"
             target="_blank"
@@ -68,9 +68,9 @@ const TextScroll = () => {
           </Link>
         </span>
       </h1>
-      <h1 className="text text-9xl tracking-tight leading-none text-gray-300 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent bg-[length:0%_100%] transition-all ease-[cubic-bezier(.1,.5,.5,1)] duration-500 border-b border-gray-700 relative">
+      <h1 className="w-full text text-9xl tracking-tight leading-none text-gray-300 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent bg-[length:0%_100%] transition-all ease-[cubic-bezier(.1,.5,.5,1)] duration-500 border-b border-gray-700 relative">
         LIKE THIS?
-        <span className="absolute inset-0 flex items-center justify-center bg-blue-600 text-black clip-path-polygon-50">
+        <span className="absolute inset-0 flex items-center justify-start bg-blue-600 text-black clip-path-polygon-50">
           <Link href="https://twitter.com/juxtopposed" target="_blank">
             LET'S CONNECT
           </Link>

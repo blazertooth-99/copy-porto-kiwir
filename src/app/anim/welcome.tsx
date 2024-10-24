@@ -53,7 +53,7 @@ const Welcome = () => {
     <div className="relative" ref={comp}>
       <div
         id="intro-slider"
-        className="h-screen p-10 bg-gray-50 absolute top-0 left-0 z-10 w-full flex flex-col gap-10 tracking-tight"
+        className="h-screen p-10 bg-gray-50 absolute top-0 left-0 z-10 w-full flex flex-col px-5 tracking-tight"
       >
         <h1 className="text-8xl md:text-9xl" id="title-2">
           Hi!
@@ -63,15 +63,25 @@ const Welcome = () => {
         </h1>
         <AnimLoading />
       </div>
-      <div className="h-screen flex bg-gray-950 items-center justify-start">
+      <div className="h-screen flex flex-col bg-gray-950 items-start justify-center">
         <div className={HERO_STYLES.CONTENT}>
           <div className="md:mb-4 mb-2 flex flex-col">
             <h2 className="text-4xl seq">Hello 👋🏻</h2>
             <h1 className="text-3xl seq">I am Tomy Kiwir</h1>
           </div>
-          <div>
-          <TypingAnimation />
-          </div>
+        </div>
+        <div className="mb-4">
+          <span>
+            <TypingAnimation />
+          </span>
+        </div>
+        <div>
+          <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20">
+            <span className="text-lg">My Resume</span>
+            <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+              <div className="relative h-full w-10 bg-white/20"></div>
+            </div>
+          </button>
         </div>
       </div>
       <div
