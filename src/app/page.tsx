@@ -4,7 +4,7 @@ import Business from "./public/business";
 import Career from "./public/career";
 import News from "./public/news"
 import About from "./public/about"
-import Welcome from "./anim/welcome"
+import Welcome from "./anim/Welcome"
 import Parallax from "./anim/Parallax"
 import TextZoom from "./anim/TextZoom"
 import ImgDist from "./anim/imgDist";

@@ -15,7 +15,7 @@ export default function TypingAnimation() {
     const text = textRef.current
     if (!text) return
 
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 })
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0 })
 
     TYPED_STR.forEach((phrase) => {
       tl.to(text, {
@@ -42,7 +42,7 @@ export default function TypingAnimation() {
     <div className="flex items-center justify-start">
       <p
         ref={textRef}
-        className="text-3xl font-bold text-cyan-400"
+        className="text-3xl font-bold text-red-700"
         aria-live="polite"
       ></p>
     </div>

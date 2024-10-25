@@ -36,6 +36,7 @@ const DarkMode = () => {
   return (
     <Button
       variant="outline"
+      className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-white-100/30 backdrop-blur-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-gray-600/80 border border-white/20"
       size="icon"
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
