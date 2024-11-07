@@ -4,8 +4,8 @@ import React, { useEffect, useRef } from "react"
 import Image from "next/image"
 import { gsap } from "gsap"
 
-import img1 from "../assets/slides/content.jpg"
-import img2 from "../assets/slides/img2.jpg"
+import img1 from "../../assets/slides/content.jpg"
+import img2 from "../../assets/slides/img2.jpg"
 const ImgDist = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const image1Ref = useRef<HTMLImageElement>(null)

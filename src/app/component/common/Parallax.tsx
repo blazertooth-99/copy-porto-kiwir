@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from 'next/image';
 import gsap from 'gsap';
-import { parallaxContent } from "../constant";
+import { parallaxContent } from "../../constant";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);

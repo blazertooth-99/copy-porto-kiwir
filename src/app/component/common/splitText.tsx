@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
-import Img1 from "../assets/slides/content.jpg"
+import Img1 from "../../assets/slides/content.jpg"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +50,7 @@ const SplitText = () => {
   return (
     <div className="relative h-screen">
       <div
-        className="h-screen grid grid-cols-2 flex bg-lime-800 justify-center items-center"
+        className="flex h-screen grid grid-cols-2 bg-lime-800 justify-center items-center"
       >
         <div  id="third-title">
           <h1 ref={content} className="content text-5xl font-semibold text-gray-100 p-5">

@@ -5,9 +5,9 @@ import { gsap } from "gsap";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitText from "./splitText";
-import AnimLoading from "../component/common/PlanetLoading";
-import TypingAnimation from "../component/common/TypingAnimation";
-import ImgBanner from "../assets/Banner.jpeg";
+import AnimLoading from "./PlanetLoading";
+import TypingAnimation from "./TypingAnimation";
+import ImgBanner from "../../assets/Banner.jpeg";
 
 const Welcome = () => {
   const comp = useRef(null);

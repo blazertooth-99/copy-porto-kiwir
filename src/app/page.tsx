@@ -1,23 +1,22 @@
 import Image from "next/image";
-import Heroimg from "./component/home/hero";
-import Business from "./public/business";
-import Career from "./public/career";
-import News from "./public/news"
+
 import About from "./public/about"
-import Welcome from "./anim/Welcome"
-import Parallax from "./anim/Parallax"
-import TextZoom from "./anim/TextZoom"
-import ImgDist from "./anim/imgDist";
-import TextScroll from "./anim/TextScroll"
+// import Welcome from "./component/common/Welcome"
+import Parallax from "./component/common/Parallax"
+import TextZoom from "./component/common/TextZoom"
+import ImgDist from "./component/common/imgDist";
+import TextScroll from "./component/common/TextScroll"
+import Profiles from "./component/common/Profiles"
 
 export default function Home() {
   return (
     <main className="flex flex-col justify-center mb-auto">
-      <Welcome />
-      <TextScroll />
-      <Parallax />
+      {/* <Welcome /> */}
+      <Profiles />
+      {/* <TextScroll /> */}
+      {/* <Parallax /> */}
       <ImgDist />
-      <TextZoom />
+      {/* <TextZoom /> */}
       {/* <TextZoomOut /> */}
       <About />
     </main>

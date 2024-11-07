@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Nunito_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "./component/home/navbar";
+// import Navbar from "./component/home/navbar";
+import Navigation from "./component/common/Navigation"
 import Footer from "./component/home/footer";
 import { ReactLenis } from "./utils/lenis";
 
@@ -32,7 +33,7 @@ export default function RootLayout({
       <ReactLenis root>
       <body className={montserrat.className}>
         <div className={nunito_sans.className}>
-          <Navbar />
+          <Navigation />
         </div>
         <div className={montserrat.className}>{children}</div>
         <Footer />
