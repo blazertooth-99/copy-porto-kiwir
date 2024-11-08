@@ -7,12 +7,14 @@ import TextZoom from "./component/common/TextZoom"
 import ImgDist from "./component/common/imgDist";
 import TextScroll from "./component/common/TextScroll"
 import Profiles from "./component/common/Profiles"
+import MorphingGradients from "./component/common/MorphingGradients";
 
 export default function Home() {
   return (
     <main className="flex flex-col justify-center mb-auto">
       {/* <Welcome /> */}
       <Profiles />
+      <MorphingGradients />
       {/* <TextScroll /> */}
       {/* <Parallax /> */}
       <ImgDist />

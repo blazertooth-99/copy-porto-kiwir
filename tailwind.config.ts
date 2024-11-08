@@ -10,6 +10,26 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		animation: {
+			'moveVertical': 'moveVertical 30s ease infinite',
+			'moveInCircle': 'moveInCircle 20s linear infinite',
+			'moveInCircleReverse': 'moveInCircle 40s linear infinite reverse',
+			'moveHorizontal': 'moveHorizontal 40s ease infinite',
+		  },
+		  keyframes: {
+			moveVertical: {
+			  '0%, 100%': { transform: 'translateY(-50%)' },
+			  '50%': { transform: 'translateY(50%)' },
+			},
+			moveInCircle: {
+			  '0%': { transform: 'rotate(0deg)' },
+			  '100%': { transform: 'rotate(360deg)' },
+			},
+			moveHorizontal: {
+			  '0%, 100%': { transform: 'translateX(-50%) translateY(-10%)' },
+			  '50%': { transform: 'translateX(50%) translateY(10%)' },
+			},
+		  },
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',

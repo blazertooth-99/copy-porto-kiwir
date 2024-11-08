@@ -1,16 +1,21 @@
 import { Button } from "@/components/ui/button"
+import React, { useState, useRef, useEffect } from 'react'
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import Link from "next/link"
+import { gsap } from 'gsap'
+
+
 
 const BurgerMenu = () => {
+
   return (
-    <div className="grid place-items-center text-center">
+    <div className="fixed grid z-50 place-items-end right-0 top-0 text-center">
       <div className="mx-auto w-full max-w-sm space-y-4">
         
-        <div className="flex border border-gray-200 rounded-lg shadow-sm dark:border-blue-800">
+        <div className="flex border border-gray-200 rounded-full shadow-sm dark:border-blue-800">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="w-8 h-8 rounded-r-none items-center justify-center">
+              <Button variant="ghost" size="icon" className="w-8 h-8 rounded-full items-center justify-center">
                 <MenuIcon className="scale-125 w-6 h-6 block" /> 
                 <span className="sr-only">Toggle menu</span>
               </Button>

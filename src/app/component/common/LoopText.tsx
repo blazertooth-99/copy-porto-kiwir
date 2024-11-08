@@ -53,7 +53,7 @@ export default function LoopText() {
   return (
     <div 
       ref={containerRef} 
-      className="w-full overflow-hidden bg-primary py-4"
+      className="relative mx-auto w-full min-h-screen z-200 overflow-hidden py-4 bg-black/10 items-center justify-center"
       aria-label="Looping text: Digital, Print, 3D, Augmented Reality"
     >
       <div className="inline-block whitespace-nowrap">
@@ -61,7 +61,7 @@ export default function LoopText() {
           <span
             key={i}
             ref={(el) => (textRefs.current[i] = el)}
-            className="inline-block text-xl font-bold text-primary-foreground px-4"
+            className="inline-block text-xl font-bold text-black px-4"
           >
             {text}
           </span>
