@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Profiles from './Profiles'
 
 export default function OptimizedMorphingGradients() {
   const interactiveRef = useRef<HTMLDivElement>(null)
@@ -66,8 +67,8 @@ export default function OptimizedMorphingGradients() {
           }}
         />
       </div>
-      <div className="absolute inset-0 flex items-center justify-center text-white text-8xl font-bold opacity-80 select-none font-dongle" style={{ textShadow: '1px 1px rgba(0,0,0,0.1)' }}>
-        Bubbles
+      <div className="absolute inset-0 flex items-center justify-center font-dongle" style={{ textShadow: '1px 1px rgba(0,0,0,0.1)' }}>
+        <Profiles />
       </div>
     </div>
   )

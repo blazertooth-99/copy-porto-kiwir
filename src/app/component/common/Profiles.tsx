@@ -7,13 +7,9 @@ import { Button } from "@/components/ui/button";
 import LoopText from "./LoopText";
 import MorphingGradients from "./MorphingGradients";
 
-interface GradientPageProps {
-  children: React.ReactNode;
-}
-const Profiles = ({ children }: GradientPageProps) => {
+const Profiles = () => {
   return (
     <div className="relative min-h-screen w-full p-0 mx-auto justify-center items-center">
-      <MorphingGradients />
       <div className="grid grid-cols-4 z-10">
         <div className="flex">
           <CardProfile />

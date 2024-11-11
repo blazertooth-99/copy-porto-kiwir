@@ -36,7 +36,7 @@ export default function RootLayout({
           <Navigation />
         </div>
         <div className={montserrat.className}>{children}</div>
-        <Footer />
+        {/* <Footer /> */}
       </body>
       </ReactLenis>
     </html>
