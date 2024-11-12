@@ -99,9 +99,9 @@ const Navbar = (props: any) => {
           </div>
         </div>
       </nav>
-      <div className="visible md:invisible">
+      {/* <div className="visible md:invisible">
         <BurgerMenu />
-      </div>
+      </div> */}
     </header>
   );
 };

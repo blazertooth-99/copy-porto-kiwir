@@ -38,7 +38,7 @@ export default function OptimizedMorphingGradients() {
   }, [])
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-gradient-to-br from-[#6C00A2] to-[#001152]">
+    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-[#6C00A2] to-[#001152]">
       <svg className="hidden">
         <defs>
           <filter id="goo">

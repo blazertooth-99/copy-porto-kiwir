@@ -93,9 +93,15 @@ const config: Config = {
       const newUtilities = {
         ".backface-hidden": {
           "backface-visibility": "hidden",
-          "-moz-backface-visibility": "hidden",
-          "-webkit-backface-visibility": "hidden",
-          "-ms-backface-visibility": "hidden",
+        },
+        ".perspective-1000": {
+          perspective: "1000px",
+        },
+        ".transform-style-preserve-3d": {
+          "transform-style": "preserve-3d",
+        },
+        ".rotate-y-180": {
+          transform: "rotateY(180deg)",
         },
         ".transform-style-3d": {
           "transform-style": "preserve-3d",

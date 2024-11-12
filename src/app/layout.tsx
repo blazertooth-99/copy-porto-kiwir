@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 // import Navbar from "./component/home/navbar";
-import Navigation from "./component/common/Navigation"
+import Navigation from "./component/common/Navigation";
 import Footer from "./component/home/footer";
 import { ReactLenis } from "./utils/lenis";
 
@@ -17,6 +17,12 @@ const nunito_sans = Nunito_Sans({
   display: "swap",
   adjustFontFallback: false,
 });
+const layoutStyle = {
+  display: "flex",
+  flexDirection: "column",
+  height: "100%",
+  width: "100%",
+};
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,13 +37,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReactLenis root>
-      <body className={montserrat.className}>
-        <div className={nunito_sans.className}>
-          <Navigation />
-        </div>
-        <div className={montserrat.className}>{children}</div>
-        {/* <Footer /> */}
-      </body>
+        <body className={montserrat.className}>
+          <div className={nunito_sans.className}>
+            <Navigation />
+          </div>
+          <div className={montserrat.className}>{children}</div>
+          <div>
+            <Footer />
+          </div>
+        </body>
       </ReactLenis>
     </html>
   );

@@ -12,7 +12,7 @@ const carouselItems = [
     id: 'our-work-1',
     step: 1,
     title: 'About Singkat',
-    text: ['Register on the bSuite app.', 'Get trained in our billboard academy.']
+    text: ['Hello, I\'m Christian Satrio, a passionate web developer with a keen love for creating beautiful, functional, and user-friendly websites. With a background in both front-end and back-end technologies.']
   },
   {
     id: 'our-work-2',
@@ -20,42 +20,18 @@ const carouselItems = [
     title: 'Education',
     text: ['It could be anyone who needs their business to become famous.']
   },
-  {
-    id: 'our-work-3',
-    step: 3,
-    title: 'Passion',
-    text: ['It may be a key location close to their business, or a location that will expose them to new audiences. The possibilities are endless.']
-  },
-//   {
-//     id: 'our-work-4',
-//     step: 4,
-//     title: 'Confirm the sale',
-//     text: ['Sign the contract and send the payment.']
-//   },
-//   {
-//     id: 'our-work-5',
-//     step: 5,
-//     title: 'Send the artwork to the platform',
-//     text: []
-//   },
-//   {
-//     id: 'our-work-6',
-//     step: 6,
-//     title: 'Receive your commissions and enjoy life!',
-//     text: []
-//   }
 ]
 
 export default function Carousel() {
-  const sectionRef = useRef(null)
-  const sliderRef = useRef(null)
-  const navRef = useRef(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const sliderRef = useRef<HTMLDivElement>(null)
+  const navRef = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
     const section = sectionRef.current
     const slider = sliderRef.current
-    const navItems = gsap.utils.toArray('.carousel__nav__item', navRef.current)
-    const slides = gsap.utils.toArray('.carousel__item', slider)
+    const navItems = gsap.utils.toArray('.nav_item', navRef.current)
+    const slides = gsap.utils.toArray('.slide', slider)
 
     const tl = gsap.timeline()
 
@@ -63,27 +39,30 @@ export default function Carousel() {
       animation: tl,
       trigger: section,
       start: 'top top',
-      end: '+=500%',
+      end: '+=200%',
       pin: true,
       scrub: true,
       snap: {
-        snapTo: 1 / (slides.length - 1)
+        snapTo: 1 / (slides.length - 1),
+        duration: { min: 0.2, max: 0.5 },
+        delay: 0.2,
       }
     })
 
     gsap.set(slides, { yPercent: 125, scale: 0.5, opacity: 0 })
 
-    navItems.forEach((item, i) => {
+    navItems.forEach((item: HTMLElement, i) => {
       item.addEventListener('click', (e) => {
         e.preventDefault()
-        const percent = tl.labels[e.target.getAttribute('data-target')] / tl.totalDuration()
+        const target = e.target as HTMLElement
+        const percent = tl.labels[target.getAttribute('data-target') || ''] / tl.totalDuration()
         const scrollPos = myST.start + (myST.end - myST.start) * percent
-        gsap.to(window, { duration: 2, scrollTo: scrollPos })
+        gsap.to(window, { duration: 1, scrollTo: scrollPos })
       })
 
-      const previousItem = navItems[i - 1]
+      const previousItem = navItems[i - 1] as HTMLElement
       if (previousItem) {
-        tl.to(item, { background: '#ed3c3c', boxShadow: '0 0 16px #ed3c3c' }, 0.5 * (i - 1))
+        tl.to(item, { background: '#ed3c3c', boxShadow: '0 0 16px #ed3c3c' }, 1 * (i - 1))
           .to(
             slides[i],
             {
@@ -112,7 +91,7 @@ export default function Carousel() {
           scale: 1,
           duration: 0,
         }, 0)
-        tl.add(`our-work-${i + 1}`, '+=0.5')
+        tl.add(`our-work-${i + 1}`, '+=1')
       }
     })
 
@@ -122,37 +101,37 @@ export default function Carousel() {
   }, [])
 
   return (
-    <>
-      <div ref={sectionRef} className="relative h-[400vh] mb-10 scroll-pb-3.5 bottom-0 overflow-hidden w-screen bg-black">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="w-full md:w-1/3 mb-8 md:mb-0">
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-[#bc2789] to-[#f85956] bg-clip-text text-transparent inline-flex">How does it</h1>
-            </div>
-            <div className="w-full md:w-2/3 slider relative">
-              <div ref={sliderRef} className="carousel__slider relative w-full min-h-[440px]">
-                {carouselItems.map((item) => (
-                  <div key={item.id} id={item.id} className="carousel__item absolute top-0 w-full min-h-[440px] p-12 text-white bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl">
-                    <div className="blurred-box__step">{item.step}</div>
-                    <h2 className="blurred-box__title text-2xl font-bold mb-4">{item.title}</h2>
-                    <div className="blurred-box__footer">
-                      <span className="blurred-box__footer-line block w-16 h-0.5 bg-white mb-4"></span>
-                      {item.text.map((text, index) => (
-                        <p key={index} className="blurred-box__text mb-2">{text}</p>
-                      ))}
-                    </div>
+    <div className="relative min-h-screen h-[300vh] w-full bg-black p-4 sm:p-6 md:p-8 lg:p-12">
+      <div ref={sectionRef} className="container mx-auto">
+        <div className="flex flex-col lg:flex-row items-center">
+          <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#bc2789] to-[#f85956] bg-clip-text text-transparent inline-flex">
+              How does it work?
+            </h1>
+          </div>
+          <div className="w-full lg:w-2/3 slider relative">
+            <div ref={sliderRef} className="carousel__slider relative w-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px]">
+              {carouselItems.map((item) => (
+                <div key={item.id} id={item.id} className="slide absolute top-0 w-full h-full p-6 sm:p-8 md:p-12 text-white bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl">
+                  <div className="blurred-box__step text-lg sm:text-xl md:text-2xl">{item.step}</div>
+                  <h2 className="blurred-box__title text-xl sm:text-2xl md:text-3xl font-bold mb-4">{item.title}</h2>
+                  <div className="blurred-box__footer">
+                    <span className="blurred-box__footer-line block w-16 h-0.5 bg-white mb-4"></span>
+                    {item.text.map((text, index) => (
+                      <p key={index} className="blurred-box__text mb-2 text-sm sm:text-base md:text-lg">{text}</p>
+                    ))}
                   </div>
-                ))}
-              </div>
-              <ul ref={navRef} className="carousel__nav flex flex-col gap-4 absolute right-0 top-1/2 transform -translate-y-1/2">
-                {carouselItems.map((item) => (
-                  <li key={item.id} className="carousel__nav__item w-2.5 h-2.5 bg-[#424b58] border border-white border-opacity-20 rounded-full cursor-pointer" data-target={item.id}></li>
-                ))}
-              </ul>
+                </div>
+              ))}
             </div>
+            <ul ref={navRef} className="carousel__nav flex lg:flex-col gap-4 justify-center lg:justify-start mt-4 lg:mt-0 lg:absolute lg:right-4 lg:top-1/2 lg:transform lg:-translate-y-1/2">
+              {carouselItems.map((item) => (
+                <li key={item.id} className="nav_item w-3 h-3 bg-[#424b58] border border-white border-opacity-20 rounded-full cursor-pointer" data-target={item.id}></li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }

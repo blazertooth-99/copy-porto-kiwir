@@ -11,16 +11,18 @@ import MorphingGradients from "./component/common/MorphingGradients";
 import StackPage from "./component/common/StackPage"
 import MorphingPageView from "./component/common/MorphingPageView"
 import AboutCarousel from './public/AboutCarousel'
+import MyProject from "./public/ProjectPage";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center mb-auto">
+    <main className="relative mx-auto w-screen items-center justify-center mb-auto">
       {/* <Welcome /> */}
       {/* <MorphingPageView /> */}
       <MorphingGradients />
-      <About />
+      {/* <About /> */}
       <AboutCarousel />
-      {/* <StackPage /> */}
+      <StackPage />
+      <MyProject />
       {/* <Profiles /> */}
       {/* <TextScroll /> */}
       {/* <Parallax /> */}

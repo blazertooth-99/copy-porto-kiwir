@@ -1,101 +1,119 @@
-'use client'
+"use client";
 
-import { useEffect, useRef, useState } from 'react'
-import { gsap } from 'gsap'
-import { Card, CardContent } from '@/components/ui/card'
-import Image, { StaticImageData } from 'next/image'
-import Banner from '../../assets/Banner.jpeg'
+import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import Rlogo from "../../assets/stack/react-seeklogo.svg";
+import Flogo from "../../assets/stack/figma-seeklogo.svg";
+import Image, { StaticImageData } from "next/image";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-type CardData = {
-  id: number
-  image: StaticImageData
-  alt: string
-  description: string
-}
 
-const cardData: CardData[] = [
-  {
-    id: 1,
-    image: Banner,
-    alt: 'A scenic landscape',
-    description: 'A beautiful landscape with mountains and a lake. The serene view captures the essence of nature\'s beauty.'
-  },
-  {
-    id: 2,
-    image: Banner,
-    alt: 'A colorful abstract pattern',
-    description: 'An vibrant abstract pattern with swirling colors. The dynamic composition creates a sense of movement and energy.'
-  },
-]
+gsap.registerPlugin(ScrollTrigger);
+const StackPage: React.FC = () => {
+  const cardsRef = useRef<HTMLDivElement[]>([]);
 
-const StackPage = () => {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set())
+  type Cards = {
+    frontImg: StaticImageData;
+    alt: string;
+    title: string;
+    backText: string;
+  };
+  const cards: Cards[] = [
+    {
+      frontImg: Rlogo,
+      alt: "Image 1",
+      title: 'React',
+      backText: "This is my new Expereince",
+    },
+
+    {
+      frontImg: Rlogo,
+      alt: "Image 1",
+      title: 'React',
+      backText: "This is my new Expereince",
+    },
+    {
+      frontImg: Flogo,
+      alt: "Image 2",
+      title: 'Figma',
+      backText: "This is my new Expereince",
+    },
+  ];
 
   useEffect(() => {
-    if (!containerRef.current) return
+    cardsRef.current.forEach((card) => {
+      // Set up initial styles for back faces to hide them
+      gsap.set(card.querySelector(".back"), { rotationY: 180 });
+      gsap.set(card, { rotationY: 0, transformStyle: "preserve-3d" });
+    });
+  }, []);
 
-    const cards = gsap.utils.toArray<HTMLDivElement>('.card-container')
-    
-    cards.forEach((card, index) => {
-      gsap.set(card, {
-        transformStyle: 'preserve-3d',
-        transformPerspective: 1000,
-      })
+  const handleCardClick = (index: number) => {
+    gsap.to(cardsRef.current[index], {
+      duration: 0.3,
+      rotationY: "+=180",
+      ease: "power3.inOut",
+    });
+  };
 
-      const handleClick = () => {
-        setFlippedCards((prevFlippedCards) => {
-          const newFlippedCards = new Set(prevFlippedCards)
-          if (newFlippedCards.has(index)) {
-            newFlippedCards.delete(index)
-          } else {
-            newFlippedCards.add(index)
-          }
-          gsap.to(card, {
-            rotationY: newFlippedCards.has(index) ? 180 : 0,
-            duration: 0.6,
-            ease: 'power2.inOut'
-          })
-          return newFlippedCards
-        })
-      }
 
-      card.addEventListener('click', handleClick)
-      return () => card.removeEventListener('click', handleClick)
-    })
-  }, [flippedCards])
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const headingsRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!sectionRef.current || !headingsRef.current) return;
+
+    gsap.to(headingsRef.current, {
+      scale: 1.05,
+      duration: 3,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        pin: true,
+        start: "top top",
+        end: "bottom center",
+        scrub: 3,
+      },
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   return (
-    <div className="relative min-h-screen mt-auto bg-neutral-700 p-8" ref={containerRef}>
-      <div className="flex flex-wrap gap-4 justify-center">
-        {cardData.map((card, index) => (
-          <Card 
-            key={card.id} 
-            className="card-container w-64 h-[400px] relative cursor-pointer"
-            tabIndex={0}
-            role="button"
-            aria-pressed={flippedCards.has(index)}
-            aria-label={`Card ${card.id}: ${card.alt}. Click to flip.`}
+    <div ref={sectionRef} className="relative w-full h-screen mx-auto justify-center items-center">
+      <div className="flex items-center justify-center mx-auto">
+        <h1 className="text-4xl font-bold">My Stack</h1>
+      </div>
+      <div 
+      ref={(el) => (headingsRef.current = el)}
+      className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 place-items-center justify-center p-5">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="relative w-[300px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] p-10 cursor-pointer transform-style-3d transition-transform duration-700"
+            ref={(el) => (cardsRef.current[index] = el!)}
+            onClick={() => handleCardClick(index)}
           >
-            <div className="card-inner w-full h-full transition-transform duration-600 transform-style-3d">
-              <CardContent className="card-front absolute w-full h-full backface-hidden overflow-hidden">
-                <Image
-                  src={card.image}
-                  alt={card.alt}
-                  layout="fill"
-                  objectFit="contain"
-                  className="rounded-lg"
-                />
-              </CardContent>
-              <CardContent className="card-back w-full h-full backface-hidden p-4 flex items-center justify-center transform rotate-y-180">
-                <p className="text-center text-gray-800">{card.description}</p>
-              </CardContent>
+            <div className="absolute flex flex-col inset-0 w-full md:w-full backface-hidden bg-red-200 items-center justify-center rounded-lg">
+              <Image
+                src={card.frontImg}
+                alt={card.alt}
+                layout="contain"
+                className="object-contain w-[100px] h-[100px] md:w-[200px] md:h-[200px] rounded-lg"
+              />
+              <div className="text-xl md:text-2xl font-semibold mt-2">
+                <h2>{card.title}</h2>
+              </div>
             </div>
-          </Card>
+            <div className="absolute inset-0 w-full h-full backface-hidden bg-blue-500 text-white flex items-center justify-center rounded-lg rotate-y-180">
+              <p className="text-center font-semibold text-lg">This is the back of card {card.backText}</p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default StackPage;
