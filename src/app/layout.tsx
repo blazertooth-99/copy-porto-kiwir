@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 // import Navbar from "./component/home/navbar";
-import Navigation from "./component/common/Navigation";
+import Navigation from "./component/home/Navigation";
 import Footer from "./component/home/footer";
 import { ReactLenis } from "./utils/lenis";
 

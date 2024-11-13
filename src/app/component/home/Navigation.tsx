@@ -18,8 +18,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import DarkMode from "../home/dark-mode-switcher";
-import BurgerMenu from "../home/burgermenu";
+import DarkMode from "./dark-mode-switcher";
+import BurgerMenu from "./burgermenu";
 
 const Navbar = (props: any) => {
   const [position, setPosition] = useState({
@@ -30,9 +30,9 @@ const Navbar = (props: any) => {
 
   return (
     <header>
-      <nav className="fixed w-fit mx-auto rounded-full border-2 inset-x-0 top-0 mt-5 z-50 bg-white/30 backdrop-blur-md shadow-lg dark:bg-neutral-800/30">
+      <nav className="fixed w-fit mx-auto rounded-full border inset-x-0 top-0 mt-2 z-50 bg-white/30 backdrop-blur-md shadow-lg dark:bg-neutral-800/30">
         <div className="container">
-          <div className="flex mx-auto w-full justify-center gap-10 px-5 items-center">
+          <div className="flex mx-auto w-full justify-center gap-5 px-2 items-center">
             <Link href="/" className="flex items-center" prefetch={false}>
               <Image
                 {...props}
@@ -56,36 +56,36 @@ const Navbar = (props: any) => {
               >
                 <Link
                   href="#"
-                  className="font-medium items-center text-sm transition-colors"
+                  className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >
                   <Tab setPosition={setPosition}>Home</Tab>
                 </Link>
 
                 <Link
-                  href="/landing_page/career"
-                  className="font-medium items-center text-sm transition-colors"
+                  href="/StackPage"
+                  className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >
                   <Tab setPosition={setPosition}>Stack</Tab>
                 </Link>
                 <Link
-                  href="/landing_page/news"
-                  className="font-medium items-center text-sm transition-colors"
+                  href="/Experience"
+                  className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >
                   <Tab setPosition={setPosition}>Experience</Tab>
                 </Link>
                 <Link
                   href="/landing_page/about"
-                  className="font-medium items-center text-sm transition-colors"
+                  className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >
                   <Tab setPosition={setPosition}>Project</Tab>
                 </Link>
                 <Link
                   href="/landing_page/contact"
-                  className="font-medium items-center text-sm transition-colors"
+                  className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >
                   <Tab setPosition={setPosition}>Contact</Tab>
@@ -123,7 +123,7 @@ const Tab = ({ children, setPosition }: any) => {
           opacity: 1,
         });
       }}
-      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+      className="relative z-10 block cursor-pointer px-3 py-1 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
     >
       {children}
     </li>
@@ -135,7 +135,7 @@ const Cursor = ({ position }: any) => {
       animate={{
         ...position,
       }}
-      className="absolute z-0 h-7 rounded-full bg-gradient-to-r from-blue-500 to blue-600 shadow-inner md:h-12"
+      className="absolute z-0 h-7 rounded-full bg-gradient-to-r from-black/70 to black/50 shadow-inner md:h-12"
     />
   );
 };

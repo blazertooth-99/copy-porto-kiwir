@@ -2,10 +2,11 @@
 
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import Rlogo from "../../assets/stack/react-seeklogo.svg";
-import Flogo from "../../assets/stack/figma-seeklogo.svg";
+import Rlogo from "../assets/stack/react-seeklogo.svg";
+import Flogo from "../assets/stack/figma-seeklogo.svg";
 import Image, { StaticImageData } from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CoolMeteorParticles from "../component/home/CoolMeteorParticles";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -82,6 +83,7 @@ const StackPage: React.FC = () => {
 
   return (
     <div ref={sectionRef} className="relative w-full h-screen mx-auto justify-center items-center">
+      {/* <CoolMeteorParticles /> */}
       <div className="flex items-center justify-center mx-auto">
         <h1 className="text-4xl font-bold">My Stack</h1>
       </div>
