@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import FloatingParticles from '../component/home/FloatingParticles'
 
 export default function ExperiencePage() {
   const containerRef = useRef(null)
@@ -126,7 +127,8 @@ export default function ExperiencePage() {
         )}
 
         {/* Experience Items */}
-        <div className="space-y-40 relative z-10">
+        {/* <FloatingParticles /> */}
+        <div className="space-y-52 relative z-10 w-full">
           {experiences.map((exp, index) => (
             <div key={index} className="experience-item flex items-center justify-center">
               <div className={`w-1/2 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>

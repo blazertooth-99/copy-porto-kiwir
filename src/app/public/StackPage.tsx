@@ -7,6 +7,7 @@ import Flogo from "../assets/stack/figma-seeklogo.svg";
 import Image, { StaticImageData } from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CoolMeteorParticles from "../component/home/CoolMeteorParticles";
+import FloatingParticles from "../component/home/FloatingParticles";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -29,14 +30,32 @@ const StackPage: React.FC = () => {
 
     {
       frontImg: Rlogo,
-      alt: "Image 1",
-      title: 'React',
+      alt: "Image 2",
+      title: 'CSS',
       backText: "This is my new Expereince",
     },
     {
       frontImg: Flogo,
-      alt: "Image 2",
+      alt: "Image 3",
       title: 'Figma',
+      backText: "This is my new Expereince",
+    },
+    {
+      frontImg: Rlogo,
+      alt: "Image 4",
+      title: 'Javascript',
+      backText: "This is my new Expereince",
+    },
+    {
+      frontImg: Rlogo,
+      alt: "Image 5",
+      title: 'Postman',
+      backText: "This is my new Expereince",
+    },
+    {
+      frontImg: Rlogo,
+      alt: "Image 6",
+      title: 'Next Js',
       backText: "This is my new Expereince",
     },
   ];
@@ -82,18 +101,19 @@ const StackPage: React.FC = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative w-full h-screen mx-auto justify-center items-center">
+    <div ref={sectionRef} className="relative w-full h-screen mx-auto justify-center items-center bg-gray-900/70">
       {/* <CoolMeteorParticles /> */}
+      <FloatingParticles />
       <div className="flex items-center justify-center mx-auto">
-        <h1 className="text-4xl font-bold">My Stack</h1>
+        <h1 className="text-4xl font-bold text-white mt-24">My Stack</h1>
       </div>
       <div 
       ref={(el) => (headingsRef.current = el)}
-      className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 place-items-center justify-center p-5">
+      className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 place-items-center justify-center p-5 mb-10">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="relative w-[300px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] p-10 cursor-pointer transform-style-3d transition-transform duration-700"
+            className="relative w-[200px] h-[200px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] p-10 cursor-pointer transform-style-3d transition-transform duration-700"
             ref={(el) => (cardsRef.current[index] = el!)}
             onClick={() => handleCardClick(index)}
           >

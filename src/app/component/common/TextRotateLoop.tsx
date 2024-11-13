@@ -4,11 +4,11 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 const words = [
-  "awesome.",
-  "beautiful.",
-  "creative.",
-  "fabulous.",
-  "interesting.",
+  "Developer.",
+  "Web Developer.",
+  "Bandar togel.",
+  "Peternak handal.",
+  "Jawir.",
 ];
 
 const RotatingText = () => {
@@ -25,7 +25,7 @@ const RotatingText = () => {
       letters.forEach((letter) => {
         const span = document.createElement("span");
         span.textContent = letter;
-        span.className = "letter inline-block";
+        span.className = "letter inline-flex";
         word.appendChild(span);
       });
     });
@@ -90,28 +90,23 @@ const RotatingText = () => {
   }, []);
 
   return (
-    <section className="relative w-full mt-10">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col w-full mx-auto items-center justify-center">
+    <section className="w-full mt-10">
+      <div className="container">
+        <div className="flex flex-col w-full items-center justify-center mx-auto place-items-center">
           <div className="mt-10">
-            <span className="text-xl md:text-2xl lg:text-3xl font-bold">
+            <span className="text-xl md:text-4xl lg:text-5xl font-bold text-white">
               Welcome to my blog :)
             </span>
             <div
               ref={containerRef}
-              className="relative overflow-hidden h-[1.2em] inline-block w-full text-xl font-bold"
+              className="font-semibold text-3xl w-full"
             >
-              <p>
-                <span>I'm Genjong,</span>
+              <span className="text-white"> Hello, I'm Christian, im a&nbsp; </span>
                 {words.map((word, index) => (
-                  <span
-                    key={index}
-                    className="word absolute whitespace-nowrap w-full overflow-hidden"
-                  >
+                  <span key={index} className="word mx-auto absolute inline-flex overflow-hidden text-red-600">
                     {word}
                   </span>
                 ))}
-              </p>
             </div>
           </div>
           <br />

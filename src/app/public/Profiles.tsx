@@ -5,16 +5,13 @@ import CardProfile from "../component/common/CardProfile";
 import TextRotateLoop from "../component/common/TextRotateLoop";
 import { Button } from "@/components/ui/button";
 import FloatingParticles from "../component/home/FloatingParticles"
-import CoolMeteorParticles from "../component/home/CoolMeteorParticles";
-import MeteorShowerBackground from "../component/home/MeteorShowerBackground";
+
 
 const Profiles = () => {
   return (
     <div className="h-screen w-full p-0 mx-auto justify-center items-center bg-gray-900/50">
       <FloatingParticles />
-      {/* <CoolMeteorParticles /> */}
-      {/* <MeteorShowerBackground /> */}
-      <div className="relative flex flex-col z-10">
+      <div className="relative flex flex-col z-10 items-center justify-center">
         <div className="relative">
           <TextRotateLoop />
         </div>
