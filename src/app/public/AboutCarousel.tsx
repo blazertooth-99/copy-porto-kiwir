@@ -136,7 +136,7 @@ export default function AboutCarousel() {
       opacity: 0,
       duration: 1,
       ease: "power3.out",
-      stagger: 1,
+      stagger: 2,
       scrollTrigger: {
         trigger: sectionRef.current,
         scrub: true,

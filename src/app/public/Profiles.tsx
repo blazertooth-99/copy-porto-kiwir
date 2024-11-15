@@ -11,9 +11,9 @@ const Profiles = () => {
   return (
     <div
       id="HOME"
-      className="relative w-full p-10 bg-sky-900"
+      className="relative min-h-screen lg:h-screen w-full p-10 items-center justify-center bg-sky-900 pb-20"
     >
-      <div className="flex justify-center mx-auto p-10 w-full h-full place-items-center">
+      <div className="relative items-center justify-center mx-auto p-10 w-full h-full">
         <CardProfileRev />
       </div>
     </div>

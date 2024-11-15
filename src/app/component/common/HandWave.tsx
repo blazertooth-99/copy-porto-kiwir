@@ -85,7 +85,7 @@ export default function WavingHand() {
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" strategy="beforeInteractive" />
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CustomEase.min.js" strategy="beforeInteractive" />
 
-      <div ref={handRef} className="text-3xl top-0">👋</div>
+      <div ref={handRef} className="text-xl md:text-3xl lg:text-6xl top-0">👋</div>
     </div>
   )
 }

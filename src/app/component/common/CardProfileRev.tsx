@@ -82,7 +82,7 @@ export default function CardProfileRev() {
     },
     {
       title: "Javascript",
-      icon: <SiJavascript />
+      icon: <SiJavascript />,
     },
     {
       title: "Figma",
@@ -90,7 +90,7 @@ export default function CardProfileRev() {
     },
   ];
   return (
-    <div className="relative min-h-screen justify-center item-scenter w-full">
+    <div className="relative h-screen justify-center item-center my-20 w-full">
       <div
         ref={cardRef}
         className="bg-white rounded-[25px] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full h-auto flex flex-col md:flex-row relative drop-shadow-xl"
@@ -107,7 +107,7 @@ export default function CardProfileRev() {
         <div ref={contentRef} className="w-full md:w-2/3 py-5 px-10">
           <div
             ref={avatarRef}
-            className="absolute w-20 h-20 rounded-full border-6 border-white bg-gradient-to-br from-[#16a085] to-[#f4d03f] top-4 -left-10 hover:scale-110"
+            className="absolute w-20 h-20 md:w-30 md:h-30 lg:w-40 lg:h-40 rounded-full border-6 border-white bg-gradient-to-br from-[#16a085] to-[#f4d03f] top-4 -left-10 md:-left-15 lg:-left-20  hover:scale-110"
           >
             <Image
               src={Img1}
@@ -119,8 +119,10 @@ export default function CardProfileRev() {
           <div className="text-right text-green-600 font-bold text-xs mb-2">
             Profiles
           </div>
-          <TextWelcome />
-          <p className="text-sm mb-4">
+          <div className="px-8 md:px-10 lg:px-16">
+            <TextWelcome />
+          </div>
+          <p className="text-xl my-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
@@ -128,16 +130,18 @@ export default function CardProfileRev() {
             only five centuries,
           </p>
           <div className="flex flex-col gap-2">
-            <span className="font-bold text-md">My Stack :</span>
+            <span className="font-bold text-lg md:text-xl lg:text-2xl">
+              My Stack :
+            </span>
             <div className="flex-row-5 space-x-10">
               {MyStackIcon.map((item) => (
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button
-                        className="text-2xl transition-all duration-500 hover:text-[#4CAF50] hover:rotate-[22deg] hover:scale-110"
-                      >
-                        {item.icon}
+                      <button className="text-2xl transition-all duration-500 hover:text-[#4CAF50] hover:rotate-[22deg] hover:scale-110">
+                        <span className="text-2xl md:text-3xl lg:text-5xl">
+                          {item.icon}
+                        </span>
                       </button>
                     </TooltipTrigger>
                     <TooltipContent>

@@ -7,20 +7,24 @@ import ExperiencePage from "./public/ExperiencePage";
 import GithubRepository from "./component/home/github-repository";
 import FirstView from "./component/home/FirstView";
 import Preloader from "./component/common/Preloader";
-// import HoverImage from "./component/common/HoverImage";
+import TextReveal from "./component/common/TextReveal";
+import TextScroll from "./component/common/TextScroll";
+import HoverImage from "./component/common/HoverImage";
 
 export default function Home() {
   return (
     <main className="relative mx-auto w-screen items-center justify-center mb-auto">
       {/* <Preloader /> */}
-      {/* <FirstView /> */}
-      {/* <HoverImage /> */}
       <Profiles />
-      <AboutCarousel />
-      {/* <StackPage /> */}
+      <HoverImage />
+      {/* <TextReveal />       */}
       <ExperiencePage />
       <MyProject />
-      {/* <GithubRepository /> */}
+      {/* <AboutCarousel /> */}
+      {/* <StackPage /> */}
+
+
+      <GithubRepository />
     </main>
   );
 }
