@@ -55,7 +55,7 @@ const Navbar = (props: any) => {
                 className="relative mx-auto flex w-fit"
               >
                 <Link
-                  href="#"
+                  href="#HOME"
                   className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >
@@ -63,28 +63,28 @@ const Navbar = (props: any) => {
                 </Link>
 
                 <Link
-                  href="/StackPage"
+                  href="#STACK"
                   className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >
                   <Tab setPosition={setPosition}>Stack</Tab>
                 </Link>
                 <Link
-                  href="/Experience"
+                  href="#EXPERIENCE"
                   className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >
                   <Tab setPosition={setPosition}>Experience</Tab>
                 </Link>
                 <Link
-                  href="/landing_page/about"
+                  href="#PROJECT"
                   className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >
                   <Tab setPosition={setPosition}>Project</Tab>
                 </Link>
                 <Link
-                  href="/landing_page/contact"
+                  href="#FOOTER"
                   className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >

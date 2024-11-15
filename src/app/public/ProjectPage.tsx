@@ -53,7 +53,7 @@ const MyProject = () => {
         });
 
         let Animation = gsap.timeline();
-        card.addEventListener("mouseover", () => {
+        card.addEventListener("mouseover" || "touchstart", () => {
           Animation.kill();
           Animation = gsap
             .timeline()
@@ -62,7 +62,7 @@ const MyProject = () => {
             .to(desc, { duration: 0.3, opacity: 1 }, "-=0.15")
             .to(action, { duration: 0.3, opacity: 1 }, "-=0.3");
         });
-        card.addEventListener("mouseleave", () => {
+        card.addEventListener("mouseleave" || "touchend", () => {
           Animation.kill();
           Animation = gsap
             .timeline()
@@ -73,18 +73,31 @@ const MyProject = () => {
         });
 
         // Touch event listeners for mobile devices
-        card.addEventListener("touchstart", () => Animation.play(), {
-          passive: true,
-        });
-        card.addEventListener("touchend", () => Animation.play(), {
-          passive: true,
-        });
+        // card.addEventListener("touchstart", () => {
+        //   Animation.kill();
+        //   Animation = gsap
+        //     .timeline()
+        //     .to(infoWrapper, { duration: 0.3, yPercent: 0 })
+        //     .to(info, { duration: 0.1, top: "50%", yPercent: -50 }, "-=0.3")
+        //     .to(desc, { duration: 0.3, opacity: 1 }, "-=0.15")
+        //     .to(action, { duration: 0.3, opacity: 1 }, "-=0.3");
+        // });
+        // card.addEventListener("touchend", () =>  {
+        //   Animation.kill();
+        //   Animation = gsap
+        //     .timeline()
+        //     .to(action, { duration: 0.1, opacity: 0 })
+        //     .to(desc, { duration: 0.1, opacity: 0 }, ">-=0.1")
+        //     .to(infoWrapper, { duration: 0.3, yPercent: 80 })
+        //     .set(info, { top: 0, yPercent: 0 }, ">-=0.3");
+        // });
+
       }
     });
   }, []);
 
   return (
-    <div className="py-12">
+    <div id="PROJECT" className="py-12">
      <div className="flex items-center justify-center mx-auto">
         <h1 className="text-4xl font-bold">Project</h1>
       </div>

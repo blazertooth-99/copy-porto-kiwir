@@ -101,7 +101,7 @@ const StackPage: React.FC = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative w-full h-screen mx-auto justify-center items-center bg-gray-900/70">
+    <div id="STACK" ref={sectionRef} className="relative w-full h-screen mx-auto justify-center items-center bg-gray-900/70">
       {/* <CoolMeteorParticles /> */}
       <FloatingParticles />
       <div className="flex items-center justify-center mx-auto">

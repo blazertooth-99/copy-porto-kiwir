@@ -29,15 +29,6 @@ export default function Component() {
             <p className="text-sm mb-1">Telepon: +62-811-1953-323</p>
             <p className="text-sm">Email: hello@agreeculture.id</p>
           </div>
-          <div className="col-span-1 mt-0">
-            <h3 className="font-semibold text-lg mb-4">Location</h3>
-            <div className="w-full max-w-3xl mx-auto">
-              <div className="aspect-video">
-                <script></script>
-                <MapPage />
-              </div>
-            </div>
-          </div>
           <div className="col-span-1">
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-2">

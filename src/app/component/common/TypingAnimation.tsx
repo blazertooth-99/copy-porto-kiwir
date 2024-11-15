@@ -39,10 +39,10 @@ export default function TypingAnimation() {
   }, [])
 
   return (
-    <div className="flex items-center justify-start">
+    <div className="relative items-center justif-center">
       <p
         ref={textRef}
-        className="text-3xl font-bold text-red-700"
+        className="text-md font-semibold text-red-700"
         aria-live="polite"
       ></p>
     </div>

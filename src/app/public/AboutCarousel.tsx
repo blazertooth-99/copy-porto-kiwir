@@ -150,7 +150,7 @@ export default function AboutCarousel() {
   }, []);
 
   return (
-    <div className="relative min-h-screen h-[300vh] bg-gray-900/70 w-full p-4 sm:p-6 md:p-8 lg:p-12">
+    <div id="ABOUT" className="relative min-h-screen h-[300vh] bg-gray-900/70 w-full p-4 sm:p-6 md:p-8 lg:p-12">
       <FloatingParticles />
       <div ref={sectionRef} className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center">

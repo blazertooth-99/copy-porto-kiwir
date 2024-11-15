@@ -88,7 +88,7 @@ export default function ExperiencePage() {
   ]
 
   return (
-    <div ref={containerRef} className="min-h-screen w-full text-white p-8 relative overflow-hidden">
+    <div id="EXPERIENCE" ref={containerRef} className="min-h-screen w-full p-8 relative overflow-hidden bg-gray-900/70">
       <h1 className="text-4xl font-bold mb-12 text-center animate-pulse text-neon-blue">My Experience</h1>
 
       <div className="relative max-w-4xl mx-auto">
