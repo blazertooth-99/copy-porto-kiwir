@@ -13,7 +13,7 @@ import HoverImage from "./component/common/HoverImage";
 
 export default function Home() {
   return (
-    <main className="relative mx-auto w-screen items-center justify-center mb-auto">
+    <main className="relative mx-auto w-screen items-center justify-center mb-auto bg-zinc-100">
       {/* <Preloader /> */}
       <Profiles />
       <HoverImage />

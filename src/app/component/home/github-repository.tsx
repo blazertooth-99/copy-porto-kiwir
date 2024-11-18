@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { Search, Star, GitFork } from 'lucide-react'
+import { Search, Star, Github } from 'lucide-react'
 import { gsap } from 'gsap'
 import { Button } from '@/components/ui/button'
 
@@ -115,7 +115,7 @@ export default function GithubRepository() {
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
       </div> */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-10"
+        className="mt-8 grid md:grid-cols-2 grid-cols-1 md:gap-5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -124,25 +124,26 @@ export default function GithubRepository() {
         {displayedRepos.map((repo) => (
           <motion.div
             key={repo.id}
-            className="dark:bg-white bg-gray-700 rounded-lg shadow-md overflow-hidden"
+            className="p-6 border dark:border-[#1E293B] border-[#CBD5E1] dark:bg-[#0F172A] bg-[#ffffff] hover:dark:bg-[#1E293B] hover:bg-[#CBD5E1] rounded-xl mb-3"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
             <div className="p-6">
-              <h2 className="text-xl font-semibold mb-2 text-blue-600">
-                <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+              <h2 className="text-xl font-semibold mb-2 text-black">
+
                   {repo.name}
-                </a>
               </h2>
-              <p className="text-gray-600 mb-4">{repo.description || 'No description available'}</p>
-              <div className="flex justify-between text-sm text-gray-500">
+              <p className="line-clamp-2 text-md text-gray-950">{repo.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}</p>
+              <div className="flex items-center flex-wrap -m-3 pt-5">
                 <div className="flex items-center">
-                  <Star className="w-4 h-4 mr-1" />
-                  <span>{repo.stargazers_count}</span>
+                  <Github className="w-4 h-4 mr-1 text-gray-500" />
                 </div>
                 <div className="flex items-center">
-                  <GitFork className="w-4 h-4 mr-1" />
-                  <span>{repo.forks_count}</span>
+                  <span className="ml-2 text-lightText transition-colors duration-500">
+                  <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-500">
+                    LoremIpsum/blabl..
+                  </a>
+                  </span>
                 </div>
               </div>
             </div>
