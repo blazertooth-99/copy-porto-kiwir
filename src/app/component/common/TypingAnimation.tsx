@@ -42,7 +42,7 @@ export default function TypingAnimation() {
     <div className="relative items-center justif-center">
       <p
         ref={textRef}
-        className="text-md font-semibold text-red-700"
+        className="text-lg md:text-xl font-semibold text-red-700"
         aria-live="polite"
       ></p>
     </div>

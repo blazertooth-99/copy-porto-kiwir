@@ -9,7 +9,7 @@ import FirstView from "./component/home/FirstView";
 import Preloader from "./component/common/Preloader";
 import TextReveal from "./component/common/TextReveal";
 import TextScroll from "./component/common/TextScroll";
-import HoverImage from "./component/common/HoverImage";
+import HoverImage from "./public/HoverImage";
 
 export default function Home() {
   return (

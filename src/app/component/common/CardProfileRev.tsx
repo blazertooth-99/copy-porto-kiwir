@@ -90,7 +90,7 @@ export default function CardProfileRev() {
     },
   ];
   return (
-    <div className="relative h-screen justify-center item-center my-20 w-full">
+    <div className="relative min-h-screen justify-center item-center my-20 w-full">
       <div
         ref={cardRef}
         className="bg-white rounded-[25px] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full h-auto flex flex-col md:flex-row relative drop-shadow-xl"
