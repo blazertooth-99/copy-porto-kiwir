@@ -4,7 +4,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { gsap } from "gsap";
-import { FaReact, FaCss3Alt, FaFigma } from "react-icons/fa";
+import {
+  FaReact,
+  FaCss3Alt,
+  FaFigma,
+  FaLinkedin,
+  FaGithubSquare,
+} from "react-icons/fa";
 import {
   SiVite,
   SiJavascript,
@@ -21,9 +27,9 @@ import {
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Img1 from "../../assets/sample.webp";
-import Img2 from "../../assets/slides/content.jpg";
-import TextWelcome from "./TextWelcome";
+import Img1 from "../assets/sample.webp";
+import Img2 from "../assets/slides/content.jpg";
+import TextWelcome from "../component/common/TextWelcome";
 
 export default function CardProfileRev() {
   const cardRef = useRef(null);
@@ -116,12 +122,36 @@ export default function CardProfileRev() {
               className="object-cover rounded-full"
             />
           </div>
-          <div className="text-right text-green-600 font-bold text-xs mb-2">
-            Profiles
+          <div className="flex justify-end top-0 right-0 flex-row space-x-5">
+            <div>
+              <button className="group w-12 hover:w-44 h-12 hover:bg-sky-600 relative bg-sky-700 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45">
+                <FaLinkedin
+                  y="0"
+                  x="0"
+                  className="w-8 h-8 shrink-0 fill-neutral-50"
+                />
+                <span className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
+                  Christian Satrio
+                </span>
+              </button>
+            </div>
+            <div>
+              <button className="group w-12 hover:w-44 h-12 hover:bg-gray-700 relative bg-gray-900 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-semibold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-gray-900 before:hover:bg-gray-700 before:rotate-45">
+                <FaGithubSquare
+                  y="0"
+                  x="0"
+                  className="w-8 h-8 shrink-0 fill-neutral-50"
+                />
+                <span className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
+                  blazertooth-99
+                </span>
+              </button>
+            </div>
           </div>
           <div className="px-8 md:px-10 lg:px-16">
             <TextWelcome />
           </div>
+
           <p className="px-8 md:px-10 lg:px-16 text-xl my-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -131,14 +161,14 @@ export default function CardProfileRev() {
           </p>
           <div className="relative gap-2 px-8 md:px-10 lg:px-16">
             <span className="font-bold text-lg md:text-xl lg:text-2xl">
-              My Stack :
+              Tech Stack :
             </span>
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-5">
+            <div className="grid grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-5 justify-start my-5 items-center w-fit">
               {MyStackIcon.map((item) => (
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="text-2xl transition-all duration-500 hover:text-[#4CAF50] hover:rotate-[22deg] hover:scale-110">
+                      <button className="text-2xl transition-all duration-500 hover:text-[#4CAF50] hover:scale-125">
                         <span className="text-2xl md:text-3xl lg:text-4xl">
                           {item.icon}
                         </span>
@@ -154,19 +184,17 @@ export default function CardProfileRev() {
 
             <div className="flex flex-col md:flex-row my-2 gap-5">
               <div>
-                <Button
-                  variant="outline"
-                  className="group/button relative inline-flex items-center justify-center rounded-full overflow-hidden bg-white-100/30 backdrop-blur-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-gray-600/80 border border-white-200"
-                >
-                  My Resume
+              <Button
+                variant="outline"
+                className="relative px-8 py-2 rounded-lg bg-white isolation-auto z-10 border-2 border-sky-800 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-sky-800 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center text-sm font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
+                  Resume
                 </Button>
               </div>
               <div>
                 <Button
-                  variant="outline"
-                  className="group/button relative inline-flex items-center justify-center rounded-full overflow-hidden bg-white-100/30 backdrop-blur-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-gray-600/80 border border-white-200"
-                >
-                  My Contact
+                variant="outline"
+                className="relative px-8 py-2 rounded-lg bg-white isolation-auto z-10 border-2 border-sky-800 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-sky-800 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center text-sm font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
+                  Contact
                 </Button>
               </div>
             </div>

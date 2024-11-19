@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import CardProfile from "../component/common/CardProfile";
+import CardProfile from "./CardProfile";
 import TextRotateLoop from "../component/common/TextWelcome";
 import { Button } from "@/components/ui/button";
 import FloatingParticles from "../component/home/FloatingParticles";
-import CardProfileRev from "../component/common/CardProfileRev";
+import CardProfileRev from "./CardProfileRev";
 
 const Profiles = () => {
   return (
