@@ -10,13 +10,14 @@ import Preloader from "./component/common/Preloader";
 import TextReveal from "./component/common/TextReveal";
 import TextScroll from "./component/common/TextScroll";
 import ProjectWork from "./public/ProjectWork";
-import Aaa from "./public/Aaa";
+import CardProfileRev from "./public/CardProfileRev"
 
 export default function Home() {
   return (
     <main className="relative mx-auto w-screen items-center justify-center mb-auto bg-zinc-100">
       {/* <Preloader /> */}
-      <Profiles />
+      {/* <Profiles /> */}
+      <CardProfileRev />
       {/* <TextReveal />       */}
       <ExperiencePage />
       {/* <Aaa /> */}

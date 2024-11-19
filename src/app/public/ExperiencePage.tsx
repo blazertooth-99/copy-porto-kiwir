@@ -149,7 +149,7 @@ export default function ExperiencePage() {
                   index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"
                 }`}
               >
-                <div className="w-full bg-red-500/60 rounded-full p-8 animate-spin">
+                <div className="w-full bg-red-500/60 rounded-full p-8">
                   <h3 className="text-2xl font-semibold text-neon-pink mb-2">
                     {exp.year}
                   </h3>
