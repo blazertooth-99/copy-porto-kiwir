@@ -15,7 +15,7 @@ export default function TypingAnimation() {
     const text = textRef.current
     if (!text) return
 
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0 })
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: -0.1 })
 
     TYPED_STR.forEach((phrase) => {
       tl.to(text, {
@@ -23,7 +23,7 @@ export default function TypingAnimation() {
         text: phrase,
         ease: "back.out",
         stagger: 0.5,
-        delay: -0.1,
+        delay: -0.2,
       }).to(text, {
         duration: 3,
         text: "",

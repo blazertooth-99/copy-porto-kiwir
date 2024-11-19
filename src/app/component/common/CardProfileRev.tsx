@@ -90,10 +90,10 @@ export default function CardProfileRev() {
     },
   ];
   return (
-    <div className="relative min-h-screen justify-center item-center my-20 w-full">
+    <div className="h-full min-h-screen justify-center item-center mt-15">
       <div
         ref={cardRef}
-        className="bg-white rounded-[25px] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full h-auto flex flex-col md:flex-row relative drop-shadow-xl"
+        className="bg-white rounded-[25px] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full flex flex-col md:flex-row relative drop-shadow-xl"
       >
         <div className="w-full md:w-1/3 border-b-4 sm:border-b-4 md:border-y-0 md:border-r-4 border-sky-900">
           <div className="sm:h-2/3 md:h-full w-full md:rounded-tl-[25px] md:rounded-bl-[25px]">
@@ -122,24 +122,24 @@ export default function CardProfileRev() {
           <div className="px-8 md:px-10 lg:px-16">
             <TextWelcome />
           </div>
-          <p className="text-xl my-4">
+          <p className="px-8 md:px-10 lg:px-16 text-xl my-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
             only five centuries,
           </p>
-          <div className="flex flex-col gap-2">
+          <div className="relative gap-2 px-8 md:px-10 lg:px-16">
             <span className="font-bold text-lg md:text-xl lg:text-2xl">
               My Stack :
             </span>
-            <div className="flex-row-5 space-x-10">
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-5">
               {MyStackIcon.map((item) => (
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <button className="text-2xl transition-all duration-500 hover:text-[#4CAF50] hover:rotate-[22deg] hover:scale-110">
-                        <span className="text-2xl md:text-3xl lg:text-5xl">
+                        <span className="text-2xl md:text-3xl lg:text-4xl">
                           {item.icon}
                         </span>
                       </button>
@@ -152,19 +152,23 @@ export default function CardProfileRev() {
               ))}
             </div>
 
-            <div className="mt-2 flex-row space-x-5">
-              <Button
-                variant="outline"
-                className="group/button relative inline-flex items-center justify-center rounded-full overflow-hidden bg-white-100/30 backdrop-blur-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-gray-600/80 border border-white-200"
-              >
-                My Resume
-              </Button>
-              <Button
-                variant="outline"
-                className="group/button relative inline-flex items-center justify-center rounded-full overflow-hidden bg-white-100/30 backdrop-blur-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-gray-600/80 border border-white-200"
-              >
-                My Contact
-              </Button>
+            <div className="flex flex-col md:flex-row my-2 gap-5">
+              <div>
+                <Button
+                  variant="outline"
+                  className="group/button relative inline-flex items-center justify-center rounded-full overflow-hidden bg-white-100/30 backdrop-blur-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-gray-600/80 border border-white-200"
+                >
+                  My Resume
+                </Button>
+              </div>
+              <div>
+                <Button
+                  variant="outline"
+                  className="group/button relative inline-flex items-center justify-center rounded-full overflow-hidden bg-white-100/30 backdrop-blur-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-gray-600/80 border border-white-200"
+                >
+                  My Contact
+                </Button>
+              </div>
             </div>
           </div>
         </div>
