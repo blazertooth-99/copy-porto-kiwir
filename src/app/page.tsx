@@ -18,12 +18,12 @@ export default function Home() {
       {/* <Preloader /> */}
       {/* <Profiles /> */}
       <CardProfileRev />
+      <AboutCarousel />
       {/* <TextReveal />       */}
       <ExperiencePage />
       {/* <Aaa /> */}
       <ProjectWork />
       {/* <MyProject /> */}
-      {/* <AboutCarousel /> */}
       {/* <StackPage /> */}
 
 
