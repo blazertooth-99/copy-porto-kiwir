@@ -95,13 +95,13 @@ const TextWelcome = () => {
       <div className="container">
         <div className="flex flex-col w-full">
           <div className="mt-10">
-            <span className="flex text-2xl md:text-4xl lg:text-6xl font-bold">
+            <span className="flex text-xl md:text-4xl lg:text-6xl font-bold">
               Hi! there!{" "}
               <span>
                 <HandWave />
               </span>
             </span>
-            <div className="font-semibold text-xl md:text-3xl lg:text-5xl w-full justify-center">
+            <div className="font-semibold text-md md:text-3xl lg:text-5xl w-full justify-center">
               <span className="">
                 I am Christian Satrio &nbsp;{" "}
               </span>

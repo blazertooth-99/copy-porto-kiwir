@@ -96,10 +96,10 @@ export default function CardProfileRev() {
     },
   ];
   return (
-    <div className="h-full min-h-screen justify-center item-center mt-15">
+    <div className="flex min-h-screen place-items-center justify-center py-10 px-5 bg-slate-300 dark:bg-gray-900">
       <div
         ref={cardRef}
-        className="bg-white rounded-[25px] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full flex flex-col md:flex-row relative drop-shadow-xl"
+        className="bg-slate-100 dark:bg-gray-700 dark:border dark:border-sky-100 h-full rounded-[25px] w-full md:w-[95%] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full flex flex-col md:flex-row relative drop-shadow-xl"
       >
         <div className="w-full md:w-1/3 border-b-4 sm:border-b-4 md:border-y-0 md:border-r-4 border-sky-900">
           <div className="sm:h-2/3 md:h-full w-full md:rounded-tl-[25px] md:rounded-bl-[25px]">
@@ -113,7 +113,7 @@ export default function CardProfileRev() {
         <div ref={contentRef} className="w-full md:w-2/3 py-5 px-10">
           <div
             ref={avatarRef}
-            className="absolute w-20 h-20 md:w-30 md:h-30 lg:w-40 lg:h-40 rounded-full border-6 border-white bg-gradient-to-br from-[#16a085] to-[#f4d03f] top-4 -left-10 md:-left-15 lg:-left-20  hover:scale-110"
+            className="absolute w-20 h-20 md:w-30 md:h-30 lg:w-40 lg:h-40 rounded-full border-6 border-white bg-gradient-to-br from-[#16a085] to-[#f4d03f] top-4 left-0 md:-left-15 lg:-left-20  hover:scale-110"
           >
             <Image
               src={Img1}
@@ -152,7 +152,7 @@ export default function CardProfileRev() {
             <TextWelcome />
           </div>
 
-          <p className="px-8 md:px-10 lg:px-16 text-xl my-4">
+          <p className="px-2 md:px-10 lg:px-16 text-md md:text-xl my-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
@@ -168,7 +168,7 @@ export default function CardProfileRev() {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="text-2xl transition-all duration-500 hover:text-[#4CAF50] hover:scale-125">
+                      <button className="text-2xl transition-all duration-500 hover:text-sky-600 hover:scale-125">
                         <span className="text-2xl md:text-3xl lg:text-4xl">
                           {item.icon}
                         </span>
