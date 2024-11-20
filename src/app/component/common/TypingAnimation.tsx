@@ -39,10 +39,10 @@ export default function TypingAnimation() {
   }, [])
 
   return (
-    <div className="ml-2 relative items-center justif-center">
+    <div className="py-2 md:py-4 relative items-center justif-center">
       <p
         ref={textRef}
-        className="text-lg md:text-xl font-semibold text-red-700"
+        className="text-xl md:text-2xl font-semibold text-cyan-600 dark:text-teal-400"
         aria-live="polite"
       ></p>
     </div>

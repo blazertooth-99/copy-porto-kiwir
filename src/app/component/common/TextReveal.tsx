@@ -38,8 +38,8 @@ const TextReveal = () => {
       stagger: 0.5,
       scrollTrigger: {
         trigger: content.current,
-        start: "top 60%",
-        end: "top 20%",
+        start: "top 80%",
+        end: "bottom center",
         scrub: 0.5,
       },
     });
@@ -57,9 +57,9 @@ const TextReveal = () => {
         .timeline({
           scrollTrigger: {
             trigger: divTriggerRef.current,
-            start: "top 80%",
-            end: "top 40%",
-            scrub: 0.75,
+            start: "top 90%",
+            end: "top 70%",
+            scrub: 1,
           },
         })
         .set(

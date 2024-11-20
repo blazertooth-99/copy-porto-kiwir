@@ -30,6 +30,7 @@ import Image from "next/image";
 import Img1 from "../assets/sample.webp";
 import Img2 from "../assets/slides/content.jpg";
 import TextWelcome from "../component/common/TextWelcome";
+import Link from "next/link";
 
 export default function CardProfileRev() {
   const cardRef = useRef(null);
@@ -96,10 +97,10 @@ export default function CardProfileRev() {
     },
   ];
   return (
-    <div className="flex min-h-screen place-items-center justify-center py-10 px-5 bg-custom-blue dark:bg-gray-900">
+    <div className="flex min-h-screen place-items-center justify-center py-10 px-5 bg-custom-blue dark:bg-slate-800">
       <div
         ref={cardRef}
-        className="bg-custom-slate dark:bg-gray-700 dark:border dark:border-sky-100 h-full rounded-[25px] md:w-[95%] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full flex flex-col md:flex-row relative drop-shadow-xl"
+        className="bg-custom-slate dark:bg-gray-800 border border-cyan-600 dark:border dark:border-teal-400 h-full rounded-[25px] md:w-[95%] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full flex flex-col md:flex-row relative drop-shadow-xl"
       >
         <div className="w-full md:w-1/3 border-b-4 sm:border-b-4 md:border-y-0 md:border-r-4 border-sky-900">
           <div className="sm:h-2/3 md:h-full w-full md:rounded-tl-[25px] md:rounded-bl-[25px]">
@@ -118,7 +119,7 @@ export default function CardProfileRev() {
             <Image
               src={Img1}
               alt="Image Profiles"
-              layout="fill"
+              fill
               className="object-cover rounded-full"
             />
           </div>
@@ -168,7 +169,7 @@ export default function CardProfileRev() {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="text-2xl transition-all duration-500 hover:text-sky-600 hover:scale-125">
+                      <button className="text-2xl transition-all duration-500 hover:text-cyan-600 dark:hover:text-teal-400  hover:scale-125">
                         <span className="text-2xl md:text-3xl lg:text-4xl">
                           {item.icon}
                         </span>
@@ -184,18 +185,32 @@ export default function CardProfileRev() {
 
             <div className="flex flex-col md:flex-row my-2 gap-5">
               <div>
-              <Button
-                variant="outline"
-                className="relative px-8 py-2 rounded-lg bg-white isolation-auto z-10 border-2 border-sky-800 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-sky-800 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center text-sm font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
+                <Button
+                  variant="outline"
+                  className="relative px-6 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-gray-300 isolation-auto z-10 border-2 border-sky-800
+                 dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
+                 hover:text-white dark:hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 
+                  before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
+                 inline-flex items-center justify-center text-base md:text-lg font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
+                 disabled:pointer-events-none"
+                >
                   Resume
                 </Button>
               </div>
               <div>
-                <Button
-                variant="outline"
-                className="relative px-8 py-2 rounded-lg bg-white isolation-auto z-10 border-2 border-sky-800 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-sky-800 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center text-sm font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
-                  Contact
-                </Button>
+                <Link href="#CONTACT" prefetch={false}>
+                  <Button
+                    variant="outline"
+                    className="relative px-6 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 text-black dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
+                 dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
+                 hover:text-white dark:hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 
+                  before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
+                 inline-flex items-center justify-center text-base md:text-lg font-semibold  shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
+                 disabled:pointer-events-none"
+                  >
+                    Contact
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -133,7 +133,7 @@ export default function ExperiencePage() {
             ref={pathRef}
             d="M1 0v800"
             fill="none"
-            stroke="rgba(66, 220, 255, 0.3)"
+            className="stroke-cyan-600 dark:stroke-teal-400"
             strokeWidth="2"
           />
         </svg>
@@ -141,14 +141,14 @@ export default function ExperiencePage() {
         {isClient && (
           <svg
             ref={orbRef}
-            className="absolute left-0 top-0"
+            className="absolute left-0 top-0 fill-cyan-600 dark:fill-teal-400"
             width="24"
             height="24"
             viewBox="0 0 24 24"
           >
-            <circle cx="12" cy="12" r="10" fill="rgba(66, 220, 255, 1)" />
-            <circle cx="12" cy="12" r="6" fill="rgba(66, 220, 255, 0.5)" />
-            <circle cx="12" cy="12" r="3" fill="rgba(66, 220, 255, 0.2)" />
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="3" />
           </svg>
         )}
 

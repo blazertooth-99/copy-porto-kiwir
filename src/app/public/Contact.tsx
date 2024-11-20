@@ -77,13 +77,26 @@ const Contact = () => {
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           <Button
-            className="bg-transparent text-white hover:bg-white/20"
             variant="outline"
+            className="relative px-6 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-gray-300 isolation-auto z-10 border-2 border-sky-800
+                 dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
+                 hover:text-white dark:hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 
+                  before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
+                 inline-flex items-center justify-center text-base md:text-lg font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
+                 disabled:pointer-events-none"
           >
             Resume
           </Button>
-          <Button className="bg-white text-teal-900 hover:bg-white/90">
-            Let&apos;s Talk
+          <Button
+            variant="outline"
+            className="relative px-6 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 text-teal-800 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
+                 dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
+                 hover:text-white dark:hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 
+                  before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
+                 inline-flex items-center justify-center text-base md:text-lg font-semibold  shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
+                 disabled:pointer-events-none"
+          >
+            Les&apos;t talk
           </Button>
         </div>
         <p className="text-white/60">
