@@ -44,6 +44,10 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        'custom-blue': '#484b6a',
+        'custom-gray': '#9394a5',
+        'custom-slate': '#d2d3db',
+
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -88,27 +92,27 @@ const config: Config = {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
-    function ({ addUtilities }) {
-      const newUtilities = {
-        ".backface-hidden": {
-          "backface-visibility": "hidden",
-        },
-        ".perspective-1000": {
-          perspective: "1000px",
-        },
-        ".transform-style-preserve-3d": {
-          "transform-style": "preserve-3d",
-        },
-        ".rotate-y-180": {
-          transform: "rotateY(180deg)",
-        },
-        ".transform-style-3d": {
-          "transform-style": "preserve-3d",
-        },
-      };
-      addUtilities(newUtilities);
-    },
+    // require("tailwindcss-animate"),
+    // function ({ addUtilities }) {
+    //   const newUtilities = {
+    //     ".backface-hidden": {
+    //       "backface-visibility": "hidden",
+    //     },
+    //     ".perspective-1000": {
+    //       perspective: "1000px",
+    //     },
+    //     ".transform-style-preserve-3d": {
+    //       "transform-style": "preserve-3d",
+    //     },
+    //     ".rotate-y-180": {
+    //       transform: "rotateY(180deg)",
+    //     },
+    //     ".transform-style-3d": {
+    //       "transform-style": "preserve-3d",
+    //     },
+    //   };
+    //   addUtilities(newUtilities);
+    // },
   ],
 };
 export default config;

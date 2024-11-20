@@ -1,17 +1,19 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
-import Img1 from "../../assets/slides/content.jpg"
+import Img1 from "../../assets/slides/content.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const TextReveal = () => {
   const content = useRef(null);
+  const textRef = useRef<HTMLSpanElement>(null);
+  const divTriggerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Ensure that the content element is available
@@ -19,6 +21,8 @@ const TextReveal = () => {
       console.error("Content element not found!");
       return;
     }
+    let splitInstance: SplitType | null = null;
+    let tl: gsap.core.Timeline | null = null;
 
     // Initialize SplitType on the content element
     new SplitType(content.current, {
@@ -34,33 +38,66 @@ const TextReveal = () => {
       stagger: 0.5,
       scrollTrigger: {
         trigger: content.current,
-        start: "top 70%",
+        start: "top 60%",
         end: "top 20%",
         scrub: 0.5,
-
       },
     });
 
+    const createSplit = () => {
+      if (splitInstance) splitInstance.revert();
+      if (tl) tl.kill();
+
+      splitInstance = new SplitType(textRef.current!, {
+        types: "chars",
+        tagName: "span",
+      });
+
+      tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: divTriggerRef.current,
+            start: "top 80%",
+            end: "top 40%",
+            scrub: 0.75,
+          },
+        })
+        .set(
+          splitInstance.chars,
+          {
+            color: "#e51d1d",
+            stagger: 2,
+          },
+          0.1
+        );
+    };
+
+    createSplit();
+
     // Cleanup GSAP and ScrollTrigger on unmount to avoid memory leaks
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
   return (
-    <div className="relative h-screen">
-      <div
-        className="w-full bg-lime-800 justify-center items-center"
-      >
-        <div>
-          <h1 ref={content} className="content text-6xl font-semibold text-gray-100 p-24">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam.
-          </h1>
-        </div>
+    <div className="h-[600px]">
+    <div className="flex h-full bg-custom-blue w-full items-center justify-center p-24">
+      <div ref={divTriggerRef} className="flex flex-col md:flex-row">
+        <h1
+          ref={content}
+          className="content text-4xl md:text-5xl font-semibold text-gray-100 text-center mr-4"
+        >
+          Interested in
+        </h1>
+        <span
+          ref={textRef}
+          className="text-4xl md:text-5xl text-white font-bold">
+          Collaboration{" "}?
+        </span>
       </div>
     </div>
+  </div>
   );
 };
 

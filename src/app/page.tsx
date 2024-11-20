@@ -1,7 +1,6 @@
-
-import Profiles from "./public/Profiles"
-import StackPage from "./public/StackPage"
-import AboutCarousel from './public/AboutCarousel'
+import Profiles from "./public/Profiles";
+import StackPage from "./public/StackPage";
+import AboutCarousel from "./public/AboutCarousel";
 import MyProject from "./public/ProjectPage";
 import ExperiencePage from "./public/ExperiencePage";
 import GithubRepository from "./component/home/github-repository";
@@ -10,7 +9,7 @@ import Preloader from "./component/common/Preloader";
 import TextReveal from "./component/common/TextReveal";
 import TextScroll from "./component/common/TextScroll";
 import ProjectWork from "./public/ProjectWork";
-import CardProfileRev from "./public/CardProfileRev"
+import CardProfileRev from "./public/CardProfileRev";
 
 export default function Home() {
   return (
@@ -19,15 +18,15 @@ export default function Home() {
       {/* <Profiles /> */}
       <CardProfileRev />
       <AboutCarousel />
-      {/* <TextReveal />       */}
+
       <ExperiencePage />
       {/* <Aaa /> */}
       <ProjectWork />
       {/* <MyProject /> */}
       {/* <StackPage /> */}
 
-
       <GithubRepository />
+      <TextReveal />
     </main>
   );
 }

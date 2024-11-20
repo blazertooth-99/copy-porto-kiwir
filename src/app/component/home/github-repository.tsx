@@ -9,10 +9,12 @@ import { Button } from '@/components/ui/button'
 interface Repository {
   id: number
   name: string
+  full_name: string
   description: string
   stargazers_count: number
   forks_count: number
   html_url: string
+  language: string
 }
 
 export default function GithubRepository() {
@@ -102,8 +104,8 @@ export default function GithubRepository() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">My GitHub Repositories</h1>
+    <div className="container w-full mx-auto px-5 py-10 bg-custom-blue">
+      <h1 className="text-4xl font-bold mb-8 text-center text-black dark:text-white">My GitHub Repositories</h1>
       {/* <div className="mb-6 relative">
         <input
           type="text"
@@ -115,7 +117,7 @@ export default function GithubRepository() {
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
       </div> */}
       <motion.div
-        className="mt-8 grid md:grid-cols-2 grid-cols-1 md:gap-5"
+        className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 items-stretch"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -124,16 +126,16 @@ export default function GithubRepository() {
         {displayedRepos.map((repo) => (
           <motion.div
             key={repo.id}
-            className="p-6 border dark:border-[#1E293B] border-[#CBD5E1] dark:bg-[#0F172A] bg-[#ffffff] hover:dark:bg-[#1E293B] hover:bg-[#CBD5E1] rounded-xl mb-3"
+            className="p-5 m-5 border dark:border-[#1E293B] border-[#CBD5E1] dark:bg-[#0F172A] bg-[#ffffff] hover:dark:bg-[#1E293B] hover:bg-[#CBD5E1] rounded-xl  items-stretch"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="p-6">
+            <div className="p-5 items-stretch">
               <h2 className="text-xl font-semibold mb-2 text-black">
 
                   {repo.name}
               </h2>
-              <p className="line-clamp-2 text-md text-gray-950">{repo.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}</p>
+              <p className="line-clamp-2 text-md text-gray-950">{repo.description || '-'}</p>
               <div className="flex items-center flex-wrap -m-3 pt-5">
                 <div className="flex items-center">
                   <Github className="w-4 h-4 mr-1 text-gray-500" />
@@ -141,8 +143,9 @@ export default function GithubRepository() {
                 <div className="flex items-center">
                   <span className="ml-2 text-lightText transition-colors duration-500">
                   <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-500">
-                    LoremIpsum/blabl..
+                    {repo.full_name}
                   </a>
+                  {repo.language}
                   </span>
                 </div>
               </div>

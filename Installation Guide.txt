@@ -34,3 +34,9 @@ npm install vanilla-tilt
 npm install @react-icons/all-files --save
 npx shadcn@latest add tooltip
 
+COLOR LIGHT MDOE :
+neutral-50
+slate-200
+'custom-blue'
+'custom-gray'
+'custom-slate'

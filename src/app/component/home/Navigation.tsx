@@ -19,7 +19,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import DarkMode from "./dark-mode-switcher";
-import BurgerMenu from "./burgermenu";
+import BurgerMenu from "./BurgerMenu";
 
 const Navbar = (props: any) => {
   const [position, setPosition] = useState({
@@ -61,14 +61,6 @@ const Navbar = (props: any) => {
                 >
                   <Tab setPosition={setPosition}>Home</Tab>
                 </Link>
-
-                <Link
-                  href="#STACK"
-                  className="font-medium items-center text-xs transition-colors"
-                  prefetch={false}
-                >
-                  <Tab setPosition={setPosition}>Stack</Tab>
-                </Link>
                 <Link
                   href="#EXPERIENCE"
                   className="font-medium items-center text-xs transition-colors"
@@ -84,7 +76,7 @@ const Navbar = (props: any) => {
                   <Tab setPosition={setPosition}>Project</Tab>
                 </Link>
                 <Link
-                  href="#FOOTER"
+                  href="#CONTACT"
                   className="font-medium items-center text-xs transition-colors"
                   prefetch={false}
                 >
@@ -99,9 +91,9 @@ const Navbar = (props: any) => {
           </div>
         </div>
       </nav>
-      {/* <div className="visible md:invisible">
+      <div className="visible md:invisible">
         <BurgerMenu />
-      </div> */}
+      </div>
     </header>
   );
 };

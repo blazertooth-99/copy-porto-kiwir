@@ -3,7 +3,7 @@ import { Inter, Montserrat, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 // import Navbar from "./component/home/navbar";
 import Navigation from "./component/home/Navigation";
-import Footer from "./component/home/footer";
+import Footer from "./component/home/Footer";
 import { ReactLenis } from "./utils/lenis";
 
 // const inter = Inter({ subsets: ["latin"] });

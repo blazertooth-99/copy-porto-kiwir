@@ -96,10 +96,10 @@ export default function CardProfileRev() {
     },
   ];
   return (
-    <div className="flex min-h-screen place-items-center justify-center py-10 px-5 bg-slate-300 dark:bg-gray-900">
+    <div className="flex min-h-screen place-items-center justify-center py-10 px-5 bg-custom-blue dark:bg-gray-900">
       <div
         ref={cardRef}
-        className="bg-slate-100 dark:bg-gray-700 dark:border dark:border-sky-100 h-full rounded-[25px] w-full md:w-[95%] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full flex flex-col md:flex-row relative drop-shadow-xl"
+        className="bg-custom-slate dark:bg-gray-700 dark:border dark:border-sky-100 h-full rounded-[25px] md:w-[95%] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full flex flex-col md:flex-row relative drop-shadow-xl"
       >
         <div className="w-full md:w-1/3 border-b-4 sm:border-b-4 md:border-y-0 md:border-r-4 border-sky-900">
           <div className="sm:h-2/3 md:h-full w-full md:rounded-tl-[25px] md:rounded-bl-[25px]">
