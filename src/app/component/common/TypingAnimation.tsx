@@ -39,7 +39,7 @@ export default function TypingAnimation() {
   }, [])
 
   return (
-    <div className="relative items-center justif-center">
+    <div className="ml-2 relative items-center justif-center">
       <p
         ref={textRef}
         className="text-lg md:text-xl font-semibold text-red-700"

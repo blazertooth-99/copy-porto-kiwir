@@ -80,7 +80,7 @@ export default function AboutCarousel() {
       if (previousItem) {
         tl.to(
           item,
-          { background: "#ed3c3c", boxShadow: "0 0 16px #ed3c3c" },
+          { background: "#fda4af", boxShadow: "0 0 16px #f43f5e" },
           1 * (i - 1)
         )
           .to(
@@ -109,8 +109,8 @@ export default function AboutCarousel() {
           .add(`our-work-${i + 1}`);
       } else {
         gsap.set(item, {
-          background: "#ed3c3c",
-          boxShadow: "0 0 16px #ed3c3c",
+          background: "#fda4af",
+          boxShadow: "0 0 16px #f43f5e",
         });
         tl.to(
           slides[i],
@@ -150,13 +150,13 @@ export default function AboutCarousel() {
   }, []);
 
   return (
-    <div id="ABOUT" className="relative min-h-screen h-[300vh] bg-gray-900/70 w-full p-4 sm:p-6 md:p-8 lg:p-12">
+    <div id="ABOUT" className="relative min-h-screen h-[300vh] bg-custom-blue w-full p-4 sm:p-6 md:p-8 lg:p-12">
       <FloatingParticles />
       <div ref={sectionRef} className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="w-full z-50 lg:w-1/3 mb-8 lg:mb-0 flex flex-col">
             <h1 ref={typeSplit} className="headline text-2xl sm:text-4xl md:text-5xl font-bold">
-              <span className="text-white">About</span> <span className="text-red-200">Me</span>
+              <span className="text-white">About</span> <span className="text-rose-500 font-extrabold">Me</span>
             </h1>
           </div>
           <div className="w-full lg:w-2/3 slider relative items-center justify-center mt-52">
@@ -197,7 +197,7 @@ export default function AboutCarousel() {
               {carouselItems.map((item) => (
                 <li
                   key={item.id}
-                  className="nav_item w-3 h-3 bg-[#424b58] border border-white border-opacity-20 rounded-full cursor-pointer"
+                  className="nav_item w-3 h-3 bg-gray-100 border border-white border-opacity-20 rounded-full cursor-pointer"
                   data-target={item.id}
                 ></li>
               ))}

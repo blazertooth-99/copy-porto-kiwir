@@ -117,7 +117,7 @@ export default function ExperiencePage() {
     <div
       id="EXPERIENCE"
       ref={containerRef}
-      className="min-h-screen w-full py-10 bg-gray-900/70"
+      className="min-h-screen w-full py-10 bg-custom-blue"
     >
       <h1 className="text-4xl font-bold mb-12 text-center animate-pulse text-neon-blue">
         My Experience
@@ -156,7 +156,7 @@ export default function ExperiencePage() {
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className="experience-item bg-slate-300 w-full flex items-center my-10 justify-center p-5  drop-shadow-[5px_5px_0_#000] transition-all transform duration-600 hover:translate-x-[-5px] hover:translate-y-[-5px] hover:drop-shadow-[12px_12px_0_#000]"
+              className="experience-item bg-custom-slate w-full flex items-center my-10 justify-center p-5  drop-shadow-[5px_5px_0_#000] transition-all transform duration-600 hover:translate-x-[-5px] hover:translate-y-[-5px] hover:drop-shadow-[12px_12px_0_#000]"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               initial={{ scale: 1 }}
