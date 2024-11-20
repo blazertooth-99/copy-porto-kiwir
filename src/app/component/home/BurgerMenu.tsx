@@ -51,7 +51,7 @@ export default function BurgerMenu() {
   return (
     <>
       <button
-        className="fixed top-4 right-4 z-50 p-2 text-white bg-black rounded-full md:hidden"
+        className="fixed top-4 right-4 z-50 p-2 text-white bg-black/90 dark:bg-slate-800/90 rounded-full md:hidden"
         onClick={toggleMenu}
         aria-expanded={isOpen}
         aria-label="Toggle menu"

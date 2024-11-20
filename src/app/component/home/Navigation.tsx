@@ -30,7 +30,7 @@ const Navbar = (props: any) => {
 
   return (
     <header>
-      <nav className="fixed w-fit mx-auto rounded-full border inset-x-0 top-0 mt-2 z-50 bg-white/30 backdrop-blur-md shadow-lg dark:bg-neutral-800/30">
+      <nav className="invisible md:visible fixed w-fit mx-auto rounded-full border border-cyan-600 dark:border dark:border-teal-400 inset-x-0 top-0 mt-2 z-50 bg-white/30 backdrop-blur-md shadow-lg dark:bg-neutral-800/30">
         <div className="container">
           <div className="flex mx-auto w-full justify-center gap-5 px-2 items-center">
             <Link href="/" className="flex items-center" prefetch={false}>
@@ -91,7 +91,7 @@ const Navbar = (props: any) => {
           </div>
         </div>
       </nav>
-      <div className="visible md:invisible">
+      <div>
         <BurgerMenu />
       </div>
     </header>
@@ -115,7 +115,7 @@ const Tab = ({ children, setPosition }: any) => {
           opacity: 1,
         });
       }}
-      className="relative z-10 block cursor-pointer px-3 py-1 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+      className="relative z-10 block cursor-pointer px-3 py-1 uppercase text-black dark:text-white font-semibold md:px-5 md:py-3 md:text-base"
     >
       {children}
     </li>
@@ -127,7 +127,7 @@ const Cursor = ({ position }: any) => {
       animate={{
         ...position,
       }}
-      className="absolute z-0 h-7 rounded-full bg-gradient-to-r from-black/70 to black/50 shadow-inner md:h-12"
+      className="absolute z-0 h-7 rounded-full dark:bg-slate-700 bg-slate-50 shadow-inner md:h-12"
     />
   );
 };

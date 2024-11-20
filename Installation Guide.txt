@@ -40,3 +40,11 @@ slate-200
 'custom-blue'
 'custom-gray'
 'custom-slate'
+
+
+button:
+teal-400
+teal-800
+
+Typing Animation:
+cyan-600

@@ -156,7 +156,7 @@ export default function AboutCarousel() {
         <div className="flex flex-col lg:flex-row items-center">
           <div className="w-full z-50 lg:w-1/3 mb-8 lg:mb-0 flex flex-col">
             <h1 ref={typeSplit} className="headline text-2xl sm:text-4xl md:text-5xl font-bold">
-              <span className="text-white">About</span> <span className="text-rose-500 font-extrabold">Me</span>
+              <span className="text-white">About</span> <span className="text-cyan-600 dark:text-teal-400 font-extrabold">Me</span>
             </h1>
           </div>
           <div className="w-full lg:w-2/3 slider relative items-center justify-center mt-52">
