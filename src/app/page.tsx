@@ -10,21 +10,17 @@ import TextReveal from "./component/common/TextReveal";
 import TextScroll from "./component/common/TextScroll";
 import ProjectWork from "./public/ProjectWork";
 import CardProfileRev from "./public/CardProfileRev";
+import TechStack from "./public/TechStack";
 
 export default function Home() {
   return (
     <main className="relative mx-auto w-screen items-center justify-center mb-auto bg-zinc-100">
       {/* <Preloader /> */}
-      {/* <Profiles /> */}
       <CardProfileRev />
-      <AboutCarousel />
-
+      <TechStack />
+      {/* <AboutCarousel /> */}
       <ExperiencePage />
-      {/* <Aaa /> */}
       <ProjectWork />
-      {/* <MyProject /> */}
-      {/* <StackPage /> */}
-
       <GithubRepository />
       <TextReveal />
     </main>

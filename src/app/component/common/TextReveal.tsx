@@ -65,7 +65,7 @@ const TextReveal = () => {
         .set(
           splitInstance.chars,
           {
-            color: "#e51d1d",
+            color: "#0891B2",
             stagger: 2,
           },
           0.1
@@ -81,18 +81,18 @@ const TextReveal = () => {
   }, []);
 
   return (
-    <div className="h-[600px]">
-    <div className="flex h-full bg-custom-blue w-full items-center justify-center p-24">
+    <div className="h-[350px] md:h-[500px]">
+    <div className="flex h-full bg-custom-blue dark:bg-slate-800 w-full items-center justify-center p-24">
       <div ref={divTriggerRef} className="flex flex-col md:flex-row">
         <h1
           ref={content}
-          className="content text-4xl md:text-5xl font-semibold text-gray-100 text-center mr-4"
+          className="content text-4xl md:text-5xl font-semibold text-gray-100 text-center mr-4 whitespace-nowrap"
         >
           Interested in
         </h1>
         <span
           ref={textRef}
-          className="text-4xl md:text-5xl text-white font-bold">
+          className="text-4xl md:text-5xl text-white font-bold whitespace-nowrap">
           Collaboration{" "}?
         </span>
       </div>

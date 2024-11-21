@@ -117,13 +117,13 @@ export default function ExperiencePage() {
     <div
       id="EXPERIENCE"
       ref={containerRef}
-      className="min-h-screen w-full py-10 bg-custom-blue"
+      className="min-h-screen w-full py-10 bg-custom-blue dark:bg-slate-800"
     >
-      <h1 className="text-4xl font-bold mb-12 text-center animate-pulse text-neon-blue">
-        My Experience
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center animate-pulse text-white">
+        My <span className="text-cyan-600 dark:text-teal-400">Experience</span>
       </h1>
 
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative w-full mx-auto">
         <svg
           viewBox="0 0 2 800"
           className="absolute left-0 transform -translate-x-1/2 w-1 h-full ml-5"
@@ -152,46 +152,46 @@ export default function ExperiencePage() {
           </svg>
         )}
 
-        <div className="space-y-36 md:space-y-52 relative z-10 p-10 w-full">
+        <div className="space-y-9 md:space-y-12 relative z-10 p-12 md:p-16 mr-10 md:mr-14 w-full">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className="experience-item bg-custom-slate w-full flex items-center my-10 justify-center p-5  drop-shadow-[5px_5px_0_#000] transition-all transform duration-600 hover:translate-x-[-5px] hover:translate-y-[-5px] hover:drop-shadow-[12px_12px_0_#000]"
+              className="experience-item bg-custom-slate dark:bg-gray-700 w-full flex items-center justify-center p-2 drop-shadow-[5px_5px_0_#000] transition-all transform duration-600 hover:translate-x-[-5px] hover:translate-y-[-5px] hover:drop-shadow-[12px_12px_0_#000]"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              initial={{ scale: 1 }}
+              initial={{ scale: 1.05 }}
               animate={{
-                scale: hoveredIndex === index ? 1.1 : 1,
+                scale: hoveredIndex === index ? 1.02 : 1,
               }}
               transition={{ duration: 0.3 }}
             >
               <div
-                className={`w-11/12 ${
-                  index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"
+                className={`w-full ${
+                  index % 2 === 0 ? "text-right pr-2" : "text-left pl-2"
                 }`}
               >
                 <motion.div
-                  className="w-full rounded-full p-8"
+                  className="w-full rounded-full p-8 space-y-2"
                 >
-                  <span className="block text-2xl font-extrabold uppercase text-black mb-4 relative overflow-hidden">
+                  <span className="block text-xl md:text-3xl font-extrabold uppercase text-cyan-600 dark:text-teal-400 mb-4 relative overflow-hidden">
                     {exp.company}
                     <div
-                      className={`border-t-2 border-black rounded-xl transition-all duration-500 ${
+                      className={`border-t-2 border-cyan-600 dark:border-teal-400 rounded-xl transition-all duration-500 ${
                         hoveredIndex === index ? "w-full" : "w-0"
                       }`}
                     ></div>
                   </span>
-                  <h4 className="text-xl font-bold mb-1 block uppercase text-black relative overflow-hidden">
+                  <h4 className="text-lg md:text-2xl font-bold mb-1 block uppercase text-black dark:text-white relative overflow-hidden">
                     {exp.year}
                   </h4>
-                  <p className="text-lg font-semibold">{exp.title}</p>
-                  <p className="text-md font-normal">{exp.Jobdesc}</p>
-                  <div className="border-b border-gray-400 rounded-xl w-full mt-5"></div>
-                  <div className={`flex space-x-1 mt-5 gap-2 ${index % 2 === 0 ? "justify-end pl-8" : "justify-start pr-8"}`}>
+                  <p className="text-base md:text-lg font-semibold">{exp.title}</p>
+                  <p className="text-sm md:text-base font-normal">{exp.Jobdesc}</p>
+                  <div className="border-b border-slate-800 dark:border-teal-400 rounded-xl w-full mt-5"></div>
+                  <div className={`flex flex-wrap space-x-1 py-5 gap-2 ${index % 2 === 0 ? "justify-end pl-2" : "justify-start pr-2"}`}>
                         {exp.Tag.map((tags, index) => (
                           <span
                             key={index}
-                            className="bg-sky-950 px-2 py-1 text-white text-xs rounded"
+                            className="bg-sky-950 dark:bg-teal-400 px-2 py-1 text-white text-xs md:text-sm rounded"
                           >
                             {tags}
                           </span>
