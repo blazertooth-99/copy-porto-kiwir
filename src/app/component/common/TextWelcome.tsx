@@ -96,7 +96,7 @@ const TextWelcome = () => {
         <div className="flex flex-col w-full">
           <div className="mt-10 space-y-1">
             <span className="flex text-xl md:text-4xl lg:text-6xl font-bold ">
-              <span className="text-cyan-600 dark:text-teal-400">Hi!&nbsp;</span> there!{" "}
+              <span className="text-cyan-600 dark:text-teal-400 animate-pulse">Hi!&nbsp;</span> there!{" "}
               <span>
                 <HandWave />
               </span>

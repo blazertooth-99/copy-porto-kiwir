@@ -81,7 +81,7 @@ const TextReveal = () => {
   }, []);
 
   return (
-    <div className="h-[350px] md:h-[500px]">
+    <div className="h-[600px]">
     <div className="flex h-full bg-custom-blue dark:bg-slate-800 w-full items-center justify-center p-24">
       <div ref={divTriggerRef} className="flex flex-col md:flex-row">
         <h1

@@ -47,16 +47,8 @@ const projectList: ProjectList[] = [
     projectImg: projectImg1,
     altImg: "Test Image",
     projectLink: "https://github.com",
-    projectSubtitle: "Short description of the project. Short description of the project. Short description of the project. Short description of the project.",
-  },
-  {
-    id: 4,
-    projectTitle: "It's project 4",
-    projectImg: projectImg1,
-    altImg: "Test Image",
-    projectLink: "https://github.com",
     projectSubtitle:
-      "Short description of the project.Short description of the project.Short description of the project.",
+      "Short description of the project. Short description of the project. Short description of the project. Short description of the project.",
   },
 ];
 
@@ -81,16 +73,18 @@ export default function HoverImage() {
   };
 
   return (
-    <div id="PROJECT" className="min-h-screen bg-custom-blue">
+    <div id="PROJECT" className="py-24 px-5 min-h-screen bg-custom-blue dark:bg-slate-800">
       <div className="flex items-center justify-center mx-auto">
-        <h1 className="text-4xl font-bold">Work Project</h1>
+        <h1 className="my-20 text-3xl md:text-4xl lg:text-5xl font-bold text-center animate-pulse text-white">
+          Work <span className="text-cyan-600 dark:text-teal-400">Project</span>
+        </h1>
       </div>
-      <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5 place-items-center w-full items-stretch">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-2 place-items-center w-full items-stretch">
         {projectList.map((project, index) => (
           <Card
             key={project.id}
             ref={(el) => (refs.current[index] = el!)}
-            className="relative h-auto rounded-xl w-3/4 md:w-full flex-col shadow-lg overflow-hidden group cursor-none bg-custom-slate"
+            className="relative h-auto rounded-xl w-3/4 md:w-full flex-col shadow-lg overflow-hidden group cursor-none bg-custom-slate dark:bg-gray-700 border-cyan-600 dark:border dark:border-teal-400"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             onMouseMove={(event) => handleMouseMove(event, index)}
@@ -112,39 +106,39 @@ export default function HoverImage() {
                     className="absolute inset-0 bg-black bg-opacity-50 pointer-events-none"
                   >
                     <motion.div
-                      className="absolute flex items-center justify-center px-4 py-2 bg-white dark:bg-gray-700 rounded-full shadow-lg pointer-events-none"
+                      className="absolute flex items-center justify-center px-4 py-2 bg-white dark:bg-slate-800 rounded-full shadow-lg pointer-events-none"
                       style={{ x: textX, y: textY }}
                     >
-                      <span className="mr-2 text-sm font-semibold text-gray-800 dark:text-white">
+                      <span className="mr-2 text-sm font-semibold text-gray-800 dark:text-teal-400">
                         View Project
                       </span>
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
                         transition={{ repeat: Infinity, duration: 1.5 }}
                       >
-                        <ArrowRight className="w-4 h-4 text-gray-800 duration-500" />
+                        <ArrowRight className="w-4 h-4 text-gray-800 dark:text-teal-400 duration-500" />
                       </motion.div>
                     </motion.div>
                   </motion.div>
                 )}
               </div>
             </CardHeader>
-            <div className="">
+            <div className="border-t border-cyan-600 dark:border-teal-400">
               <CardContent className="grid grid-cols-2 p-5 h-full items-stretch b">
-                <CardTitle className="text-lg font-semibold mb-2">
+                <CardTitle className="text-xl md:text-2xl font-semibold mb-2 text-black dark:text-teal-400">
                   {project.projectTitle}
                 </CardTitle>
                 <Link
                   href={project.projectLink}
                   target="_blank"
-                  className="relative mb-2 hover:text-purple-300 cursor-default right-0 top-0 justify-self-end"
+                  className="relative mb-2 hover:text-sky-700 dark:hover:text-teal-400 cursor-default right-0 top-0 justify-self-end"
                   onMouseEnter={() => setHoveredIndex(null)}
                   onMouseLeave={() => setHoveredIndex(index)}
                   onMouseMove={(event) => handleMouseMove(event, index)}
                 >
                   <FaExternalLinkAlt />
                 </Link>
-                <p className="text-sm text-gray-600 mb-5 col-span-2">
+                <p className="text-base md:text-lg text-black dark:text-white inline-flex mb-5 col-span-2">
                   {project.projectSubtitle}
                 </p>
               </CardContent>

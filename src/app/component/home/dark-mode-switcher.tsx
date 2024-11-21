@@ -17,15 +17,12 @@ const DarkMode = () => {
     } else if (prefersDark) {
       setTheme("dark")
     }
+    document.documentElement.classList.toggle("dark", savedTheme === "dark" || (!savedTheme && prefersDark))
   }, [])
 
   useEffect(() => {
     // Update the HTML class and save the theme preference
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-    }
+    document.documentElement.classList.toggle("dark", theme === "dark")
     localStorage.setItem("theme", theme)
   }, [theme])
 
@@ -36,15 +33,15 @@ const DarkMode = () => {
   return (
     <Button
       variant="outline"
-      className="group/button relative inline-flex items-center justify-center rounded-full overflow-hidden bg-white-100/30 backdrop-blur-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-gray-600/80 border border-white/20"
+      className="group/button relative inline-flex items-center justify-center rounded-full overflow-hidden bg-white/80 dark:bg-gray-700 backdrop-blur-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-gray-600/20 border border-white/20 dark:border-black/20 w-11 h-11"
       size="icon"
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
     >
       {theme === "light" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-yellow-200" />
+        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-yellow-600" />
       ) : (
-        <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-gray-200" />
+        <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-teal-200" />
       )}
       <span className="sr-only">Toggle theme</span>
     </Button>
