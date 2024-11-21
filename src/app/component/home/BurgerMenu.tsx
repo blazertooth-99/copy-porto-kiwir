@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import { Menu, X } from "lucide-react";
+import { Menu, X } from 'lucide-react';
 import DarkMode from "./dark-mode-switcher";
 
 export default function BurgerMenu() {
@@ -10,6 +10,7 @@ export default function BurgerMenu() {
   const menuRef = useRef(null);
   const menuItemsRef = useRef([]);
   const iconRef = useRef(null);
+  const darkModeSwitcherRef = useRef(null);
 
   const menuItems = ["Home", "Experience", "Project", "Contact"];
 
@@ -31,6 +32,12 @@ export default function BurgerMenu() {
         duration: 0.3,
         ease: "power2.inOut",
       });
+      // Animate dark mode switcher
+      gsap.fromTo(
+        darkModeSwitcherRef.current,
+        { opacity: 0, scale: 0.5, x: 5, duration: 0.5},
+        { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" }
+      );
     } else {
       gsap.to(menuRef.current, {
         opacity: 0,
@@ -43,6 +50,14 @@ export default function BurgerMenu() {
         duration: 0.3,
         ease: "power2.inOut",
       });
+      // Hide dark mode switcher
+      gsap.to(darkModeSwitcherRef.current, {
+        opacity: 0,
+        scale: 0.5,
+        x: 40,
+        duration: 0.3,
+        ease: "power2.in",
+      });
     }
   }, [isOpen]);
 
@@ -51,7 +66,7 @@ export default function BurgerMenu() {
   return (
     <>
       <button
-        className="fixed top-4 right-4 z-50 p-2 text-white bg-black/90 dark:bg-slate-800/90 rounded-full md:hidden"
+        className="fixed top-4 right-4 z-50 p-2 text-cyan-600 dark:text-teal-400 bg-white/10 dark:bg-black/20 border-2 border-cyan-600 dark:border-teal-400 rounded-full md:hidden backdrop-blur-lg"
         onClick={toggleMenu}
         aria-expanded={isOpen}
         aria-label="Toggle menu"
@@ -72,22 +87,23 @@ export default function BurgerMenu() {
         </div>
       </button>
 
+      <div ref={darkModeSwitcherRef} className="fixed top-4 right-20 z-50 md:hidden opacity-0">
+        <DarkMode />
+      </div>
+
       {isOpen && (
         <div
           ref={menuRef}
-          className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-lg md:hidden"
           onClick={toggleMenu}
         >
           <nav className="text-center" onClick={(e) => e.stopPropagation()}>
-            <div className="absolute top-4 right-20 p-2">
-              <DarkMode />
-            </div>
             {menuItems.map((item, index) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 ref={(el) => (menuItemsRef.current[index] = el)}
-                className="block py-4 text-4xl font-bold text-white transition-colors hover:text-gray-300"
+                className="block py-4 text-4xl font-bold text-white dark:text-teal-400 transition-colors hover:text-cyan-600 dark:hover:text-teal-200"
                 onClick={toggleMenu}
               >
                 {item}
@@ -99,3 +115,4 @@ export default function BurgerMenu() {
     </>
   );
 }
+

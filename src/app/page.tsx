@@ -21,7 +21,7 @@ export default function Home() {
       {/* <AboutCarousel /> */}
       <ExperiencePage />
       <ProjectWork />
-      <GithubRepository />
+      {/* <GithubRepository /> */}
       <TextReveal />
     </main>
   );

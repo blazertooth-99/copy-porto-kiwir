@@ -4,15 +4,15 @@ import Contact from "../../public/Contact"
 
 export default function Component() {
   return (
-    <footer className="relative w-full h-screen bg-cover overflow-hidden items-stretch">
-      <Image 
+    <footer className="relative w-full h-5/6 pt-80 bg-cover overflow-hidden items-stretch bg-custom-blue dark:bg-slate-800">
+      {/* <Image 
         src={FooterBg2}
         alt="Descriptive text for screen readers"
         fill
-        className="object-cover w-full"
+        className="object-cover w-full h-full"
         priority
       
-      />
+      /> */}
       <Contact />
     </footer>
   )

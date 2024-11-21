@@ -159,7 +159,7 @@ export default function ExperiencePage() {
               className="experience-item bg-custom-slate dark:bg-gray-700 w-full flex items-center justify-center p-2 drop-shadow-[5px_5px_0_#000] transition-all transform duration-600 hover:translate-x-[-5px] hover:translate-y-[-5px] hover:drop-shadow-[12px_12px_0_#000]"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              initial={{ scale: 1.05 }}
+              initial={{ scale: 1.01 }}
               animate={{
                 scale: hoveredIndex === index ? 1.02 : 1,
               }}
