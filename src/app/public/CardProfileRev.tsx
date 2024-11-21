@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useSpring, useTransform } from "framer-motion";
-import { ArrowDown } from "lucide-react";
 import { gsap } from "gsap";
 import {
   FaReact,
@@ -31,6 +29,7 @@ import Img1 from "../assets/sample.webp";
 import Img2 from "../assets/slides/content.jpg";
 import TextWelcome from "../component/common/TextWelcome";
 import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export default function CardProfileRev() {
   const cardRef = useRef(null);
@@ -66,43 +65,43 @@ export default function CardProfileRev() {
       }
     });
   }, []);
-  const MyStackIcon = [
-    {
-      title: "React",
-      icon: <FaReact />,
-    },
-    {
-      title: "Vite",
-      icon: <SiVite />,
-    },
-    {
-      title: "CSS 3",
-      icon: <FaCss3Alt />,
-    },
-    {
-      title: "Tailwind Css",
-      icon: <SiTailwindcss />,
-    },
-    {
-      title: "Next Js",
-      icon: <SiNextdotjs />,
-    },
-    {
-      title: "Javascript",
-      icon: <SiJavascript />,
-    },
-    {
-      title: "Figma",
-      icon: <FaFigma />,
-    },
-  ];
+  // const MyStackIcon = [
+  //   {
+  //     title: "React",
+  //     icon: <FaReact />,
+  //   },
+  //   {
+  //     title: "Vite",
+  //     icon: <SiVite />,
+  //   },
+  //   {
+  //     title: "CSS 3",
+  //     icon: <FaCss3Alt />,
+  //   },
+  //   {
+  //     title: "Tailwind Css",
+  //     icon: <SiTailwindcss />,
+  //   },
+  //   {
+  //     title: "Next Js",
+  //     icon: <SiNextdotjs />,
+  //   },
+  //   {
+  //     title: "Javascript",
+  //     icon: <SiJavascript />,
+  //   },
+  //   {
+  //     title: "Figma",
+  //     icon: <FaFigma />,
+  //   },
+  // ];
   return (
-    <div className="flex min-h-screen place-items-center justify-center py-10 px-5 bg-custom-blue dark:bg-slate-800">
+    <div className="flex min-h-screen place-items-center justify-center py-16 px-5 bg-custom-blue dark:bg-gray-700">
       <div
         ref={cardRef}
         className="bg-custom-slate dark:bg-gray-800 border border-cyan-600 dark:border dark:border-teal-400 h-full rounded-[25px] md:w-[95%] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full flex flex-col md:flex-row relative drop-shadow-xl"
       >
-        <div className="w-full md:w-1/3 border-b-4 sm:border-b-4 md:border-y-0 md:border-r-4 border-sky-900">
+        <div className="w-full md:w-1/3 border-b-2 sm:border-b-2 md:border-y-0 md:border-r-2 border-cyan-600 dark:border-teal-400">
           <div className="sm:h-2/3 md:h-full w-full md:rounded-tl-[25px] md:rounded-bl-[25px]">
             <Image
               src={Img2}
@@ -111,60 +110,63 @@ export default function CardProfileRev() {
             />
           </div>
         </div>
-        <div ref={contentRef} className="w-full md:w-2/3 py-5 px-10">
-          <div
-            ref={avatarRef}
-            className="absolute w-20 h-20 md:w-30 md:h-30 lg:w-40 lg:h-40 rounded-full border-6 border-white bg-gradient-to-br from-[#16a085] to-[#f4d03f] top-4 left-0 md:-left-15 lg:-left-20  hover:scale-110"
-          >
-            <Image
-              src={Img1}
-              alt="Image Profiles"
-              fill
-              className="object-cover rounded-full"
-            />
-          </div>
-          <div className="flex justify-end top-0 right-0 flex-row space-x-5">
-            <div>
-              <button className="group w-12 hover:w-44 h-12 hover:bg-sky-600 relative bg-sky-700 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45">
-                <FaLinkedin
-                  y="0"
-                  x="0"
-                  className="w-8 h-8 shrink-0 fill-neutral-50"
-                />
-                <span className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
-                  Christian Satrio
-                </span>
-              </button>
+        <div ref={contentRef} className="w-full md:w-2/3 py-2 px-10">
+          <div className="flex flex-col items-center justify-center p-5 space-y-2 md:space-y-5">
+            <div
+              ref={avatarRef}
+              className="flex w-20 h-20 md:w-30 md:h-30 lg:w-32 lg:h-32 rounded-full border-2 border-cyan-600 dark:border-teal-400 bg-gradient-to-br from-[#16a085] to-[#f4d03f] top-4"
+            >
+              <Image
+                src={Img1}
+                alt="Image Profiles"
+                fill
+                style={{
+                  objectFit: 'contain', // cover, contain, none
+                }}
+                className="rounded-full"
+              />
             </div>
-            <div>
-              <button className="group w-12 hover:w-44 h-12 hover:bg-gray-700 relative bg-gray-900 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-semibold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-gray-900 before:hover:bg-gray-700 before:rotate-45">
-                <FaGithubSquare
-                  y="0"
-                  x="0"
-                  className="w-8 h-8 shrink-0 fill-neutral-50"
-                />
-                <span className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
-                  blazertooth-99
-                </span>
-              </button>
+            <div className="flex justify-end top-0 right-0 flex-row space-x-2 md:space-x-5">
+              <div>
+                <button className="group w-8 h-8 hover:w-32 md:w-12 md:h-12 md:hover:w-44  hover:bg-sky-600 relative bg-sky-700 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45">
+                  <FaLinkedin
+                    y="0"
+                    x="0"
+                    className="w-4 h-4 md:w-8 md:h-8 shrink-0 fill-neutral-50"
+                  />
+                  <span className="origin-left text-xs md:text-base inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
+                    Christian Satrio
+                  </span>
+                </button>
+              </div>
+              <div>
+                <button className="group w-8 h-8 hover:w-32 md:w-12 md:h-12 md:hover:w-44 hover:bg-gray-700 relative bg-gray-900 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-semibold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-gray-900 before:hover:bg-gray-700 before:rotate-45">
+                  <FaGithubSquare
+                    y="0"
+                    x="0"
+                    className="w-4 h-4 md:w-8 md:h-8 shrink-0 fill-neutral-50"
+                  />
+                  <span className="origin-left text-xs md:text-base inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
+                    blazertooth-99
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
-          <div className="px-8 md:px-10 lg:px-16">
+          <div className="border-b-2 border-cyan-600 dark:border-teal-200 w-full"></div>
+          <div className="px-2 md:px-5">
             <TextWelcome />
           </div>
-
-          <p className="px-2 md:px-10 lg:px-16 text-md md:text-xl my-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries,
+          <p className="px-2 md:px-5 text-md md:text-xl mb-4 text-pretty">
+              An enthusiastic person who likes to learnn new things, especially in the field of technology.
+              Has approximately 3 years of working experience. Have worked with various roles such as System Engineer,
+              Fullstack web developer, Freelancer, Design & Software quality assurance.
           </p>
-          <div className="relative gap-2 px-8 md:px-10 lg:px-16">
-            <span className="font-bold text-lg md:text-xl lg:text-2xl">
+          <div className="px-2 py-5 md:px-5 relative gap-2">
+            {/* <span className="font-bold text-lg md:text-xl lg:text-2xl">
               Tech Stack :
-            </span>
-            <div className="grid grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-5 justify-start my-5 items-center w-fit">
+            </span> */}
+            {/* <div className="grid grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-5 justify-start my-5 items-center w-fit">
               {MyStackIcon.map((item) => (
                 <TooltipProvider>
                   <Tooltip>
@@ -181,13 +183,13 @@ export default function CardProfileRev() {
                   </Tooltip>
                 </TooltipProvider>
               ))}
-            </div>
+            </div> */}
 
             <div className="flex flex-col md:flex-row my-2 gap-5">
               <div>
                 <Button
                   variant="outline"
-                  className="relative px-6 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-gray-300 isolation-auto z-10 border-2 border-sky-800
+                  className="relative w-full px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-gray-300 isolation-auto z-10 border-2 border-sky-800
                  dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
                  hover:text-white dark:hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 
                   before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
@@ -201,7 +203,7 @@ export default function CardProfileRev() {
                 <Link href="#CONTACT" prefetch={false}>
                   <Button
                     variant="outline"
-                    className="relative px-6 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 text-black dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
+                    className="relative w-full px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 text-teal-800 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
                  dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
                  hover:text-white dark:hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 
                   before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
