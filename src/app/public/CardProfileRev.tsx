@@ -26,10 +26,10 @@ import {
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Img1 from "../assets/sample.webp";
-import Img2 from "../assets/slides/content.jpg";
+import Img2 from "../assets/paVincent.jpg";
 import TextWelcome from "../component/common/TextWelcome";
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function CardProfileRev() {
   const cardRef = useRef(null);
@@ -102,7 +102,8 @@ export default function CardProfileRev() {
         className="bg-custom-slate dark:bg-gray-700 border border-cyan-600 dark:border dark:border-teal-400 h-full rounded-[25px] md:w-[95%] shadow-[0px_14px_80px_rgba(34,35,58,0.5)] w-full flex flex-col md:flex-row relative drop-shadow-xl"
       >
         <div className="w-full md:w-1/3 border-b-2 sm:border-b-2 md:border-y-0 md:border-r-2 border-cyan-600 dark:border-teal-400">
-          <div className="sm:h-2/3 md:h-full w-full md:rounded-tl-[25px] md:rounded-bl-[25px]">
+          {/* <div className="absolute w-full h-2/4 md:h-full md:w-1/3 inset-0 bg-slate-800/60" /> */}
+          <div className="h-2/3 md:h-full w-full md:rounded-tl-[25px] md:rounded-bl-[25px]">
             <Image
               src={Img2}
               alt="Image Banner"
@@ -168,9 +169,11 @@ export default function CardProfileRev() {
             <TextWelcome />
           </div>
           <p className="px-2 md:px-5 text-md md:text-xl mb-4 text-pretty">
-              An enthusiastic person who likes to learnn new things, especially in the field of technology.
-              Has approximately 3 years of working experience. Have worked with various roles such as System Engineer,
-              Fullstack web developer, Freelancer, Design & Software quality assurance.
+            An enthusiastic person who likes to learnn new things, especially in
+            the field of technology. Has approximately 3 years of working
+            experience. Have worked with various roles such as System Engineer,
+            Fullstack web developer, Freelancer, Design & Software quality
+            assurance.
           </p>
           <div className="px-2 py-5 md:px-5 relative gap-2">
             {/* <span className="font-bold text-lg md:text-xl lg:text-2xl">
