@@ -55,11 +55,13 @@ const TextReveal = () => {
 
       tl = gsap
         .timeline({
+          duration: 1,
           scrollTrigger: {
-            trigger: divTriggerRef.current,
-            start: "top 90%",
-            end: "top 70%",
-            scrub: 1,
+            trigger: textRef.current,
+            start: "top 60%",
+            end: "center center",
+            scrub: 0,
+            markers: true,
           },
         })
         .set(
@@ -81,7 +83,7 @@ const TextReveal = () => {
   }, []);
 
   return (
-    <div className="h-[600px]">
+    <div className="h-[300px] md:h-[400px] lg:h-[500px] w-full">
     <div className="flex h-full bg-custom-blue dark:bg-slate-800 w-full items-center justify-center p-24">
       <div ref={divTriggerRef} className="flex flex-col md:flex-row">
         <h1
@@ -93,7 +95,7 @@ const TextReveal = () => {
         <span
           ref={textRef}
           className="text-4xl md:text-5xl text-white font-bold whitespace-nowrap">
-          Collaboration{" "}?
+          Collaboration?
         </span>
       </div>
     </div>

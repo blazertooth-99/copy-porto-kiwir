@@ -5,6 +5,8 @@ import "./globals.css";
 import Navigation from "./component/home/Navigation";
 import Footer from "./component/home/Footer";
 import { ReactLenis } from "./utils/lenis";
+import Loading from "./component/common/Loading";
+import { Suspense } from "react";
 
 // const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({
@@ -41,7 +43,9 @@ export default function RootLayout({
           <div className={nunito_sans.className}>
             <Navigation />
           </div>
+          <Suspense fallback={<Loading/>}>
           <div className={montserrat.className}>{children}</div>
+          </Suspense>
           <div>
             <Footer />
           </div>

@@ -57,7 +57,7 @@ const Contact = () => {
   return (
     <div
       id="CONTACT"
-      className="flex h-full items-center justify-center m-auto"
+      className="flex h-full w-full items-center justify-center m-auto p-2"
     >
       <div className="flex flex-col h-full justify-end z-10 items-center py-10 space-y-8 md:space-y-10">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tighter text-white sm:text-4xl text-center">
