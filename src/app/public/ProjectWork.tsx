@@ -83,7 +83,7 @@ export default function HoverImage() {
         {projectList.map((project, index) => (
           <Card
             key={project.id}
-            ref={(el) => (refs.current[index] = el!)}
+            ref={(el: any) => (refs.current[index] = el!)}
             className="relative h-auto rounded-xl w-3/4 md:w-full flex-col shadow-lg overflow-hidden group cursor-none bg-custom-slate dark:bg-gray-700 border-cyan-600 dark:border dark:border-teal-400"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -95,7 +95,8 @@ export default function HoverImage() {
                   src={project.projectImg}
                   alt={project.altImg}
                   fill
-                  className="cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw"
+                  className="object-cover w-full"
                 />
                 {hoveredIndex === index && (
                   <motion.div

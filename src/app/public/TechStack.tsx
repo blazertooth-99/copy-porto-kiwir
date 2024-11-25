@@ -34,7 +34,7 @@ const techIcons: TechIcon[] = [
     id: 1,
     Icon: FaLinux,
     label: "Linux",
-    color: "text-cyan-500",
+    color: "text-cyan-700",
     duration: 2.5,
   },
   {
@@ -48,7 +48,7 @@ const techIcons: TechIcon[] = [
     id: 3,
     Icon: SiJavascript,
     label: "JavaScript",
-    color: "text-orange-800",
+    color: "text-yellow-600",
     duration: 3,
   },
   {
@@ -61,7 +61,7 @@ const techIcons: TechIcon[] = [
   {
     id: 5,
     Icon: SiTailwindcss,
-    label: "Tailwind Csst",
+    label: "Tailwind Css",
     color: "text-cyan-400",
     duration: 2.5,
   },
@@ -111,7 +111,7 @@ const techIcons: TechIcon[] = [
     id: 12,
     Icon: FaGitAlt,
     label: "Git",
-    color: "text-pink-500",
+    color: "text-red-500",
     duration: 4,
   },
 ];
@@ -147,7 +147,7 @@ export default function Tech() {
         className="flex flex-wrap items-center justify-center gap-5 p-2 mb-20"
       >
         {techIcons.map(({ id, Icon, label, color, duration }) => (
-          <TooltipProvider>
+          <TooltipProvider key={id}>
             <Tooltip>
               <TooltipTrigger asChild>
                 <motion.div
@@ -160,7 +160,6 @@ export default function Tech() {
                   className="rounded-2xl p-4 dark:bg-gray-700 bg-custom-slate border border-cyan-600 dark:border dark:border-teal-400 "
                 >
                   <Icon
-                    key={id}
                     className={`text-4xl md:text-5xl lg:text-7xl  ${color}`}
                     aria-label={label}
                   />

@@ -115,7 +115,7 @@ export default function CardProfileRev() {
           <div className="flex flex-col items-center justify-center p-5 space-y-2 md:space-y-5">
             <div
               ref={avatarRef}
-              className="flex items-center justify-center w-20 h-20 md:w-30 md:h-30 lg:w-32 lg:h-32 rounded-full border-2 border-cyan-600 dark:border-teal-400 bg-gradient-to-br from-[#16a085] to-[#f4d03f] top-4"
+              className="flex items-center justify-center w-20 h-20 md:w-30 md:h-30 lg:w-32 lg:h-32 rounded-full border-2 border-cyan-600 dark:border-teal-400 bg-cyan-600 dark:bg-teal-400"
             >
               <Image
                 src={Img1}

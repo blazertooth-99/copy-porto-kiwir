@@ -10,26 +10,35 @@ export default function Loading() {
   const progressBarRef = useRef<HTMLDivElement>(null);
   const percentageRef = useRef<HTMLDivElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
+  const loadingTextRef = useRef<HTMLDivElement>(null);
+  const completeTextRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    if (!preloaderRef.current || !contentRef.current || !progressBarRef.current || !percentageRef.current || !circleRef.current) {
-      console.error("One or more refs are null");
+    // Check if all refs are available
+    if (!preloaderRef.current || !contentRef.current || !progressBarRef.current || 
+        !percentageRef.current || !circleRef.current || !loadingTextRef.current || 
+        !completeTextRef.current || !titleRef.current || !paragraphRef.current) {
       return;
     }
 
-    const loadingText = new SplitType(".loading-text-initial", {
+    // Initialize SplitType after ensuring elements exist
+    const loadingText = new SplitType(loadingTextRef.current, {
       types: "chars",
     });
-    const completeText = new SplitType(".loading-text-complete", {
+    const completeText = new SplitType(completeTextRef.current, {
       types: "chars",
     });
-    const titleText = new SplitType(".content h1", { types: "chars" });
-    const paragraphText = new SplitType(".content p", { types: "chars" });
+    const titleText = new SplitType(titleRef.current, { types: "chars" });
+    const paragraphText = new SplitType(paragraphRef.current, { types: "chars" });
 
-    gsap.set(".loading-text-complete", { y: "100%" });
+    // Initial states
+    gsap.set(completeTextRef.current, { y: "100%" });
     gsap.set(loadingText.chars, { opacity: 0, y: 100 });
     gsap.set(completeText.chars, { opacity: 0, y: 100 });
 
+    // Animate loading text
     gsap.to(loadingText.chars, {
       opacity: 1,
       y: 0,
@@ -39,16 +48,15 @@ export default function Loading() {
     });
 
     const colorStages = [
-      { start: { bg: "#1e3a8a", text: "#2dd4bf", accent: "#0d9488" }, end: { bg: "#0f172a", text: "#5eead4", accent: "#14b8a6" } },
-      { start: { bg: "#0f172a", text: "#5eead4", accent: "#14b8a6" }, end: { bg: "#0c4a6e", text: "#99f6e4", accent: "#0d9488" } },
-      { start: { bg: "#0c4a6e", text: "#99f6e4", accent: "#0d9488" }, end: { bg: "#134e4a", text: "#2dd4bf", accent: "#0f766e" } },
-      { start: { bg: "#134e4a", text: "#2dd4bf", accent: "#0f766e" }, end: { bg: "#1e3a8a", text: "#2dd4bf", accent: "#0d9488" } },
+      { start: { bg: "#363c4d", text: "#2dd4bf", accent: "#0d9488" }, end: { bg: "#313338", text: "#5eead4", accent: "#14b8a6" } },
+      { start: { bg: "#0f172a", text: "#5eead4", accent: "#14b8a6" }, end: { bg: "#182830", text: "#99f6e4", accent: "#0d9488" } },
+      { start: { bg: "#0c4a6e", text: "#99f6e4", accent: "#0d9488" }, end: { bg: "#1a2928", text: "#2dd4bf", accent: "#0f766e" } },
+      { start: { bg: "#134e4a", text: "#2dd4bf", accent: "#0f766e" }, end: { bg: "#22242b", text: "#2dd4bf", accent: "#0d9488" } },
     ];
 
     function updateColors(progress: number) {
       const stageIndex = Math.min(Math.floor(progress / 25), colorStages.length - 1);
       const stage = colorStages[stageIndex];
-      const stageProgress = (progress % 25) / 25;
 
       gsap.to(preloaderRef.current, {
         backgroundColor: stage.end.bg,
@@ -66,9 +74,14 @@ export default function Loading() {
         ease: "power2.inOut",
       });
 
-      document.querySelectorAll(
-        ".loading-text-initial .char, .loading-text-complete .char, .percentage"
-      ).forEach((el) => {
+      // Update text colors
+      const textElements = [
+        ...loadingText.chars || [],
+        ...completeText.chars || [],
+        percentageRef.current
+      ].filter(Boolean);
+
+      textElements.forEach((el) => {
         gsap.to(el, {
           color: stage.end.text,
           duration: 0.5,
@@ -96,13 +109,13 @@ export default function Loading() {
         });
       },
     })
-      .to(".loading-text-initial", {
+      .to(loadingTextRef.current, {
         y: "-100%",
         duration: 0.5,
         ease: "power2.inOut",
       })
       .to(
-        ".loading-text-complete",
+        completeTextRef.current,
         {
           y: "0%",
           duration: 0.5,
@@ -148,13 +161,18 @@ export default function Loading() {
       .set(preloaderRef.current, {
         display: "none",
       });
+
+    // Cleanup function
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   return (
     <>
       <div
         ref={preloaderRef}
-        className="fixed top-0 left-0 w-full h-screen bg-[#1e3a8a] flex justify-center items-center flex-col z-[1000]"
+        className="fixed top-0 left-0 w-full h-screen bg-gray-800 flex justify-center items-center flex-col z-[1000]"
       >
         <div className="w-[300px] h-[2px] bg-[#2dd4bf]/10 mb-5 relative z-2">
           <div
@@ -163,11 +181,17 @@ export default function Loading() {
           ></div>
         </div>
         <div className="h-[3em] relative overflow-hidden my-5 w-[200px]">
-          <div className="loading-text-initial absolute w-full text-center font-['Inter'] font-light text-[#2dd4bf] text-base uppercase tracking-[-0.02em]">
-            Initializing
+          <div
+            ref={loadingTextRef}
+            className="absolute w-full text-center font-light text-[#2dd4bf] text-base uppercase tracking-[-0.02em]"
+          >
+            Loading
           </div>
-          <div className="loading-text-complete absolute w-full text-center font-['Inter'] font-light text-[#2dd4bf] text-base uppercase tracking-[-0.02em] translate-y-full">
-            System Ready
+          <div
+            ref={completeTextRef}
+            className="absolute w-full text-center font-light text-[#2dd4bf] text-base uppercase tracking-[-0.02em] translate-y-full"
+          >
+            COMPLETE
           </div>
         </div>
         <div
@@ -176,7 +200,7 @@ export default function Loading() {
         ></div>
         <div
           ref={percentageRef}
-          className="fixed bottom-8 right-8 font-['Inter'] font-bold text-[25rem] leading-[0.8] text-[#2dd4bf] opacity-10"
+          className="fixed bottom-8 right-8 font-bold text-[25rem] leading-[0.8] text-[#2dd4bf] opacity-10"
         >
           0
         </div>
@@ -184,12 +208,12 @@ export default function Loading() {
 
       <div
         ref={contentRef}
-        className="fixed top-0 left-0 w-full h-screen p-8 flex flex-col justify-center items-center text-[#2dd4bf] bg-[#1e3a8a] invisible z-1"
+        className="fixed top-0 left-0 w-full h-screen p-8 flex flex-col justify-center items-center text-[#2dd4bf] bg-gray-700 invisible z-1"
       >
-        <h1 className="text-5xl mb-4 overflow-hidden">
-          Welcome to the Future
+        <h1 ref={titleRef} className="text-5xl mb-4 overflow-hidden">
+          Welcome!
         </h1>
-        <p className="text-xl overflow-hidden">
+        <p ref={paragraphRef} className="text-xl overflow-hidden">
           Explore the possibilities of tomorrow, today.
         </p>
       </div>

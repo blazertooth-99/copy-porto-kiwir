@@ -165,20 +165,20 @@ export default function GithubRepository() {
                   </span>
                 </div>
               </div>
-          
+
               {repo.language && (
                 <div className="relative content-end">
                   <div className="flex items-center">
-                  <span
-                    className="w-3 h-3 rounded-full mr-2"
-                    style={{
-                      backgroundColor: getLanguageColor(repo.language),
-                    }}
-                    aria-hidden="true"
-                  ></span>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    {repo.language}
-                  </span>
+                    <span
+                      className="w-3 h-3 rounded-full mr-2"
+                      style={{
+                        backgroundColor: getLanguageColor(repo.language),
+                      }}
+                      aria-hidden="true"
+                    ></span>
+                    <span className="text-sm text-gray-600 dark:text-gray-300">
+                      {repo.language}
+                    </span>
                   </div>
                 </div>
               )}
@@ -191,12 +191,12 @@ export default function GithubRepository() {
           <Button
             onClick={showMoreRepos}
             variant="outline"
-            className="relative px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-gray-300 isolation-auto z-10 border-2 border-sky-800
-            dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
-            hover:text-white dark:hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 
-             before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
-            inline-flex items-center justify-center text-base md:text-lg font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
-            disabled:pointer-events-none"
+            className="relative px-10 py-6 rounded-lg bg-white dark:bg-slate-800/50 text-teal-800 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
+               dark:border-teal-400 dark:hover:border-white before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
+               hover:text-white dark:hover:text-black before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 dark:before:bg-teal-400 
+                before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
+               inline-flex items-center justify-center text-base md:text-lg font-semibold  shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
+               disabled:pointer-events-none"
           >
             Show more
           </Button>
@@ -205,12 +205,12 @@ export default function GithubRepository() {
           <Button
             onClick={showLessRepos}
             variant="outline"
-            className="relative px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-gray-300 isolation-auto z-10 border-2 border-sky-800
-            dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
-            hover:text-white dark:hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 
-             before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
-            inline-flex items-center justify-center text-base md:text-lg font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
-            disabled:pointer-events-none"
+            className="relative px-10 py-6 rounded-lg bg-white dark:bg-slate-800/50 text-teal-800 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
+              dark:border-teal-400 dark:hover:border-white before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
+              hover:text-white dark:hover:text-black before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 dark:before:bg-teal-400 
+               before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
+              inline-flex items-center justify-center text-base md:text-lg font-semibold  shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
+              disabled:pointer-events-none"
           >
             Show less
           </Button>

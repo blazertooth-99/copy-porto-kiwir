@@ -65,7 +65,9 @@ const Contact = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
           {ContacIcon.map((icons, index) => (
-            <div className="relative rounded-full bg-cyan-600/60 dark:bg-white/10 p-3 text-white dark:text-teal-400 hover:bg-cyan-600/70 dark:hover:bg-white/20 transition-transform duration-300 hover:scale-125">
+            <div 
+            key={index}
+            className="relative rounded-full bg-cyan-600/60 dark:bg-white/10 p-3 text-white dark:text-teal-400 hover:bg-cyan-600/70 dark:hover:bg-white/20 transition-transform duration-300 hover:scale-125">
               <Link key={index} href={icons.link}>
                 <span className="w-6 h-6 bg-transparent hover:scale-75">
                   {icons.Icon}
