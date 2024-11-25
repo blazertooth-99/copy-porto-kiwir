@@ -37,6 +37,7 @@ const Navbar = (props: any) => {
               <Image
                 {...props}
                 src={logoCS}
+                alt= "Logo Website"
                 x="20%"
                 y="20%"
                 width="50"

@@ -61,7 +61,6 @@ const TextReveal = () => {
             start: "top 60%",
             end: "center center",
             scrub: 0,
-            markers: true,
           },
         })
         .set(
