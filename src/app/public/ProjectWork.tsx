@@ -4,9 +4,9 @@ import { useState, useRef } from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
 import { ArrowDown, ArrowRight, ExternalLink } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-import projectImg1 from "../assets/news1.jpg";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
+import { projectList, ProjectList } from "../constant";
 import {
   Card,
   CardContent,
@@ -15,42 +15,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-type ProjectList = {
-  id: number;
-  projectTitle: string;
-  projectImg: StaticImageData;
-  altImg: string;
-  projectLink: string;
-  projectSubtitle: string;
-};
 
-const projectList: ProjectList[] = [
-  {
-    id: 1,
-    projectTitle: "It's project 1",
-    projectImg: projectImg1,
-    altImg: "Test Image",
-    projectLink: "https://github.com",
-    projectSubtitle: "Short description of the project.",
-  },
-  {
-    id: 2,
-    projectTitle: "It's project 2",
-    projectImg: projectImg1,
-    altImg: "Test Image",
-    projectLink: "https://github.com",
-    projectSubtitle: "Short description of the project.",
-  },
-  {
-    id: 3,
-    projectTitle: "It's project 3",
-    projectImg: projectImg1,
-    altImg: "Test Image",
-    projectLink: "https://github.com",
-    projectSubtitle:
-      "Short description of the project. Short description of the project. Short description of the project. Short description of the project.",
-  },
-];
 
 export default function HoverImage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

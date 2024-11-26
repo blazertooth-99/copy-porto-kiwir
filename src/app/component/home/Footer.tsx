@@ -1,7 +1,6 @@
 import Image from "next/image"
 // import FooterBg2 from "../../assets/FooterBg2.png"
 import Contact from "../../public/Contact"
-import ThemeImg from "../common/ThemeImg"
 import LightBg from "../../assets/background/light-theme-footer2.webp"
 import DarkBg from "../../assets/background/dark-theme-footer.webp"
 

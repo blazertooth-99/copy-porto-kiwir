@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
+import { EXPERIENCE } from "../constant"
 
 export default function ExperiencePage() {
   const containerRef = useRef(null);
@@ -82,36 +83,7 @@ export default function ExperiencePage() {
     };
   }, []);
 
-  const experiences = [
-    {
-      year: "May 2020- Jan 2021",
-      title: "Junior Developer",
-      Jobdesc : "Create something goods",
-      Tag : ["PHP", "HTML", "Boostrap"],
-      company: "Tech Startup Inc.",
-    },
-    {
-      year: "Feb 2021 - Mar 2022",
-      title: "Mid-level Developer",
-      Jobdesc : "Create something goods",
-      Tag : ["PHP", "HTML", "Boostrap"],
-      company: "Innovative Solutions LLC",
-    },
-    {
-      year: "2022",
-      title: "Senior Developer",
-      Jobdesc : "Create something goods",
-      Tag : ["PHP", "HTML", "Boostrap"],
-      company: "Global Tech Giants",
-    },
-    {
-      year: "2023",
-      title: "Lead Developer",
-      Jobdesc : "Create something goods",
-      Tag : ["PHP", "HTML", "Boostrap"],
-      company: "Future Systems Co.",
-    },
-  ];
+ 
 
   return (
     <div
@@ -153,10 +125,10 @@ export default function ExperiencePage() {
         )}
 
         <div className="space-y-9 md:space-y-12 relative z-10 p-12 md:p-16 mr-10 md:mr-14 w-full">
-          {experiences.map((exp, index) => (
+          {EXPERIENCE.map((exp, index) => (
             <motion.div
               key={index}
-              className="experience-item bg-custom-slate dark:bg-gray-700 w-full flex items-center justify-center p-2 drop-shadow-[5px_5px_0_#000] transition-all transform duration-600 hover:translate-x-[-5px] hover:translate-y-[-5px] hover:drop-shadow-[12px_12px_0_#000]"
+              className="experience-item bg-custom-slate dark:bg-gray-700 w-full flex items-center justify-center p-2 drop-shadow-[5px_5px_0_#0891b2] dark:drop-shadow-[5px_5px_0_#2dd4bf] transition-all transform duration-600 hover:translate-x-[-5px] hover:translate-y-[-5px] hover:drop-shadow-[12px_12px_0_#0891b2] dark:hover:drop-shadow-[12px_12px_0_#14b8a6]"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               initial={{ scale: 1.01 }}
@@ -191,7 +163,7 @@ export default function ExperiencePage() {
                         {exp.Tag.map((tags, index) => (
                           <span
                             key={index}
-                            className="bg-sky-950 dark:bg-teal-400 px-2 py-1 text-white text-xs md:text-sm rounded"
+                            className="bg-sky-950 dark:bg-teal-400 px-2 py-1 text-white dark:text-black text-xs md:text-sm rounded"
                           >
                             {tags}
                           </span>

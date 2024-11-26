@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { FaLinkedin,FaGithubSquare } from "react-icons/fa";
+import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -10,6 +10,7 @@ import Img1 from "../assets/sample.webp";
 import Img2 from "../assets/paVincent.jpg";
 import TextWelcome from "../component/common/TextWelcome";
 import Link from "next/link";
+import { SOCIAL_MEDIA } from "../constant";
 
 export default function CardProfileRev() {
   const cardRef = useRef(null);
@@ -45,7 +46,7 @@ export default function CardProfileRev() {
       }
     });
   }, []);
- 
+
   return (
     <div className="flex min-h-screen place-items-center justify-center py-16 px-5 bg-custom-blue dark:bg-slate-800">
       <div
@@ -78,40 +79,58 @@ export default function CardProfileRev() {
             </div>
             <div className="flex justify-end top-0 right-0 flex-row space-x-2 md:space-x-5">
               <div>
-                <button className="group w-10 h-10 hover:w-32 md:w-12 md:h-12 md:hover:w-44  hover:bg-sky-600 relative bg-sky-700 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45">
-                  <FaLinkedin
-                    y="0"
-                    x="0"
-                    className="w-6 h-9 md:w-8 md:h-10 shrink-0 fill-neutral-50"
-                  />
-                  <span className="origin-left text-left text-xs md:text-base inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
-                    Christian Satrio
-                  </span>
-                </button>
+                <Link
+                  href={SOCIAL_MEDIA.Linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="group w-10 h-10 hover:w-32 md:w-12 md:h-12 md:hover:w-44  hover:bg-sky-600 relative dark:hover:bg-slate-500 dark:bg-slate-600 bg-sky-700 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45">
+                    <FaLinkedin
+                      y="0"
+                      x="0"
+                      className="w-6 h-9 md:w-8 md:h-10 shrink-0 fill-neutral-50 dark:fill-teal-500 dark:hover:fill-teal-400"
+                    />
+                    <span className="origin-left dark:text-teal-500 text-left text-xs md:text-base inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
+                      Christian Satrio
+                    </span>
+                  </button>
+                </Link>
               </div>
               <div>
-                <button className="group w-10 h-10 hover:w-32 md:w-12 md:h-12 md:hover:w-44  hover:bg-gray-800 relative bg-gray-900 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45">
-                  <FaGithubSquare
-                    y="0"
-                    x="0"
-                    className="w-6 h-9 md:w-8 md:h-10 shrink-0 fill-neutral-50"
-                  />
-                  <span className="origin-left text-left text-xs md:text-base inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
-                    blazertooth-99
-                  </span>
-                </button>
+                <Link
+                  href={SOCIAL_MEDIA.Github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="group w-10 h-10 hover:w-32 md:w-12 md:h-12 md:hover:w-44 hover:bg-gray-800 relative dark:hover:bg-slate-500 dark:bg-slate-600 bg-gray-900 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45">
+                    <FaGithubSquare
+                      y="0"
+                      x="0"
+                      className="w-6 h-9 md:w-8 md:h-10 shrink-0 fill-neutral-50 dark:fill-teal-500 dark:hover:fill-teal-400"
+                    />
+                    <span className="origin-left dark:text-teal-500 text-left text-xs md:text-base inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
+                      blazertooth-99
+                    </span>
+                  </button>
+                </Link>
               </div>
               <div>
-                <button className="group w-10 h-10 hover:w-40 md:w-12 md:h-12 md:hover:w-56  hover:bg-rose-700 relative bg-rose-800 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45">
-                  <IoIosMail
-                    y="0"
-                    x="0"
-                    className="w-6 h-9 md:w-8 md:h-10 shrink-0 fill-neutral-50"
-                  />
-                  <span className="origin-left text-left text-xs md:text-base inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
-                    christiansatrio30 @gmail.com
-                  </span>
-                </button>
+                <Link
+                  href={SOCIAL_MEDIA.Gmail}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="group w-10 h-10 hover:w-40 md:w-12 md:h-12 md:hover:w-56  hover:bg-rose-700 relative dark:hover:bg-slate-500 dark:bg-slate-600 bg-rose-800 rounded text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start gap-2 items-center p-2 pr-6 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:bg-sky-700 before:hover:bg-sky-600 before:rotate-45">
+                    <IoIosMail
+                      y="0"
+                      x="0"
+                      className="w-6 h-9 md:w-8 md:h-10 shrink-0 fill-neutral-50 dark:fill-teal-500 dark:hover:fill-teal-400"
+                    />
+                    <span className="origin-left  dark:text-teal-500 text-left text-xs md:text-base inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
+                      christiansatrio30 @gmail.com
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -131,9 +150,9 @@ export default function CardProfileRev() {
               <div>
                 <Button
                   variant="outline"
-                  className="relative w-full px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-gray-300 isolation-auto z-10 border-2 border-sky-800
+                  className="relative w-full px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
                  dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
-                 hover:text-white dark:hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 
+                 hover:text-white dark:hover:text-black before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 dark:before:bg-teal-400
                   before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
                  inline-flex items-center justify-center text-base md:text-lg font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
                  disabled:pointer-events-none"

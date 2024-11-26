@@ -39,7 +39,7 @@ export default function TypingAnimation() {
   }, [])
 
   return (
-    <div className="relative py-2 md:py-4 items-center h-[80px] md:h-[50px] whitespace-normal overflow-hidden">
+    <div className="relative py-2 md:py-4 items-center h-[90px] md:h-[50px] whitespace-normal overflow-hidden">
       <p
         ref={textRef}
         className="absolute text-xl md:text-2xl font-semibold text-cyan-600 dark:text-teal-400"

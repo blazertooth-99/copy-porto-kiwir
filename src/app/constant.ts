@@ -1,44 +1,254 @@
+import Image, { StaticImageData } from "next/image";
+import projectImg1 from "../app/assets/news1.jpg";
 
-import Img1 from '../app/assets/sample.webp'
-import Img2 from '../app/assets/slides/content.jpg'
-import Img3 from '../app/assets/news1.jpg'
-import Img4 from '../app/assets/sample2.webp'
-import Image, { StaticImageData } from 'next/image'
-
-
+import { IconType } from "react-icons";
+import { DiPhp } from "react-icons/di";
+import { BiLogoPostgresql } from "react-icons/bi";
+import {
+  FaReact,
+  FaCss3Alt,
+  FaFigma,
+  FaGitAlt,
+  FaLinux,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+  FaFacebook,
+  FaDribbble,
+} from "react-icons/fa";
+import {
+  SiVite,
+  SiJavascript,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiSelenium,
+} from "react-icons/si";
 
 export const TYPED_STR = [
-    "I design and develop for website",
-    "I love to learn new technology",
-    "I design dynamic user experience",
-  ];
+  "I design and develop for website",
+  "I love to learn new technology",
+  "I design dynamic user experience",
+];
 
+export const SOCIAL_MEDIA = {
+  Linkedin: "https://www.linkedin.com/in/c-satrio/",
+  Github: "https://github.com/blazertooth-99",
+  Gmail: "https://mail.google.com/mail/u/0/#inbox?compose=jrjtXDzggPZPppddbDcBTNpkZlPVhKdcJsjnhxThZJPKSSfNZLWkrmBKWNHLdCqZqRHxWmpn",
+  Instagram: "https://www.instagram.com/csatrioo/",
+  Twitter: "",
+  Facebook: "https://www.facebook.com/christian.satrio30/",
+}
 
-export interface ParallaxContent{
-    id: number;
-    title: string;
-    image: StaticImageData;
-  }
-export const parallaxContent: ParallaxContent[] = [
+//EXPERIENCE DATA
+export const EXPERIENCE = [
+  {
+    year: "May 2020- Jan 2021",
+    title: "Junior Developer",
+    Jobdesc: "Create something goods",
+    Tag: ["PHP", "HTML", "Boostrap"],
+    company: "Tech Startup Inc.",
+  },
+  {
+    year: "Feb 2021 - Mar 2022",
+    title: "Mid-level Developer",
+    Jobdesc: "Create something goods",
+    Tag: ["PHP", "HTML", "Boostrap"],
+    company: "Innovative Solutions LLC",
+  },
+  {
+    year: "2022",
+    title: "Senior Developer",
+    Jobdesc: "Create something goods",
+    Tag: ["PHP", "HTML", "Boostrap"],
+    company: "Global Tech Giants",
+  },
+  {
+    year: "2023",
+    title: "Lead Developer",
+    Jobdesc: "Create something goods",
+    Tag: ["PHP", "HTML", "Boostrap"],
+    company: "Future Systems Co.",
+  },
+];
 
-    {
-        id: 1,
-        title: 'Image Parallax 1',
-        image: Img2,
-    },
-    {
-        id: 2,
-        title: 'Image Parallax 2',
-        image: Img1,
-    },
-    {
-        id: 3,
-        title: 'Image Parallax 3',
-        image: Img3,
-    },
-    {
-        id: 4,
-        title: 'Image Parallax 4',
-        image: Img4,
-    },
+//PROJECT PAGE DATA
+export type ProjectList = {
+  id: number;
+  projectTitle: string;
+  projectImg: StaticImageData;
+  altImg: string;
+  projectLink: string;
+  projectSubtitle: string;
+};
+
+export const projectList: ProjectList[] = [
+  {
+    id: 1,
+    projectTitle: "It's project 1",
+    projectImg: projectImg1,
+    altImg: "Test Image",
+    projectLink: "https://github.com",
+    projectSubtitle: "Short description of the project.",
+  },
+  {
+    id: 2,
+    projectTitle: "It's project 2",
+    projectImg: projectImg1,
+    altImg: "Test Image",
+    projectLink: "https://github.com",
+    projectSubtitle: "Short description of the project.",
+  },
+  {
+    id: 3,
+    projectTitle: "It's project 3",
+    projectImg: projectImg1,
+    altImg: "Test Image",
+    projectLink: "https://github.com",
+    projectSubtitle:
+      "Short description of the project. Short description of the project. Short description of the project. Short description of the project.",
+  },
+];
+
+//TECH STACK PAGE DATA
+export interface TechIcon {
+  id: number;
+  Icon: IconType;
+  label: string;
+  color: string;
+  duration: number;
+}
+
+export const techIcons: TechIcon[] = [
+  {
+    id: 1,
+    Icon: FaLinux,
+    label: "Linux",
+    color: "text-cyan-700 dark:text-cyan-300",
+    duration: 2.5,
+  },
+  {
+    id: 2,
+    Icon: FaReact,
+    label: "React Js",
+    color: "text-cyan-500 dark:text-cyan-400",
+    duration: 2.5,
+  },
+  {
+    id: 3,
+    Icon: SiJavascript,
+    label: "JavaScript",
+    color: "text-yellow-600 dark:text-yellow-400",
+    duration: 3,
+  },
+  {
+    id: 4,
+    Icon: SiVite,
+    label: "Vite",
+    color: "text-cyan-800 dark:text-cyan-200",
+    duration: 4,
+  },
+  {
+    id: 5,
+    Icon: SiTailwindcss,
+    label: "Tailwind Css",
+    color: "text-cyan-400 dark:text-cyan-300",
+    duration: 2.5,
+  },
+  {
+    id: 6,
+    Icon: DiPhp,
+    label: "PHP",
+    color: "text-cyan-600 dark:text-cyan-400",
+    duration: 2.5,
+  },
+  {
+    id: 7,
+    Icon: FaCss3Alt,
+    label: "CSS 3",
+    color: "text-blue-600 dark:text-blue-400",
+    duration: 2.5,
+  },
+  {
+    id: 8,
+    Icon: SiNextdotjs,
+    label: "Next Js",
+    color: "text-slate-800 dark:text-slate-200",
+    duration: 3,
+  },
+  {
+    id: 9,
+    Icon: BiLogoPostgresql,
+    label: "PostgreSQL",
+    color: "text-sky-700 dark:text-sky-300",
+    duration: 4,
+  },
+  {
+    id: 10,
+    Icon: SiSelenium,
+    label: "Selenium",
+    color: "text-sky-700 dark:text-sky-300",
+    duration: 4,
+  },
+  {
+    id: 11,
+    Icon: FaFigma,
+    label: "Figma",
+    color: "text-pink-500 dark:text-pink-300",
+    duration: 4,
+  },
+  {
+    id: 12,
+    Icon: FaGitAlt,
+    label: "Git",
+    color: "text-red-500 dark:text-red-400",
+    duration: 4,
+  },
+];
+
+//CONTACT FOOTER DATA
+
+export interface ContactIcon1 {
+  id: number;
+  title: string;
+  Icon: IconType;
+  link: string;
+}
+export const ContactIcon: ContactIcon1[] = [
+  {
+    id: 1,
+    title: "Github",
+    Icon: FaGithub,
+    link: "https://github.com/blazertooth-99",
+  },
+  {
+    id: 2,
+    title: "Linkedin",
+    Icon: FaLinkedin,
+    link: "https://www.linkedin.com/in/c-satrio/",
+  },
+  {
+    id: 3,
+    title: "Twitter",
+    Icon: FaTwitter,
+    link: "#",
+  },
+  {
+    id: 4,
+    title: "Instagram",
+    Icon: FaInstagram,
+    link: "https://www.instagram.com/csatrioo/",
+  },
+  {
+    id: 5,
+    title: "Facebook",
+    Icon: FaFacebook,
+    link: "https://www.facebook.com/christian.satrio30/",
+  },
+  {
+    id: 6,
+    title: "Dribble",
+    Icon: FaDribbble,
+    link: "#",
+  },
 ];
