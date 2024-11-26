@@ -6,6 +6,7 @@ import { Search, Star, Github } from "lucide-react";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import { getLanguageColor } from "../../utils/languageColors";
+import Link from "next/link";
 
 interface Repository {
   id: number;
@@ -137,9 +138,11 @@ export default function GithubRepository() {
             whileTap={{ scale: 0.98 }}
           >
             <div className="flex flex-col h-full w-full">
-              <h2 className="text-lg md:text-xl font-semibold mb-8 text-black dark:text-teal-400">
-                {repo.name}
-              </h2>
+              <Link href={repo.html_url}>
+                <h2 className="text-lg md:text-xl font-semibold mb-8 text-black dark:text-teal-400 hover:text-gray-600 dark:hover:text-teal-300 hover:scale-105 transition-all duration-500">
+                  {repo.name}
+                </h2>
+              </Link>
               <div
                 className={`border-t-2 border-cyan-600 dark:border-teal-400 rounded-xl transition-all duration-500 mb-5 ${
                   hoveredIndex === index ? "w-full" : "w-0"

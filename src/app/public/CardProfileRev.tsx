@@ -2,34 +2,14 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import {
-  FaReact,
-  FaCss3Alt,
-  FaFigma,
-  FaLinkedin,
-  FaGithubSquare,
-} from "react-icons/fa";
+import { FaLinkedin,FaGithubSquare } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import {
-  SiVite,
-  SiJavascript,
-  SiTailwindcss,
-  SiNextdotjs,
-} from "react-icons/si";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Img1 from "../assets/sample.webp";
 import Img2 from "../assets/paVincent.jpg";
 import TextWelcome from "../component/common/TextWelcome";
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function CardProfileRev() {
   const cardRef = useRef(null);
@@ -65,36 +45,7 @@ export default function CardProfileRev() {
       }
     });
   }, []);
-  // const MyStackIcon = [
-  //   {
-  //     title: "React",
-  //     icon: <FaReact />,
-  //   },
-  //   {
-  //     title: "Vite",
-  //     icon: <SiVite />,
-  //   },
-  //   {
-  //     title: "CSS 3",
-  //     icon: <FaCss3Alt />,
-  //   },
-  //   {
-  //     title: "Tailwind Css",
-  //     icon: <SiTailwindcss />,
-  //   },
-  //   {
-  //     title: "Next Js",
-  //     icon: <SiNextdotjs />,
-  //   },
-  //   {
-  //     title: "Javascript",
-  //     icon: <SiJavascript />,
-  //   },
-  //   {
-  //     title: "Figma",
-  //     icon: <FaFigma />,
-  //   },
-  // ];
+ 
   return (
     <div className="flex min-h-screen place-items-center justify-center py-16 px-5 bg-custom-blue dark:bg-slate-800">
       <div
@@ -176,28 +127,6 @@ export default function CardProfileRev() {
             assurance.
           </p>
           <div className="px-2 py-5 md:px-5 relative gap-2">
-            {/* <span className="font-bold text-lg md:text-xl lg:text-2xl">
-              Tech Stack :
-            </span> */}
-            {/* <div className="grid grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-5 justify-start my-5 items-center w-fit">
-              {MyStackIcon.map((item) => (
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <button className="text-2xl transition-all duration-500 hover:text-cyan-600 dark:hover:text-teal-400  hover:scale-125">
-                        <span className="text-2xl md:text-3xl lg:text-4xl">
-                          {item.icon}
-                        </span>
-                      </button>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{item.title}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              ))}
-            </div> */}
-
             <div className="flex flex-col md:flex-row my-2 gap-5">
               <div>
                 <Button

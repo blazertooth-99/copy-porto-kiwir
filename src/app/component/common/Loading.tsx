@@ -9,17 +9,15 @@ export default function Loading() {
   const contentRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const percentageRef = useRef<HTMLDivElement>(null);
-  const circleRef = useRef<HTMLDivElement>(null);
+
   const loadingTextRef = useRef<HTMLDivElement>(null);
   const completeTextRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const paragraphRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     // Check if all refs are available
     if (!preloaderRef.current || !contentRef.current || !progressBarRef.current || 
-        !percentageRef.current || !circleRef.current || !loadingTextRef.current || 
-        !completeTextRef.current || !titleRef.current || !paragraphRef.current) {
+        !percentageRef.current || !loadingTextRef.current || 
+        !completeTextRef.current) {
       return;
     }
 
@@ -30,8 +28,6 @@ export default function Loading() {
     const completeText = new SplitType(completeTextRef.current, {
       types: "chars",
     });
-    const titleText = new SplitType(titleRef.current, { types: "chars" });
-    const paragraphText = new SplitType(paragraphRef.current, { types: "chars" });
 
     // Initial states
     gsap.set(completeTextRef.current, { y: "100%" });
@@ -46,7 +42,7 @@ export default function Loading() {
       stagger: 0.05,
       ease: "power2.out",
     });
-
+    //Color Initial when loading
     const colorStages = [
       { start: { bg: "#363c4d", text: "#2dd4bf", accent: "#0d9488" }, end: { bg: "#313338", text: "#5eead4", accent: "#14b8a6" } },
       { start: { bg: "#0f172a", text: "#5eead4", accent: "#14b8a6" }, end: { bg: "#182830", text: "#99f6e4", accent: "#0d9488" } },
@@ -68,11 +64,7 @@ export default function Loading() {
         duration: 0.5,
         ease: "power2.inOut",
       });
-      gsap.to(circleRef.current, {
-        borderColor: stage.end.accent,
-        duration: 0.5,
-        ease: "power2.inOut",
-      });
+     
 
       // Update text colors
       const textElements = [
@@ -102,11 +94,7 @@ export default function Loading() {
           percentageRef.current.textContent = progress.toString();
         }
         updateColors(progress);
-        gsap.to(circleRef.current, {
-          rotation: progress * 3.6,
-          duration: 0.1,
-          ease: "none",
-        });
+       
       },
     })
       .to(loadingTextRef.current, {
@@ -140,24 +128,7 @@ export default function Loading() {
         ease: "power2.inOut",
         delay: 0.8,
       })
-      .set(
-        contentRef.current,
-        {
-          visibility: "visible",
-        },
-        "-=1"
-      )
-      .to(
-        [titleText.chars, paragraphText.chars],
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.02,
-          ease: "power4.out",
-        },
-        "-=0.5"
-      )
+      
       .set(preloaderRef.current, {
         display: "none",
       });
@@ -177,30 +148,26 @@ export default function Loading() {
         <div className="w-[300px] h-[2px] bg-[#2dd4bf]/10 mb-5 relative z-2">
           <div
             ref={progressBarRef}
-            className="absolute left-0 top-0 h-full w-0 bg-[#2dd4bf]"
+            className="absolute left-0 top-0 h-full w-0 bg-teal-400"
           ></div>
         </div>
         <div className="h-[3em] relative overflow-hidden my-5 w-[200px]">
           <div
             ref={loadingTextRef}
-            className="absolute w-full text-center font-light text-[#2dd4bf] text-base uppercase tracking-[-0.02em]"
+            className="absolute w-full text-center font-light text-teal-400 text-base uppercase tracking-[-0.02em]"
           >
             Loading
           </div>
           <div
             ref={completeTextRef}
-            className="absolute w-full text-center font-light text-[#2dd4bf] text-base uppercase tracking-[-0.02em] translate-y-full"
+            className="absolute w-full text-center font-light text-teal-400 text-base uppercase tracking-[-0.02em] translate-y-full"
           >
             COMPLETE
           </div>
         </div>
         <div
-          ref={circleRef}
-          className="w-[300px] h-[300px] border-4 border-[#0d9488] rounded-full absolute opacity-20"
-        ></div>
-        <div
           ref={percentageRef}
-          className="fixed bottom-8 right-8 font-bold text-[25rem] leading-[0.8] text-[#2dd4bf] opacity-10"
+          className="fixed bottom-8 right-8 font-bold text-[18rem] md:text-[20rem] lg:text-[25rem] leading-[0.8] text-[#2dd4bf] opacity-10"
         >
           0
         </div>
@@ -210,12 +177,6 @@ export default function Loading() {
         ref={contentRef}
         className="fixed top-0 left-0 w-full h-screen p-8 flex flex-col justify-center items-center text-[#2dd4bf] bg-gray-700 invisible z-1"
       >
-        <h1 ref={titleRef} className="text-5xl mb-4 overflow-hidden">
-          Welcome!
-        </h1>
-        <p ref={paragraphRef} className="text-xl overflow-hidden">
-          Explore the possibilities of tomorrow, today.
-        </p>
       </div>
     </>
   );

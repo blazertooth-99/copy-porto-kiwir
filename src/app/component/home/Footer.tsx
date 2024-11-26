@@ -7,7 +7,7 @@ import DarkBg from "../../assets/background/dark-theme-footer.webp"
 
 export default function Component() {
   return (
-    <div className="relative w-full h-5/6 pt-80 bg-cover overflow-hidden items-stretch bg-custom-blue dark:bg-slate-800">
+    <div rel="preload" className="relative w-full h-5/6 pt-80 bg-cover overflow-hidden items-stretch bg-custom-blue dark:bg-slate-800">
       <Image 
         src={DarkBg}
         alt="Background Footer Dark Theme"
@@ -15,6 +15,7 @@ export default function Component() {
         sizes="(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw"
         loading="lazy"
         className="object-cover w-full h-full hidden dark:block"
+        rel="preload"
       />
       <Image 
         src={LightBg}
@@ -24,6 +25,7 @@ export default function Component() {
         className="object-cover w-full h-full block dark:hidden"
         placeholder="blur"
         priority
+        rel="preload"
       />
       <Contact />
     </div>

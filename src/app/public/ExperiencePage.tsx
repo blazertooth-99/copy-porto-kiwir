@@ -26,7 +26,7 @@ export default function ExperiencePage() {
 
         if (!container || !orb || !path) return;
 
-        gsap.set(orb, { xPercent: -50, yPercent: -50 });
+        gsap.set(orb, { xPercent: -25, yPercent: -25 });
 
         gsap.to(orb, {
           motionPath: {
@@ -35,7 +35,7 @@ export default function ExperiencePage() {
             alignOrigin: [0.5, 0.5],
           },
           ease: "power1.inOut",
-          stagger: 1,
+          stagger: 0,
           scrollTrigger: {
             trigger: container,
             start: "top top",
@@ -45,7 +45,7 @@ export default function ExperiencePage() {
         });
 
         gsap.utils.toArray(".experience-item").forEach((item) => {
-          gsap.fromTo(
+          return gsap.fromTo(
             item,
             {
               opacity: 0,
@@ -76,7 +76,7 @@ export default function ExperiencePage() {
     return () => {
       if (typeof window !== "undefined") {
         const ScrollTrigger = require("gsap/ScrollTrigger").default;
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        ScrollTrigger.getAll().forEach((trigger: { kill: () => any; }) => trigger.kill());
         gsap.killTweensOf("*");
       }
     };
