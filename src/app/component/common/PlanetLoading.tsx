@@ -68,9 +68,9 @@ export default function FuturisticLoading() {
     <div className="flex items-center justify-center">
       <svg
         ref={containerRef}
-        width="150"
-        height="150"
-        viewBox="-100 -100 200 200"
+        width="300"
+        height="300"
+        viewBox="-100 -100 300 300"
         aria-label="Loading"
         role="progressbar"
       >

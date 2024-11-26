@@ -45,7 +45,7 @@ export default function BurgerMenu() {
         duration: 0.3,
         ease: "power2.inOut",
       });
-
+      // location pop up button theme button
       gsap.fromTo(
         darkModeSwitcherElement,
         { opacity: 0, scale: 0.5, x: 5 },
@@ -63,7 +63,7 @@ export default function BurgerMenu() {
         duration: 0.3,
         ease: "power2.inOut",
       });
-
+      // dark menu disappear when toggle menu close / clicked
       gsap.to(darkModeSwitcherElement, {
         opacity: 0,
         scale: 0.5,
@@ -99,7 +99,7 @@ export default function BurgerMenu() {
           />
         </div>
       </button>
-
+      {/* call dark menu from dark-mode-switch */}
       <div ref={darkModeSwitcherRef} className="fixed top-4 right-20 z-50 md:hidden opacity-0">
         <DarkMode />
       </div>

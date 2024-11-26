@@ -60,7 +60,7 @@ const TextReveal = () => {
             trigger: textRef.current,
             start: "top 60%",
             end: "center center",
-            scrub: 0,
+            scrub: 0.2,
           },
         })
         .set(
