@@ -1,23 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
 import logoCS from "../../assets/logoCS.png";
-import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
+import logoCSDark from "../../assets/logoCSoutline.png";
 import { motion } from "framer-motion";
-
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
 import DarkMode from "./dark-mode-switcher";
 import BurgerMenu from "./BurgerMenu";
 
@@ -35,14 +23,23 @@ const Navbar = (props: any) => {
           <div className="flex mx-auto w-full justify-center gap-5 px-2 items-center">
             <Link href="/" className="flex items-center" prefetch={false}>
               <Image
-                {...props}
                 src={logoCS}
-                alt= "Logo Website"
-                x="20%"
-                y="20%"
-                width="50"
-                height="50"
-                viewBox="0 0 50 100"
+                alt="Logo Portofolio Lancea"
+                height={0}
+                width={0}
+                sizes="100vh"
+                style={{width:'55px', height: "auto" }}
+                className="hidden dark:block"
+              />
+
+              <Image
+                src={logoCSDark}
+                alt="Logo Portofolio Lancea"
+                height={0}
+                width={0}
+                sizes="100vh"
+                style={{width:'55px', height: "auto" }}
+                className="block dark:hidden"
               />
             </Link>
             <nav className="hidden md:flex gap-10">

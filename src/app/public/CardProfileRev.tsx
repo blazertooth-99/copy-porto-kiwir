@@ -6,8 +6,9 @@ import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Img1 from "../assets/sample.webp";
-import Img2 from "../assets/paVincent.jpg";
+
+import ProfilePhoto from "../assets/SatrioProfile1.webp";
+import SideProfilePhoto from "../assets/SatrioBGCover.webp"
 import TextWelcome from "../component/common/TextWelcome";
 import Link from "next/link";
 import { SOCIAL_MEDIA } from "../constant";
@@ -57,7 +58,7 @@ export default function CardProfileRev() {
           {/* <div className="absolute w-full h-2/4 md:h-full md:w-1/3 inset-0 bg-slate-800/60" /> */}
           <div className="h-2/3 md:h-full w-full md:rounded-tl-[25px] md:rounded-bl-[25px]">
             <Image
-              src={Img2}
+              src={SideProfilePhoto}
               alt="Image Banner"
               className="object-cover w-full h-full rounded-tl-[25px] rounded-tr-[25px] sm:rounded-tl-[25px] sm:rounded-tr-[25px] md:rounded-tr-[0px] md:rounded-tl-[25px] md:rounded-bl-[25px]"
             />
@@ -70,10 +71,9 @@ export default function CardProfileRev() {
               className="flex items-center justify-center w-20 h-20 md:w-30 md:h-30 lg:w-32 lg:h-32 rounded-full border-2 border-cyan-600 dark:border-teal-400 bg-cyan-600 dark:bg-teal-400"
             >
               <Image
-                src={Img1}
+                src={ProfilePhoto}
                 alt="Image Profiles"
-                width={200}
-                height={200}
+                style={{objectFit:"cover"}}
                 className="rounded-full"
               />
             </div>

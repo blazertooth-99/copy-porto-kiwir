@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ContactIcon, ContactIcon1 } from "../constant";
 import { SOCIAL_MEDIA } from "../constant";
 
-
 const Contact = () => {
   return (
     <div
@@ -47,23 +46,27 @@ const Contact = () => {
           >
             Resume
           </Button>
-          <Button
-            variant="outline"
-            className="relative px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 text-teal-800 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
+          <Link 
+          href="https://wa.me/+6285851816241"
+          target="_blank">
+            <Button
+              variant="outline"
+              className="relative px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 text-teal-800 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
                  dark:border-teal-400 dark:hover:border-white before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
                  hover:text-white dark:hover:text-black before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 dark:before:bg-teal-400 
                   before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
                  inline-flex items-center justify-center text-base md:text-lg font-semibold  shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
                  disabled:pointer-events-none"
-          >
-            Les&apos;t talk
-          </Button>
+            >
+              Les&apos;t talk
+            </Button>
+          </Link>
         </div>
 
         <div className="w-full flex justify-center items-center bottom-5">
           <p className="text-sm md:text-base text-white/60 text-center">
             Created using Next Js and Developed{" "}
-            <span className="text-red-500">❤️</span> by C Satrio
+            <span className="text-red-500 dark:text-teal-400">&#10084;</span> by C Satrio
           </p>
         </div>
       </div>
