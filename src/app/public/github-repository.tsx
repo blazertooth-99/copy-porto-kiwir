@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Search, Star, Github } from "lucide-react";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
-import { getLanguageColor } from "../../utils/languageColors";
+import { getLanguageColor } from "../utils/languageColors";
 import Link from "next/link";
 
 interface Repository {
@@ -115,9 +115,9 @@ export default function GithubRepository() {
 
   return (
     <div className="w-full mx-auto py-24 px-5 bg-custom-blue dark:bg-slate-800 items-center justify-center">
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center animate-pulse text-white">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center text-white">
         My{" "}
-        <span className="text-cyan-600 dark:text-teal-400">
+        <span className="text-cyan-600 dark:text-teal-400 animate-pulse">
           Github Repository
         </span>
       </h1>

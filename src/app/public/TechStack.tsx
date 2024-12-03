@@ -32,9 +32,9 @@ export default function TechStack() {
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5 }}
-        className="my-20 text-3xl md:text-4xl lg:text-5xl font-bold text-center animate-pulse text-white"
+        className="my-20 text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white"
       >
-        Tech <span className="text-cyan-600 dark:text-teal-400">Stack</span>
+        Tech <span className="text-cyan-600 dark:text-teal-400 animate-pulse">Stack</span>
       </motion.h1>
       <motion.div
         initial={{ opacity: 0, x: -100 }}

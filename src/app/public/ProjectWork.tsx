@@ -40,8 +40,8 @@ export default function HoverImage() {
   return (
     <div id="PROJECT" className="py-24 px-5 min-h-screen bg-custom-blue dark:bg-slate-800">
       <div className="flex items-center justify-center mx-auto">
-        <h1 className="my-20 text-3xl md:text-4xl lg:text-5xl font-bold text-center animate-pulse text-white">
-          Work <span className="text-cyan-600 dark:text-teal-400">Project</span>
+        <h1 className="my-20 text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white">
+          Work <span className="text-cyan-600 dark:text-teal-400 animate-pulse">Project</span>
         </h1>
       </div>
       <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-2 place-items-center w-full items-stretch">

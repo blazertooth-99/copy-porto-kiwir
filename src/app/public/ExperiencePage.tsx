@@ -91,8 +91,8 @@ export default function ExperiencePage() {
       ref={containerRef}
       className="min-h-screen w-full py-10 bg-custom-blue dark:bg-slate-800"
     >
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center animate-pulse text-white">
-        My <span className="text-cyan-600 dark:text-teal-400">Experience</span>
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center text-white">
+        My <span className="text-cyan-600 dark:text-teal-400 animate-pulse">Experience</span>
       </h1>
 
       <div className="relative w-full mx-auto">

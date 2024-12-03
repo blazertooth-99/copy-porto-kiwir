@@ -1,5 +1,5 @@
 import ExperiencePage from "./public/ExperiencePage";
-import GithubRepository from "./component/home/github-repository";
+import GithubRepository from "./public/github-repository";
 import TextReveal from "./component/common/TextReveal";
 import ProjectWork from "./public/ProjectWork";
 import CardProfileRev from "./public/CardProfileRev";
