@@ -27,8 +27,22 @@ const layoutStyle = {
 };
 
 export const metadata: Metadata = {
-  title: "Lancea Web",
+  title: "Lancea Porto",
   description: "Welcome to my porto",
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/icon2.png",
+        href: "/icon2.png",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/icon1.png",
+        href: "/icon1.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -43,8 +57,8 @@ export default function RootLayout({
           <div className={nunito_sans.className}>
             <Navigation />
           </div>
-          <Suspense fallback={<Loading/>}>
-          <div className={montserrat.className}>{children}</div>
+          <Suspense fallback={<Loading />}>
+            <div className={montserrat.className}>{children}</div>
           </Suspense>
           <div>
             <Footer />

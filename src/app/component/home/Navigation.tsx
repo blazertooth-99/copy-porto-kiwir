@@ -20,7 +20,7 @@ const Navbar = (props: any) => {
     <header>
       <nav className="invisible md:visible fixed w-fit mx-auto rounded-full border border-cyan-600 dark:border dark:border-teal-400 inset-x-0 top-0 mt-2 z-50 bg-white/30 backdrop-blur-md shadow-lg dark:bg-neutral-800/30">
         <div className="container">
-          <div className="flex mx-auto w-full justify-center gap-5 px-2 items-center">
+          <div className="flex mx-auto w-full justify-center gap-5 p-1 items-center">
             <Link href="/" className="flex items-center" prefetch={false}>
               <Image
                 src={logoCS}
@@ -52,13 +52,6 @@ const Navbar = (props: any) => {
                 }}
                 className="relative mx-auto flex w-fit"
               >
-                <Link
-                  href="#HOME"
-                  className="font-medium items-center text-xs transition-colors"
-                  prefetch={false}
-                >
-                  <Tab setPosition={setPosition}>Home</Tab>
-                </Link>
                 <Link
                   href="#EXPERIENCE"
                   className="font-medium items-center text-xs transition-colors"

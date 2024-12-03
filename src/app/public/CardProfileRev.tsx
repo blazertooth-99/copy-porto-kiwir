@@ -7,8 +7,8 @@ import { IoIosMail } from "react-icons/io";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-import ProfilePhoto from "../assets/SatrioProfile1.webp";
-import SideProfilePhoto from "../assets/SatrioBGCover.webp"
+import ProfilePhoto from "../assets/Profiletrans.png";
+import SideProfilePhoto from "../assets/SatrioBGCover.webp";
 import TextWelcome from "../component/common/TextWelcome";
 import Link from "next/link";
 import { SOCIAL_MEDIA } from "../constant";
@@ -57,10 +57,11 @@ export default function CardProfileRev() {
         <div className="w-full md:w-1/3 border-b-2 sm:border-b-2 md:border-y-0 md:border-r-2 border-cyan-600 dark:border-teal-400">
           {/* <div className="absolute w-full h-2/4 md:h-full md:w-1/3 inset-0 bg-slate-800/60" /> */}
           <div className="h-2/3 md:h-full w-full md:rounded-tl-[25px] md:rounded-bl-[25px]">
+            <div className="absolute w-full h-auto top-0 left-0 bg-transparent z-100"></div>
             <Image
               src={SideProfilePhoto}
               alt="Image Banner"
-              className="object-cover w-full h-full rounded-tl-[25px] rounded-tr-[25px] sm:rounded-tl-[25px] sm:rounded-tr-[25px] md:rounded-tr-[0px] md:rounded-tl-[25px] md:rounded-bl-[25px]"
+              className="object-cover w-full h-full rounded-tl-[25px] rounded-tr-[25px] sm:rounded-tl-[25px] sm:rounded-tr-[25px] md:rounded-tr-[0px] md:rounded-tl-[25px] md:rounded-bl-[25px] pointer-events-none"
             />
           </div>
         </div>
@@ -70,11 +71,12 @@ export default function CardProfileRev() {
               ref={avatarRef}
               className="flex items-center justify-center w-20 h-20 md:w-30 md:h-30 lg:w-32 lg:h-32 rounded-full border-2 border-cyan-600 dark:border-teal-400 bg-cyan-600 dark:bg-teal-400"
             >
+              <div className="absolute w-full h-auto top-0 left-0 bg-transparent z-10"></div>
               <Image
                 src={ProfilePhoto}
                 alt="Image Profiles"
-                style={{objectFit:"cover"}}
-                className="rounded-full"
+                style={{ objectFit: "cover" }}
+                className="rounded-full pointer-events-none"
               />
             </div>
             <div className="flex justify-end top-0 right-0 flex-row space-x-2 md:space-x-5">
@@ -148,17 +150,23 @@ export default function CardProfileRev() {
           <div className="px-2 py-5 md:px-5 relative gap-2">
             <div className="flex flex-col md:flex-row my-2 gap-5">
               <div>
-                <Button
-                  variant="outline"
-                  className="relative w-full px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
+                <Link
+                href="/dummy.pdf"
+                target="_blank"
+                rel="noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    className="relative w-full px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
                  dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
                  hover:text-white dark:hover:text-black before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 dark:before:bg-teal-400
                   before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
                  inline-flex items-center justify-center text-base md:text-lg font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
                  disabled:pointer-events-none"
-                >
-                  Resume
-                </Button>
+                  >
+                    Resume
+                  </Button>
+                </Link>
               </div>
               <div>
                 <Link href="#CONTACT" prefetch={false}>

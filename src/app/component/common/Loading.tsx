@@ -133,7 +133,6 @@ export default function Loading() {
         display: "none",
       });
 
-    // Cleanup function
     return () => {
       tl.kill();
     };

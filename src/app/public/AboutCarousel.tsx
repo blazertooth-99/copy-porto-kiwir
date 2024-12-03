@@ -6,9 +6,6 @@ import { Button } from "@/components/ui/button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import SplitType from "split-type";
-import MeteorParticles from "../component/home/MeteorParticles";
-import CoolMeteorParticles from "../component/home/CoolMeteorParticles";
-import FloatingParticles from "../component/home/FloatingParticles";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 

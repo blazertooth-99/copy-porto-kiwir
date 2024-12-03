@@ -16,7 +16,6 @@ const TextReveal = () => {
   const divTriggerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Ensure that the content element is available
     if (!content.current) {
       console.error("Content element not found!");
       return;
@@ -75,7 +74,6 @@ const TextReveal = () => {
 
     createSplit();
 
-    // Cleanup GSAP and ScrollTrigger on unmount to avoid memory leaks
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };

@@ -15,7 +15,6 @@ export const getLanguageColor = (language: string): string => {
     PHP: '#4F5D95',
     HTML: '#e34c26',
     CSS: '#563d7c',
-    // Add more languages and their corresponding colors as needed
   };
 
   return colors[language] || '#808080'; // Default to gray if language not found

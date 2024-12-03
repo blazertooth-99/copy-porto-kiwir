@@ -43,32 +43,32 @@ export const SOCIAL_MEDIA = {
 //EXPERIENCE DATA
 export const EXPERIENCE = [
   {
-    year: "May 2020- Jan 2021",
-    title: "Junior Developer",
+    year: "Sept 2019 - Apr 2020",
+    title: "System Engineer (Intern)",
     Jobdesc: "Create something goods",
-    Tag: ["PHP", "HTML", "Boostrap"],
-    company: "Tech Startup Inc.",
+    Tag: ["Docker", "Angular 7", "Springboot", "Redhat 7", "Oracle 11g"],
+    company: "PT. Multipolar Technology, Tbk.",
   },
   {
-    year: "Feb 2021 - Mar 2022",
-    title: "Mid-level Developer",
+    year: "Jan 2021 - Apr 2021",
+    title: "PHP Programmer & Android Developer",
     Jobdesc: "Create something goods",
-    Tag: ["PHP", "HTML", "Boostrap"],
-    company: "Innovative Solutions LLC",
+    Tag: ["Code Igniter", "HTML", "CSS", "MySQL"],
+    company: "Freelance - Koperasi",
   },
   {
-    year: "2022",
-    title: "Senior Developer",
+    year: "Nov 2021 - May 2022",
+    title: "PHP Programmer - Fullstack",
     Jobdesc: "Create something goods",
-    Tag: ["PHP", "HTML", "Boostrap"],
-    company: "Global Tech Giants",
+    Tag: ["Zend Framework", "Boostrap", "MySQL"],
+    company: "Square Gate One",
   },
   {
-    year: "2023",
-    title: "Lead Developer",
+    year: "Jul 2022 - Present",
+    title: "Design & Software Quality Assurance",
     Jobdesc: "Create something goods",
-    Tag: ["PHP", "HTML", "Boostrap"],
-    company: "Future Systems Co.",
+    Tag: ["Selenium", "Manual Tester", "Automation Tester"],
+    company: "PT. Hartono Istana Teknologi (Polytron)",
   },
 ];
 

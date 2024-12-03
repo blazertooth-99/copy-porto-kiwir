@@ -19,7 +19,7 @@ const TextWelcome = () => {
             </span>
             <div className="font-semibold text-lg md:text-2xl lg:text-3xl w-full justify-center">
               <span>
-                I am Christian Satrio &nbsp;{" "}
+                I&apos;m Christian Satrio &nbsp;{" "}
               </span>
               <span>
                 <TypingAnimation />
