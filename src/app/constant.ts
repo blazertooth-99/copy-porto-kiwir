@@ -1,5 +1,8 @@
 import Image, { StaticImageData } from "next/image";
 import projectImg1 from "../app/assets/news1.jpg";
+import ProjectBabel from "../app/assets/project/Projectbabel.png"
+import ProjectKoperasi from "../app/assets/project/Projectkoperasi.png"
+import ProjectMyKitchen from "../app/assets/project/Projectmykitchen.png"
 
 import { IconType } from "react-icons";
 import { DiPhp } from "react-icons/di";
@@ -85,28 +88,28 @@ export type ProjectList = {
 export const projectList: ProjectList[] = [
   {
     id: 1,
-    projectTitle: "It's project 1",
-    projectImg: projectImg1,
-    altImg: "Test Image",
-    projectLink: "https://github.com",
-    projectSubtitle: "Short description of the project.",
+    projectTitle: "Babel Leathercraft Catalogue",
+    projectImg: ProjectBabel,
+    altImg: "Babel Logo",
+    projectLink: "https://github.com/blazertooth-99/angular-babel-product-catalogue",
+    projectSubtitle: "Leather craft product catalog website from babel brand using Angular 7.",
   },
   {
     id: 2,
-    projectTitle: "It's project 2",
-    projectImg: projectImg1,
-    altImg: "Test Image",
-    projectLink: "https://github.com",
-    projectSubtitle: "Short description of the project.",
+    projectTitle: "Web & Android App Koperasi",
+    projectImg: ProjectKoperasi,
+    altImg: "Koperasi Logo",
+    projectLink: "https://github.com/blazertooth-99/PHP-Aplikasi-koperasi",
+    projectSubtitle: "Website & android application for selling credit, electricity tokens, groceries and online loan applications using PHP code igniter & Android native.",
   },
   {
     id: 3,
-    projectTitle: "It's project 3",
-    projectImg: projectImg1,
-    altImg: "Test Image",
-    projectLink: "https://github.com",
+    projectTitle: "My Kitchen Design",
+    projectImg: ProjectMyKitchen,
+    altImg: "My Kitchen Logo",
+    projectLink: "https://www.figma.com/proto/58fGb202in1aAPbIEqaKPY/Untitled?t=McedLYR26235VIee-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2&starting-point-node-id=2%3A2",
     projectSubtitle:
-      "Short description of the project. Short description of the project. Short description of the project. Short description of the project.",
+    "My Kitchen Design UI/UX design using figma for the My Kitchen application, the use of the application as a guide to how to cook and there are many catalog recipes available",
   },
 ];
 

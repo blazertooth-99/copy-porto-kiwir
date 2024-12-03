@@ -15,8 +15,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-
-
 export default function HoverImage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const refs = useRef<HTMLDivElement[]>([]);
@@ -38,10 +36,16 @@ export default function HoverImage() {
   };
 
   return (
-    <div id="PROJECT" className="py-24 px-5 min-h-screen bg-custom-blue dark:bg-slate-800">
+    <div
+      id="PROJECT"
+      className="py-24 px-5 min-h-screen bg-custom-blue dark:bg-slate-800"
+    >
       <div className="flex items-center justify-center mx-auto">
         <h1 className="my-20 text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white">
-          Work <span className="text-cyan-600 dark:text-teal-400 animate-pulse">Project</span>
+          Work{" "}
+          <span className="text-cyan-600 dark:text-teal-400 animate-pulse">
+            Project
+          </span>
         </h1>
       </div>
       <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-2 place-items-center w-full items-stretch">
@@ -55,6 +59,7 @@ export default function HoverImage() {
             onMouseMove={(event) => handleMouseMove(event, index)}
           >
             <CardHeader className="p-0">
+            <Link href={project.projectLink} target="_blank" className="cursor-none">
               <div className="relative h-48 sm:h-64 md:h-72 lg:h-80">
                 <Image
                   src={project.projectImg}
@@ -75,9 +80,11 @@ export default function HoverImage() {
                       className="absolute flex items-center justify-center px-4 py-2 bg-white dark:bg-slate-800 rounded-full shadow-lg pointer-events-none"
                       style={{ x: textX, y: textY }}
                     >
-                      <span className="mr-2 text-sm font-semibold text-gray-800 dark:text-teal-400">
-                        View Project
-                      </span>
+                     
+                        <span className="mr-2 text-sm font-semibold text-gray-800 dark:text-teal-400">
+                          View Project
+                        </span>
+                      
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
                         transition={{ repeat: Infinity, duration: 1.5 }}
@@ -88,6 +95,7 @@ export default function HoverImage() {
                   </motion.div>
                 )}
               </div>
+              </Link>
             </CardHeader>
             <div className="border-t border-cyan-600 dark:border-teal-400">
               <CardContent className="grid grid-cols-2 p-5 h-full items-stretch b">
