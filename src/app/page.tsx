@@ -1,4 +1,3 @@
-// import AboutCarousel from "./public/AboutCarousel";
 import ExperiencePage from "./public/ExperiencePage";
 import GithubRepository from "./component/home/github-repository";
 import TextReveal from "./component/common/TextReveal";

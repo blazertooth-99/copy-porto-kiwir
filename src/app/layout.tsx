@@ -28,7 +28,7 @@ const layoutStyle = {
 
 export const metadata: Metadata = {
   title: "Lancea Porto",
-  description: "Welcome to my porto",
+  description: "Welcome to my Website!",
   icons: {
     icon: [
       {
@@ -52,11 +52,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* Lenis for smoothscrolling layout */}
       <ReactLenis root>
         <body className={montserrat.className}>
           <div className={nunito_sans.className}>
             <Navigation />
           </div>
+          {/* Loading appears when load website */}
           <Suspense fallback={<Loading />}>
             <div className={montserrat.className}>{children}</div>
           </Suspense>

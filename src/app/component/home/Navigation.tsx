@@ -22,23 +22,24 @@ const Navbar = (props: any) => {
         <div className="container">
           <div className="flex mx-auto w-full justify-center gap-5 p-1 items-center">
             <Link href="/" className="flex items-center" prefetch={false}>
+              {/* When dark theme active */}
               <Image
                 src={logoCS}
                 alt="Logo Portofolio Lancea"
                 height={0}
                 width={0}
                 sizes="100vh"
-                style={{width:'55px', height: "auto" }}
+                style={{width:'50px', height: "auto" }}
                 className="hidden dark:block"
               />
-
+              {/* When Light theme active */}
               <Image
                 src={logoCSDark}
                 alt="Logo Portofolio Lancea"
                 height={0}
                 width={0}
                 sizes="100vh"
-                style={{width:'55px', height: "auto" }}
+                style={{width:'50px', height: "auto" }}
                 className="block dark:hidden"
               />
             </Link>

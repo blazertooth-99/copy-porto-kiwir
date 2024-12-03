@@ -42,6 +42,7 @@ export default function TechStack() {
         transition={{ duration: 1.5 }}
         className="flex flex-wrap items-center justify-center gap-5 p-2 mb-20"
       >
+        {/* add tooltips to show some description when hover */}
         {techIcons.map(({ id, Icon, label, color, duration }) => (
           <TooltipProvider key={id}>
             <Tooltip>

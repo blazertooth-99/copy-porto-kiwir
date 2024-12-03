@@ -1,18 +1,25 @@
-import Link from 'next/link'
-import { Home } from 'lucide-react'
+import Link from "next/link";
+import { Home } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function notFound() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-custom-blue dark:bg-slate-800 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 text-center">
         <div className="space-y-4">
-          <h1 className="text-6xl font-extrabold text-gray-900">404</h1>
-          <h2 className="text-3xl font-bold text-gray-900">Page Not Found</h2>
-          <p className="text-xl text-gray-600">Oops! The page you're looking for doesn't exist.</p>
+          <h1 className="text-6xl font-extrabold text-gray-300 dark:text-gray-200">
+            404
+          </h1>
+          <h2 className="text-3xl font-bold text-gray-300 dark:text-gray-200">
+            Page Not Found
+          </h2>
+          <p className="text-xl text-gray-400 dark:text-gray-300">
+            Oops! The page you're looking for doesn't exist.
+          </p>
         </div>
         <div className="mt-8">
           <svg
-            className="mx-auto h-32 w-32 text-gray-400"
+            className="mx-auto h-32 w-32 text-gray-200 dark:text-gray-100"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -27,15 +34,22 @@ export default function notFound() {
           </svg>
         </div>
         <div className="mt-8">
-          <Link
-            href="/"
-            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          >
-            <Home className="mr-2 -ml-1 h-5 w-5" aria-hidden="true" />
-            Back to Home
+          <Link href="/">
+            <Button
+              variant="outline"
+              className="relative px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
+                 dark:border-slate-600 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full 
+                 hover:text-white dark:hover:text-black before:-right-full before:hover:right-0 before:rounded-full before:bg-cyan-600 dark:before:bg-teal-400
+                  before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 
+                 inline-flex items-center justify-center text-base md:text-lg font-semibold text-black shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
+                 disabled:pointer-events-none"
+            >
+              <Home className="mr-2 -ml-1 h-5 w-5" aria-hidden="true" />
+              Back to Home
+            </Button>
           </Link>
         </div>
       </div>
     </div>
-  )
+  );
 }

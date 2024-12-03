@@ -10,7 +10,7 @@ export default function ExperiencePage() {
   const orbRef = useRef(null);
   const pathRef = useRef(null);
   const [isClient, setIsClient] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -40,7 +40,7 @@ export default function ExperiencePage() {
           scrollTrigger: {
             trigger: container,
             start: "top top",
-            end: "bottom bottom",
+            end: "bottom 70%",
             scrub: true,
           },
         });
