@@ -8,10 +8,10 @@ import Link from "next/link";
 
 export default function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef(null);
-  const menuItemsRef = useRef([]);
-  const iconRef = useRef(null);
-  const darkModeSwitcherRef = useRef(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuItemsRef = useRef<HTMLDivElement[]>([]);
+  const iconRef = useRef<HTMLDivElement>(null);
+  const darkModeSwitcherRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
     { menu: "Home", link: "#HOME" },
@@ -45,7 +45,7 @@ export default function BurgerMenu() {
         duration: 0.3,
         ease: "power2.inOut",
       });
-      // location pop up button theme button
+
       gsap.fromTo(
         darkModeSwitcherElement,
         { opacity: 0, scale: 0.5, x: 5 },
@@ -63,7 +63,7 @@ export default function BurgerMenu() {
         duration: 0.3,
         ease: "power2.inOut",
       });
-      // dark menu disappear when toggle menu close / clicked
+
       gsap.to(darkModeSwitcherElement, {
         opacity: 0,
         scale: 0.5,
@@ -99,7 +99,6 @@ export default function BurgerMenu() {
           />
         </div>
       </button>
-      {/* call dark menu from dark-mode-switch */}
       <div ref={darkModeSwitcherRef} className="fixed top-4 right-20 z-50 md:hidden opacity-0">
         <DarkMode />
       </div>
@@ -115,12 +114,15 @@ export default function BurgerMenu() {
           {menuItems.map((item, index) => (
             <Link
               key={index}
-              href={`${item.link}`}
+              href={item.link}
               className="block py-4 text-4xl font-bold text-white dark:text-teal-400 transition-colors hover:text-cyan-600 dark:hover:text-teal-200"
               onClick={toggleMenu}
-              ref={(el) => (menuItemsRef.current[index] = el)}
             >
-              {item.menu}
+              <div ref={(el) => {
+                if (el) menuItemsRef.current[index] = el;
+              }}>
+                {item.menu}
+              </div>
             </Link>
           ))}
         </nav>
