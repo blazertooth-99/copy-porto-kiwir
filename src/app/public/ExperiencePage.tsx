@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import { EXPERIENCE } from "../constant"
 
 export default function ExperiencePage() {
-  const containerRef = useRef(null);
-  const orbRef = useRef(null);
-  const pathRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const orbRef = useRef<SVGSVGElement>(null);
+  const pathRef = useRef<SVGPathElement>(null);
   const [isClient, setIsClient] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -36,7 +36,6 @@ export default function ExperiencePage() {
             alignOrigin: [0.5, 0.5],
           },
           ease: "power1.inOut",
-          stagger: 0,
           scrollTrigger: {
             trigger: container,
             start: "top top",
@@ -45,8 +44,8 @@ export default function ExperiencePage() {
           },
         });
 
-        gsap.utils.toArray(".experience-item").forEach((item) => {
-          return gsap.fromTo(
+        gsap.utils.toArray<HTMLElement>(".experience-item").forEach((item) => {
+          gsap.fromTo(
             item,
             {
               opacity: 0,
@@ -56,7 +55,6 @@ export default function ExperiencePage() {
               opacity: 1,
               y: 0,
               duration: 1,
-              stagger: 1,
               scrollTrigger: {
                 trigger: item,
                 start: "top 90%",
@@ -77,13 +75,11 @@ export default function ExperiencePage() {
     return () => {
       if (typeof window !== "undefined") {
         const ScrollTrigger = require("gsap/ScrollTrigger").default;
-        ScrollTrigger.getAll().forEach((trigger: { kill: () => any; }) => trigger.kill());
+        ScrollTrigger.getAll().forEach((trigger: any) => trigger.kill());
         gsap.killTweensOf("*");
       }
     };
   }, []);
-
- 
 
   return (
     <div
@@ -160,15 +156,15 @@ export default function ExperiencePage() {
                   <p className="text-sm md:text-base font-normal">{exp.Jobdesc}</p>
                   <div className="border-b border-slate-800 dark:border-teal-400 rounded-xl w-full mt-5"></div>
                   <div className={`flex flex-wrap space-x-1 py-5 gap-2 ${index % 2 === 0 ? "justify-end pl-2" : "justify-start pr-2"}`}>
-                        {exp.Tag.map((tags, index) => (
-                          <span
-                            key={index}
-                            className="bg-sky-950 dark:bg-teal-400 px-2 py-1 text-white dark:text-black text-xs md:text-sm rounded"
-                          >
-                            {tags}
-                          </span>
-                        ))}
-                      </div>
+                    {exp.Tag.map((tags, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="bg-sky-950 dark:bg-teal-400 px-2 py-1 text-white dark:text-black text-xs md:text-sm rounded"
+                      >
+                        {tags}
+                      </span>
+                    ))}
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
@@ -178,3 +174,4 @@ export default function ExperiencePage() {
     </div>
   );
 }
+

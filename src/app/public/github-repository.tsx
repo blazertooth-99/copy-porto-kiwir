@@ -50,7 +50,7 @@ export default function GithubRepository() {
       setRepositories(data);
       setFilteredRepos(data);
       setDisplayedRepos(data.slice(0, 6));
-    } catch (err) {
+    } catch (err:any) {
       setError(err.message);
     } finally {
       setLoading(false);

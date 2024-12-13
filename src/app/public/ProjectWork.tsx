@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
-import { ArrowDown, ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
