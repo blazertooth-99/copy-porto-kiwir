@@ -6,6 +6,7 @@ import { ContactIcon, ContactIcon1 } from "../constant";
 import { SOCIAL_MEDIA } from "../constant";
 
 const Contact = () => {
+  const text = "Let's talk"
   return (
     <div
       id="CONTACT"
@@ -58,7 +59,7 @@ const Contact = () => {
                  inline-flex items-center justify-center text-base md:text-lg font-semibold  shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 
                  disabled:pointer-events-none"
             >
-              Les&apos;t talk
+              {text}
             </Button>
           </Link>
         </div>
