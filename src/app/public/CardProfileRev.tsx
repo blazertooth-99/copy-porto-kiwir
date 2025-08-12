@@ -151,7 +151,7 @@ export default function CardProfileRev() {
             <div className="flex flex-col md:flex-row my-2 gap-5">
               <div>
                 <Link
-                href="/dummy.pdf"
+                href="/CV_CSatrio.pdf"
                 target="_blank"
                 rel="noreferrer"
                 >

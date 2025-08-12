@@ -114,7 +114,7 @@ export default function ExperiencePage() {
             height="24"
             viewBox="0 0 24 24"
           >
-            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="10" />
             <circle cx="12" cy="12" r="6" />
             <circle cx="12" cy="12" r="3" />
           </svg>
@@ -134,9 +134,8 @@ export default function ExperiencePage() {
               transition={{ duration: 0.3 }}
             >
               <div
-                className={`w-full ${
-                  index % 2 === 0 ? "text-right pr-2" : "text-left pl-2"
-                }`}
+                className={`w-full ${index % 2 === 0 ? "text-right pr-2" : "text-left pl-2"
+                  }`}
               >
                 <motion.div
                   className="w-full rounded-full p-8 space-y-2"
@@ -144,16 +143,22 @@ export default function ExperiencePage() {
                   <span className="block text-xl md:text-3xl font-extrabold uppercase text-cyan-600 dark:text-teal-400 mb-4 relative overflow-hidden">
                     {exp.company}
                     <div
-                      className={`border-t-2 border-cyan-600 dark:border-teal-400 rounded-xl transition-all duration-500 ${
-                        hoveredIndex === index ? "w-full" : "w-0"
-                      }`}
+                      className={`border-t-2 border-cyan-600 dark:border-teal-400 rounded-xl transition-all duration-500 ${hoveredIndex === index ? "w-full" : "w-0"
+                        }`}
                     ></div>
                   </span>
                   <h4 className="text-lg md:text-2xl font-bold mb-1 block uppercase text-black dark:text-white relative overflow-hidden">
                     {exp.year}
                   </h4>
                   <p className="text-base md:text-lg font-semibold">{exp.title}</p>
-                  <p className="text-sm md:text-base font-normal">{exp.Jobdesc}</p>
+                  {/* <p className="text-sm md:text-base font-normal">{exp.Jobdesc}</p> */}
+                  <div>
+                    {exp.Jobdesc.map((jobdesc, descIndex) => (
+                      <ul key={descIndex}>
+                        <li>{jobdesc}</li>
+                      </ul>
+                    ))}
+                  </div>
                   <div className="border-b border-slate-800 dark:border-teal-400 rounded-xl w-full mt-5"></div>
                   <div className={`flex flex-wrap space-x-1 py-5 gap-2 ${index % 2 === 0 ? "justify-end pl-2" : "justify-start pr-2"}`}>
                     {exp.Tag.map((tags, tagIndex) => (

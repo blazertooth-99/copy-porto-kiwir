@@ -49,28 +49,46 @@ export const EXPERIENCE = [
   {
     year: "Sept 2019 - Apr 2020",
     title: "System Engineer (Intern)",
-    Jobdesc: "Create something goods",
+    Jobdesc: [
+      "➤ Configured server environments for banking clients using Oracle 11g.",
+      "➤ Performed system upgrades and frontend/backend testing pre-deployment.",
+      "➤ Implementation of UI updates using Angular 7.",
+      "➤ Adding a virtual payment feature to a specific bank account using java srping boot.",
+    ],
     Tag: ["Docker", "Angular 7", "Springboot", "Redhat 7", "Oracle 11g"],
     company: "PT. Multipolar Technology, Tbk.",
   },
   {
     year: "Jan 2021 - Apr 2021",
     title: "PHP Programmer & Android Developer",
-    Jobdesc: "Create something goods",
+    Jobdesc: [
+      "➤ Added and refactored features for cooperative payment apps (Web & Android).",
+      "➤ Designed UI mockups and implemented backend logic for grocery purchase system.",
+      "➤ Create overall documentation of the android app and website.",
+    ],
     Tag: ["Code Igniter", "HTML", "CSS", "MySQL"],
     company: "Freelance - Koperasi",
   },
   {
     year: "Nov 2021 - May 2022",
     title: "PHP Programmer - Fullstack",
-    Jobdesc: "Create something goods",
+    Jobdesc: [
+      "➤ Developed and tested new features for banking systems using PHP and SQL Server.",
+      "➤ Performed data migration, query optimization, and UI enhancements.",
+      "➤ Collaborated with QA to validate system functionality on dev servers.",
+    ],
     Tag: ["Zend Framework", "Boostrap", "MySQL"],
     company: "Square Gate One",
   },
   {
     year: "Jul 2022 - Present",
     title: "Design & Software Quality Assurance",
-    Jobdesc: "Create something goods",
+    Jobdesc: [
+      "➤ Conducted manual and automation testing (Selenium) for web and Android applications.",
+      "➤ Detected and documented bugs, validated features, and prepared detailed test reports.",
+      "➤ Evaluated design and function quality of IoT devices and Android TV platforms.",
+      "➤ Conduct an User Acceptance Test for a new application package release."
+    ],
     Tag: ["Selenium", "Manual Tester", "Automation Tester"],
     company: "PT. Hartono Istana Teknologi (Polytron)",
   },
@@ -110,7 +128,7 @@ export const projectList: ProjectList[] = [
     altImg: "My Kitchen Logo",
     projectLink: "https://www.figma.com/proto/58fGb202in1aAPbIEqaKPY/Untitled?t=McedLYR26235VIee-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2&starting-point-node-id=2%3A2",
     projectSubtitle:
-    "My Kitchen Design UI/UX design using figma for the My Kitchen application, the use of the application as a guide to how to cook and there are many catalog recipes available",
+      "My Kitchen Design UI/UX design using figma for the My Kitchen application, the use of the application as a guide to how to cook and there are many catalog recipes available",
   },
   {
     id: 4,
@@ -119,7 +137,7 @@ export const projectList: ProjectList[] = [
     altImg: "Neukod Logo",
     projectLink: "https://www.figma.com/proto/58fGb202in1aAPbIEqaKPY/Untitled?t=McedLYR26235VIee-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2&starting-point-node-id=2%3A2",
     projectSubtitle:
-    "Neukod is a learning website for youth and adults, with classes in technology and coding.",
+      "Neukod is a learning website for youth and adults, with classes in technology and coding.",
   },
 ];
 

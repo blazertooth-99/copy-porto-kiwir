@@ -36,7 +36,7 @@ const Contact = () => {
           ))}
         </div>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="/dummy.pdf" target="_blank" rel="noreferrer">
+          <Link href="/CV_CSatrio.pdf" target="_blank" rel="noreferrer">
             <Button
               variant="outline"
               className="relative px-10 py-6 rounded-lg bg-white/50 dark:bg-slate-800/50 dark:text-teal-400 isolation-auto z-10 border-2 border-sky-800
