@@ -136,9 +136,9 @@ export const projectList: ProjectList[] = [
     projectTitle: "Neukod Edu",
     projectImg: ProjectNeukod,
     altImg: "Neukod Logo",
-    projectLink: "https://www.figma.com/proto/58fGb202in1aAPbIEqaKPY/Untitled?t=McedLYR26235VIee-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2&starting-point-node-id=2%3A2",
+    projectLink: "#",
     projectSubtitle:
-      "Neukod is a learning website for youth and adults, with classes in technology and coding.",
+      "The Neukod website is still under development. Neukod is a learning website for youth and adults, with classes in technology and coding.",
   },
   {
     id: 5,
