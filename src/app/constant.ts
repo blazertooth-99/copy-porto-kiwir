@@ -136,7 +136,7 @@ export const projectList: ProjectList[] = [
     projectTitle: "Neukod Edu",
     projectImg: ProjectNeukod,
     altImg: "Neukod Logo",
-    projectLink: "#",
+    projectLink: "https://neukod-frontend-website-git-dev-lanceas-projects.vercel.app",
     projectSubtitle:
       "The Neukod website is still under development. Neukod is a learning website for youth and adults, with classes in technology and coding.",
   },
