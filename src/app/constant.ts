@@ -4,6 +4,7 @@ import ProjectBabel from "../app/assets/project/Projectbabel.png"
 import ProjectKoperasi from "../app/assets/project/Projectkoperasi.png"
 import ProjectMyKitchen from "../app/assets/project/Projectmykitchen.png"
 import ProjectNeukod from "../app/assets/project/projectneukod.png"
+import ProjectDigidaw from "../app/assets/project/ProjectDigidaw.png"
 
 import { IconType } from "react-icons";
 import { DiPhp } from "react-icons/di";
@@ -138,6 +139,14 @@ export const projectList: ProjectList[] = [
     projectLink: "https://www.figma.com/proto/58fGb202in1aAPbIEqaKPY/Untitled?t=McedLYR26235VIee-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2&starting-point-node-id=2%3A2",
     projectSubtitle:
       "Neukod is a learning website for youth and adults, with classes in technology and coding.",
+  },
+  {
+    id: 5,
+    projectTitle: "Digidaw Website",
+    projectImg: ProjectDigidaw,
+    altImg: "Digidaw Logo",
+    projectLink: "https://digidaw-cyan.vercel.app/",
+    projectSubtitle:"The Digidaw website is still under development. It is a fashion-themed website for clothing product catalogs.",
   },
 ];
 

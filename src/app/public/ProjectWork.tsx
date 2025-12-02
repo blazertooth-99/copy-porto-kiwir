@@ -66,7 +66,7 @@ export default function HoverImage() {
                   alt={project.altImg}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw"
-                  className="object-cover w-full"
+                  className="object-contain w-full"
                 />
                 {hoveredIndex === index && (
                   <motion.div
